@@ -9,6 +9,8 @@
 // TODO menu transition vfx, 
 // TODO Button sound effect
 
+// TODO Game should pause when menu is open
+
 public class MenuScript : MonoBehaviour
 {
     public GameObject menuRef;
@@ -19,13 +21,21 @@ public class MenuScript : MonoBehaviour
 
         if (Input.GetButtonDown(menuString)) {
             bool theMenuIsActive = menuRef.activeSelf;
-            menuRef.SetActive(!theMenuIsActive);
+            if (theMenuIsActive) {
+                menuRef.SetActive(false);
+                ResumeGame();
+            }
+            else {
+                PauseGame();
+                menuRef.SetActive(true);
+            }
         }
     }
 
     public void ResumeButton() {
         PlayButtonSound();
         menuRef.SetActive(false);
+        ResumeGame();
     }
 
     public void QuitButton() {
@@ -36,5 +46,15 @@ public class MenuScript : MonoBehaviour
 
     private void PlayButtonSound() {
         buttonSound.Play();
+    }
+    
+    void PauseGame ()
+    {
+        Time.timeScale = 0f;
+    }
+
+    void ResumeGame ()
+    {
+        Time.timeScale = 1;
     }
 }
