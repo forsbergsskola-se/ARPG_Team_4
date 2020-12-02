@@ -10,7 +10,7 @@ namespace Assets.Scripts.Hitbox_And_Hurtbox {
 
         void HasCollided() {
             if (DestroyOnImpact && Collided) {
-                isact
+                
             }
         }
     }

@@ -13,7 +13,7 @@ public class Hurtbox : MonoBehaviour {
         if (dataFromCollision.gameObject.tag == HitBoxTag) {
             var objectHealthScript = GetComponent<ObjectHealth>();
 
-            dataFromCollision.collided = true;
+            dataFromCollision.Collided = true;
             HitBoxBaseDamage = dataFromCollision.transform.GetComponent<Hitbox>().Damage;
             objectHealthScript.Health -= HitBoxBaseDamage * objectHealthScript.HealthModifier;
             
