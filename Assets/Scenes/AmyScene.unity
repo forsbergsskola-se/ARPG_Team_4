@@ -214,6 +214,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8012347}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &9071591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7011458866357252173, guid: 15a17bcd910c02942b4781f821bbfdc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7011458866469048805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &231201725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1221,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1505624486884789586, guid: 15a17bcd910c02942b4781f821bbfdc2,
+        type: 3}
+      propertyPath: fireHitboxPoint
+      value: 
+      objectReference: {fileID: 9071591}
     - target: {fileID: 7011458865724773779, guid: 15a17bcd910c02942b4781f821bbfdc2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1274,6 +1285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7011458866357252173, guid: 15a17bcd910c02942b4781f821bbfdc2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a17bcd910c02942b4781f821bbfdc2, type: 3}

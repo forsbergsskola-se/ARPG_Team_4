@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a1db8278ec95464bbdb937e0aa8edd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireHitbox: {fileID: 7011458866357252173}
-  fireHitboxRange: 1.5
+  fireHitboxPoint: {fileID: 7011458866357252173}
+  fireLayers:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &7011458866357252162
 GameObject:
   m_ObjectHideFlags: 0
