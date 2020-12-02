@@ -12,8 +12,8 @@ public class Hurtbox : MonoBehaviour {
     void OnCollisionEnter(Collision dataFromCollision) {
         if (dataFromCollision.gameObject.tag == HitBoxTag) {
             var objectHealthScript = GetComponent<ObjectHealth>();
-
-            dataFromCollision.Collided = true;
+            //GetComponent<>()
+            //dataFromCollision.GetComponent<ObjectHealth>()
             HitBoxBaseDamage = dataFromCollision.transform.GetComponent<Hitbox>().Damage;
             objectHealthScript.Health -= HitBoxBaseDamage * objectHealthScript.HealthModifier;
             
