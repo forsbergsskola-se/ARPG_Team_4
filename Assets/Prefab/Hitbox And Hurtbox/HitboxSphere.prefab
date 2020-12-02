@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 653dbb5f18f5e4cba8c9d016f31c434a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
   LifeSec: 1
+  Damage: 10
   Knockback: 0
-  Parent: {fileID: 0}
   DeactivateOnImpact: 1
+  Parent: {fileID: 0}
