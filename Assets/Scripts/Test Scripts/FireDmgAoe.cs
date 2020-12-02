@@ -1,20 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace UIStatsResources { 
 public class FireDmgAoe : MonoBehaviour
 {
     public Transform fireHitboxPoint;
     //public float fireHitboxRange = 1.5f;
     public LayerMask fireLayers;
+    public UIStatsResource statType;
 
-    void Update()
+    void FixedUpdate()
     {
-        /*
-        if () {
-            FireAttack();
-        }
-        */
         FireAttack();
     }
     void FireAttack() {
@@ -22,6 +18,7 @@ public class FireDmgAoe : MonoBehaviour
         int i = 0;
         foreach (Collider fire in hitPlayer) {
             Debug.Log("Player hit by Fire");
+
         }
     }
     void OnDrawGizmosSelected()
@@ -30,4 +27,5 @@ public class FireDmgAoe : MonoBehaviour
             return;
         Gizmos.DrawWireCube(fireHitboxPoint.position, transform.localScale);
     }
+}
 }
