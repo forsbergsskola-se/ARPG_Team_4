@@ -9,8 +9,6 @@
 // TODO menu transition vfx, 
 // TODO Button sound effect
 
-// TODO Game should pause when menu is open
-
 public class MenuScript : MonoBehaviour
 {
     public GameObject menuRef;
@@ -37,6 +35,25 @@ public class MenuScript : MonoBehaviour
         menuRef.SetActive(false);
         ResumeGame();
     }
+
+    public void LoadCheckpointButton() {
+        //TODO
+        buttonSound.Play();
+        Debug.Log("Load cehckpoint clicked");
+    }
+    
+    public void SettingsButton() {
+        //TODO
+        buttonSound.Play();
+        Debug.Log("Settings clicked");
+    }
+    
+    public void QuitToMainMenuButton() {
+        //TODO
+        buttonSound.Play();
+        Debug.Log("Quit to main menu clicked");
+    }
+    
 
     public void QuitButton() {
         Debug.Log("The application should quit if the game is built");
