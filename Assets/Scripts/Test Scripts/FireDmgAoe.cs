@@ -15,7 +15,7 @@ public class FireDmgAoe : MonoBehaviour
     }
     void FireAttack() {
         Collider[] hitPlayer = Physics.OverlapBox(fireHitboxPoint.position, transform.localScale, Quaternion.identity,  fireLayers);
-        int i = 0;
+        //int i = 0;
         foreach (Collider fire in hitPlayer) {
             Debug.Log("Player hit by Fire");
 
@@ -27,5 +27,5 @@ public class FireDmgAoe : MonoBehaviour
             return;
         Gizmos.DrawWireCube(fireHitboxPoint.position, transform.localScale);
     }
-}
+    }
 }
