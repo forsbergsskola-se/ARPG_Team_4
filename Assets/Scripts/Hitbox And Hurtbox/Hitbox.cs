@@ -1,17 +1,28 @@
 ﻿using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 namespace Assets.Scripts.Hitbox_And_Hurtbox {
     public class Hitbox : MonoBehaviour {
-        public int Damage;
         public int LifeSec;
+        public int Damage;
         public int Knockback;
-        public bool DestroyOnImpact;
-        public bool Collided = false;
+        public bool DeactivateOnImpact;
+        public GameObject Parent;
+        private float _lifeTimer;
 
-        void HasCollided() {
-            if (DestroyOnImpact && Collided) {
-                
-            }
+        public void HasCollided() {
+            if (DeactivateOnImpact) gameObject.SetActive(false);
+        }
+
+        private void OnEnable() {
+            _lifeTimer = LifeSec;
+            Debug.Log(_lifeTimer);
+        }
+
+        private void Update() {
+            Debug.Log(_lifeTimer);
+            _lifeTimer -= Time.deltaTime;
+            if (_lifeTimer <= 0.0f) gameObject.SetActive(false);
         }
     }
 }

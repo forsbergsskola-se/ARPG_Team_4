@@ -1,23 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Assets.Scripts.Hitbox_And_Hurtbox;
+﻿using Assets.Scripts.Hitbox_And_Hurtbox;
 using UnityEngine;
 
 public class Hurtbox : MonoBehaviour {
-    public Collider HurtBox;
     private const string HitBoxTag = "IsHitBox";
-    public int HitBoxBaseDamage;
+    public GameObject Parent;
     
-
-    void OnCollisionEnter(Collision dataFromCollision) {
-        if (dataFromCollision.gameObject.tag == HitBoxTag) {
-            var objectHealthScript = GetComponent<ObjectHealth>();
-            //GetComponent<>()
-            //dataFromCollision.GetComponent<ObjectHealth>()
-            HitBoxBaseDamage = dataFromCollision.transform.GetComponent<Hitbox>().Damage;
-            objectHealthScript.Health -= HitBoxBaseDamage * objectHealthScript.HealthModifier;
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag != HitBoxTag) return;
+        
+        var thisHealthScript = this.GetComponent<ObjectHealth>();
+        var otherHitBoxScript = other.gameObject.GetComponent<Hitbox>();
+        
+        if (otherHitBoxScript.Parent == this.Parent) return;
             
-        }
+        otherHitBoxScript.HasCollided();
+        thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
+        
     }
 }
 
