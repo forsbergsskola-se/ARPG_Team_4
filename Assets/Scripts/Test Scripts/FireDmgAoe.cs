@@ -19,8 +19,8 @@ public class FireDmgAoe : MonoBehaviour
             //int i = 0;
             foreach (Collider fire in hitPlayer) {
                 DmgHealUpdate();
-                DmgHealProduce();
-                Debug.Log("Player hit by Fire");
+                //DmgHealProduce();
+                //Debug.Log("Player hit by Fire");
         }
     }
         void DmgHealUpdate()
@@ -28,7 +28,8 @@ public class FireDmgAoe : MonoBehaviour
             this.elapsedTime += Time.deltaTime;
             if (this.elapsedTime >= this.data.dmgHealInterval)
             {
-                //DmgHealProduce();
+                DmgHealProduce();
+                Debug.Log("Player hit by Fire");
                 this.elapsedTime -= this.data.dmgHealInterval;
             }
         }
@@ -39,10 +40,13 @@ public class FireDmgAoe : MonoBehaviour
         }
         void DmgHealProduce()
         {
+            Debug.Log("Methord DmgHealProduce");
+            var Heal = this.data.GetStatHealAmount(this.Amount);
+            var DMG = this.data.GetStatDmgAmount(this.Amount);
+            statType.CurrentUIStats -= DMG.statAmount;
+            Debug.Log("" + statType.CurrentUIStats);
             if (this.Amount == 0)
                 return;
-            var Heal = this.data.GetStatHealAmount(this.Amount);
-            var DMG =  this.data.GetStatDmgAmount(this.Amount);
         }
         void OnDrawGizmosSelected()
         {

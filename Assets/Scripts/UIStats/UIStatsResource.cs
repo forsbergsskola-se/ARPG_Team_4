@@ -18,11 +18,11 @@ namespace UIStatsResources
                 this.StatChange.Invoke(value);
             }
         }
-        public int CurrentMaxUIStats {
-            get => PlayerPrefs.GetInt(this.name, this.StatMaxAmount);
+        public int MaxUIStats{
+            get => PlayerPrefs.GetInt(this.name + "Max Amount", this.StatMaxAmount);
             set
             {
-                PlayerPrefs.SetInt(this.name, value);
+                PlayerPrefs.SetInt(this.name + "Max Amount", value);
                 this.MaxStatChange.Invoke(value);
             }
         }

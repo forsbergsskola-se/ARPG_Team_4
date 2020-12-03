@@ -1078,7 +1078,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: dea917cb8ac06b648afde723b42c8872,
         type: 2}
+    - target: {fileID: 1505624486884789586, guid: 15a17bcd910c02942b4781f821bbfdc2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1778335323464621294, guid: 15a17bcd910c02942b4781f821bbfdc2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490674525718281318, guid: 15a17bcd910c02942b4781f821bbfdc2,
         type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -32,7 +32,7 @@ namespace UIStatsResources {
         {
             this.statResource = maxStatResource;
             this.statResource.MaxStatChange.AddListener(OnMaxStatChange);
-            OnMaxStatChange(this.statResource.CurrentMaxUIStats);
+            OnMaxStatChange(this.statResource.MaxUIStats);
 
 
         }
