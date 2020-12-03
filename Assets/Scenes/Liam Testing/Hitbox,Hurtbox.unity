@@ -759,6 +759,11 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1148903238}
+    - target: {fileID: 2900851657005486198, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: DeactivateOnImpact
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2900851657005486199, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
         type: 3}
       propertyPath: m_IsTrigger

@@ -5,32 +5,32 @@ public class Hurtbox : MonoBehaviour {
     private const string HitBoxTag = "IsHitBox";
     public GameObject Parent;
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         
         if (other.tag == HitBoxTag) {
             var thisHealthScript = this.GetComponent<ObjectHealth>();
             var otherHitBoxScript = other.gameObject.GetComponent<Hitbox>();
 
             if (otherHitBoxScript.Parent == this.Parent) return;
-   
             
-            /*
-             switch (Effect)
+             switch (otherHitBoxScript.Effect)
              {
+             case "Healing":
+                //Parent.ApplyHealing(Damage, time);
+                break;
              case "Poison":
-                Parent.ApplyPoison(Damage, time);
+                //Parent.ApplyPoison(Damage, time);
                 break;
             case "Burn":
-                Parent.ApplyBurn(Damage, time);
+                thisHealthScript.ApplyBurn(1, 0, other.gameObject);
                 break;
-            case "Knockback":
-                Parent.Knockback(Damage, KnockbackAamount);
+            case "Knockback": 
+                thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
+                //Parent.Knockback(Damage, KnockbackAamount);
                 break;
               }
              
-            */
             otherHitBoxScript.HasCollided();
-            thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
         }
     }
 }
