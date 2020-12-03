@@ -4,19 +4,33 @@ using UnityEngine;
 public class Hurtbox : MonoBehaviour {
     private const string HitBoxTag = "IsHitBox";
     public GameObject Parent;
-    
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log("Got here 1");
+
+    private void OnTriggerStay(Collider other) {
         
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == HitBoxTag) {
+        if (other.tag == HitBoxTag) {
             var thisHealthScript = this.GetComponent<ObjectHealth>();
             var otherHitBoxScript = other.gameObject.GetComponent<Hitbox>();
-            Debug.Log("Got here 2");
+
             if (otherHitBoxScript.Parent == this.Parent) return;
-            Debug.Log("Got here 3");
+            
+             switch (otherHitBoxScript.Effect)
+             {
+             case "Healing":
+                //Parent.ApplyHealing(Damage, time);
+                break;
+             case "Poison":
+                //Parent.ApplyPoison(Damage, time);
+                break;
+            case "Burn":
+                thisHealthScript.ApplyBurn(1, 0, other.gameObject);
+                break;
+            case "Knockback": 
+                thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
+                //Parent.Knockback(Damage, KnockbackAamount);
+                break;
+              }
+             
             otherHitBoxScript.HasCollided();
-            thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
         }
     }
 }
