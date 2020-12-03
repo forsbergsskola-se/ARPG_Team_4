@@ -17,11 +17,10 @@ public class Teleport : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (isEnabled) {
-            Debug.Log("Entered Portal");
-
-            //other.GetComponent<NavMeshAgent>().enabled = false;
-            other.transform.position = teleportTarget.position;
+        if (!isEnabled)
+            return;
+        if (other.CompareTag("Player")) {
+            other.GetComponentInParent<Transform>().position = teleportTarget.position;
             other.GetComponentInParent<NavMeshAgent>().SetDestination(teleportTarget.position);
         }
     }

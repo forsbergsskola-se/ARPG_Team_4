@@ -19,6 +19,9 @@ namespace Player {
         }
 
         void Update() {
+            if (!isAlive) {
+                myAgent.SetDestination(transform.position);
+            }
             if (Input.GetMouseButton(0) && isAlive) {
                 Ray myRay = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo;

@@ -43,11 +43,9 @@ public class PatrolThreat : MonoBehaviour {
     {
         _myAgent = GetComponent<NavMeshAgent>();
         _myAgent.SetDestination(targetLocationArray[_index].position);
-        Debug.Log("array length: " + targetLocationArray.Length);
         GetComponent<Rigidbody>().isKinematic = true;
     }
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("collision");
         if (other.transform.position == targetLocationArray[_index].position) {
             GoToNextPosition();
         }

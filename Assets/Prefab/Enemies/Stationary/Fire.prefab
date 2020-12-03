@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 81ae1746cdbe442fc80cbd7d55f641bc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7011458865724773783}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a1db8278ec95464bbdb937e0aa8edd4, type: 3}
   m_Name: 
@@ -136,6 +136,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7011458865724773779}
     m_Modifications:
+    - target: {fileID: 1062316299589021951, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: Parent
+      value: 
+      objectReference: {fileID: 7011458865724773783}
     - target: {fileID: 2900851657005486154, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -191,6 +196,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2900851657005486154, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900851657005486154, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900851657005486154, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2900851657005486193, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
         type: 3}
       propertyPath: m_Name
@@ -199,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 2900851657005486199, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2, type: 3}
