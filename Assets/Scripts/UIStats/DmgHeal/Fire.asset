@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealAmount:
     statAmount: 0
-    statResource: {fileID: 11400000, guid: 1445934319fd15946986c6b7f634c474, type: 2}
+    statResource: {fileID: 11400000, guid: 3b14a067ba19ba74e8dd6ce47b74743e, type: 2}
   DmgAmount:
     statAmount: 1
     statResource: {fileID: 11400000, guid: 1445934319fd15946986c6b7f634c474, type: 2}
