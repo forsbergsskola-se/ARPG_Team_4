@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ManaPoints
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0.057691336, b: 1, a: 1}
-  StatAmount: 30
+  StatAmount: 20
   StatMaxAmount: 20
   StatChange:
     m_PersistentCalls:
