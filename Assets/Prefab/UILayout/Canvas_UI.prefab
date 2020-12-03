@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3932878474177877900}
   - component: {fileID: 3932878474177877906}
-  - component: {fileID: 3932878474177877907}
   - component: {fileID: 3932878474177877905}
+  - component: {fileID: 4797453387435636969}
   m_Layer: 5
   m_Name: UILayoutSetup
   m_TagString: Untagged
@@ -46,22 +46,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3932878474177877901}
   m_CullTransparentMesh: 0
---- !u!114 &3932878474177877907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3932878474177877901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d49f7e2f4957e469cd44cde9042256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiStatResource:
-  - {fileID: 11400000, guid: 1445934319fd15946986c6b7f634c474, type: 2}
-  - {fileID: 11400000, guid: 360363008200a9c4c86fc5e4150ea3f8, type: 2}
-  prefab: {fileID: 5230144013067895978, guid: bd63749ea34c90742b62475c5b656a45, type: 3}
 --- !u!114 &3932878474177877905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +71,22 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
+--- !u!114 &4797453387435636969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3932878474177877901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d49f7e2f4957e469cd44cde9042256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiStatResource:
+  - {fileID: 11400000, guid: 1445934319fd15946986c6b7f634c474, type: 2}
+  - {fileID: 11400000, guid: 360363008200a9c4c86fc5e4150ea3f8, type: 2}
+  prefab: {fileID: 5230144013067895978, guid: bd63749ea34c90742b62475c5b656a45, type: 3}
 --- !u!1 &3932878475602504479
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,18 +9,21 @@ namespace UIStatsResources
         public Color color;
         public int StatAmount = 10;
         public int StatMaxAmount = 20;
+        public IntEvent StatChange;
         public int CurrentUIStats {
             get => PlayerPrefs.GetInt(this.name, this.StatAmount);
-            set => PlayerPrefs.SetInt(this.name, value);
-        }
-        void Update() {
-            if (StatMaxAmount <= StatAmount /*StatAmount >= StatMaxAmount*/) { 
-                this.StatAmount = this.StatMaxAmount;
+            set { 
+                PlayerPrefs.SetInt(this.name, value);
+                this.StatChange.Invoke(value);
             }
         }
-        /*
-        public void StatChange() { 
+        public int CurrentMaxUIStats {
+            get => PlayerPrefs.GetInt(this.name, this.StatMaxAmount);
+            set
+            {
+                PlayerPrefs.SetInt(this.name, value);
+                this.StatChange.Invoke(value);
+            }
         }
-        */
     }
 }

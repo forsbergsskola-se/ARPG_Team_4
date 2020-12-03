@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace UIStatsResources { 
+namespace UIStatsResources.DmgHeal{ 
 public class FireDmgAoe : MonoBehaviour
 {
     public Transform fireHitboxPoint;
