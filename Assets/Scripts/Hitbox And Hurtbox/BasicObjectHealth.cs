@@ -5,15 +5,17 @@ using UnityEngine;
 public class BasicObjectHealth : MonoBehaviour
 {
     public int MaxHealth = 30;
-    public float Health = 30;
+    public float CurrentHealth = 30;
     public int HealthModifier = 1;
 
     public void UpdateHealth(float damage) {
         
-        Health = Mathf.Min(Health, MaxHealth);
-        Health = Mathf.Max(Health - damage, 0);
-        Debug.Log("Health: " + Health);
+        CurrentHealth = Mathf.Min(CurrentHealth, MaxHealth);
+        CurrentHealth = Mathf.Max(CurrentHealth - damage, 0);
+        Debug.Log("Health: " + CurrentHealth);
 
-        if (Health == 0) Debug.Log("Enemy/Player Died");
+        if (CurrentHealth == 0) {
+            
+        };
     }
 }

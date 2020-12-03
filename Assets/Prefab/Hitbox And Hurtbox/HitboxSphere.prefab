@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2900851657005486197}
   - component: {fileID: 2900851657005486196}
   - component: {fileID: 2900851657005486199}
-  - component: {fileID: 2900851657005486198}
+  - component: {fileID: 1062316299589021951}
   m_Layer: 0
   m_Name: HitboxSphere
   m_TagString: IsHitBox
@@ -59,8 +59,7 @@ MeshRenderer:
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e6331c8bf2e17459983cf79ac70e4d18, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +93,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2900851657005486198
+--- !u!114 &1062316299589021951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,11 +102,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2900851657005486193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 653dbb5f18f5e4cba8c9d016f31c434a, type: 3}
+  m_Script: {fileID: 11500000, guid: 79b42f11e5e8b4fad935292304b3bdb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LifeSec: 1
-  Damage: 10
+  LifeSec: 100
+  Damage: 30
   Effect: Knockback
   Knockback: 0
   DeactivateOnImpact: 1
