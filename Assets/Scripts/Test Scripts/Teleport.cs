@@ -20,9 +20,9 @@ public class Teleport : MonoBehaviour {
         if (isEnabled) {
             Debug.Log("Entered Portal");
 
-            other.GetComponent<NavMeshAgent>().enabled = false;
+            //other.GetComponent<NavMeshAgent>().enabled = false;
             other.transform.position = teleportTarget.position;
-            other.GetComponent<NavMeshAgent>().enabled = true;
+            other.GetComponentInParent<NavMeshAgent>().SetDestination(teleportTarget.position);
         }
     }
 

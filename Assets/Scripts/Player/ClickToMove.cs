@@ -8,6 +8,7 @@ namespace Player {
         public LayerMask whatCanBeClickedOn;
         private NavMeshAgent myAgent;
         private Camera mainCamera;
+        public bool isAlive = true;
         void Start() {
             myAgent = GetComponent<NavMeshAgent>();
             mainCamera = Camera.main;
@@ -18,7 +19,7 @@ namespace Player {
         }
 
         void Update() {
-            if (Input.GetMouseButton(0)) {
+            if (Input.GetMouseButton(0) && isAlive) {
                 Ray myRay = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo;
             
