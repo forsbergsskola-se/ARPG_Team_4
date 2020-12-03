@@ -10,6 +10,7 @@ namespace UIStatsResources
         public int StatAmount = 10;
         public int StatMaxAmount = 20;
         public IntEvent StatChange;
+        public IntEvent MaxStatChange;
         public int CurrentUIStats {
             get => PlayerPrefs.GetInt(this.name, this.StatAmount);
             set { 
@@ -22,7 +23,7 @@ namespace UIStatsResources
             set
             {
                 PlayerPrefs.SetInt(this.name, value);
-                this.StatChange.Invoke(value);
+                this.MaxStatChange.Invoke(value);
             }
         }
     }

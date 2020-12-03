@@ -7,6 +7,7 @@ namespace UIStatsResources.DmgHeal {
     {
         [SerializeField] StatAmount HealAmount;
         [SerializeField] StatAmount DmgAmount;
+        public float dmgHealInterval = 3f;
 
         public StatAmount GetStatHealAmount(int statAmount)
         {
