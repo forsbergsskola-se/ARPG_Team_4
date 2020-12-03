@@ -12,7 +12,7 @@ namespace UIStatsResources {
         public Text UIStatOutOf;
         public UIStatsResource uiStatsResource;
 
-        public void Update()
+        public void LateUpdate()
         {
             this.UIStatAmount.text = this.uiStatsResource.CurrentUIStats.ToString();
             this.UIStatName.text = this.uiStatsResource.name;

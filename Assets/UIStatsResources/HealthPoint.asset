@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HealthPoint
   m_EditorClassIdentifier: 
   color: {r: 1, g: 0, b: 0, a: 1}
-  StatAmount: 10
+  StatAmount: 40
   StatMaxAmount: 20

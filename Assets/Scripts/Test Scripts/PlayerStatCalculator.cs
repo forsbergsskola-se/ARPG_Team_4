@@ -9,7 +9,16 @@ namespace UIStatsResources {
 
         void Start()
         {
-            playerHealth = this.resourceStat.StatAmount;
+            playerHealth = this.resourceStat.CurrentUIStats;
+            Debug.Log("Start "+ playerHealth);
+        }
+        private void Update()
+        {
+            if (playerHealth >= this.resourceStat.StatMaxAmount)
+            {
+                this.playerHealth = this.resourceStat.StatMaxAmount;
+            }
+            Debug.Log("Updated "+ playerHealth);
         }
     }
 }
