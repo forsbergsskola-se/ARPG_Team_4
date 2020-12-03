@@ -193,11 +193,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2390917873988594758, guid: 619cfba91664c44f4bc57c66cca5dbfc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2390917873988594759, guid: 619cfba91664c44f4bc57c66cca5dbfc,
         type: 3}
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1148903238}
+    - target: {fileID: 6695387820790949535, guid: 619cfba91664c44f4bc57c66cca5dbfc,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 619cfba91664c44f4bc57c66cca5dbfc, type: 3}
 --- !u!1 &206408475 stripped
@@ -276,11 +286,16 @@ PrefabInstance:
     - target: {fileID: 2390917873988594755, guid: 619cfba91664c44f4bc57c66cca5dbfc,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2390917873988594755, guid: 619cfba91664c44f4bc57c66cca5dbfc,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390917873988594758, guid: 619cfba91664c44f4bc57c66cca5dbfc,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2390917873988594759, guid: 619cfba91664c44f4bc57c66cca5dbfc,
@@ -288,6 +303,11 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1498780948}
+    - target: {fileID: 6695387820790949535, guid: 619cfba91664c44f4bc57c66cca5dbfc,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 619cfba91664c44f4bc57c66cca5dbfc, type: 3}
 --- !u!1 &806662834
@@ -565,7 +585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498780948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.8}
+  m_LocalPosition: {x: 0, y: 0, z: -2.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1660866606}
@@ -588,7 +608,7 @@ PrefabInstance:
     - target: {fileID: 2462924544459791809, guid: ee91d5329ee1e4c2081dac2b8fd1b62d,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2462924544459791812, guid: ee91d5329ee1e4c2081dac2b8fd1b62d,
         type: 3}
@@ -653,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 2462924544459791820, guid: ee91d5329ee1e4c2081dac2b8fd1b62d,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2462924544459791821, guid: ee91d5329ee1e4c2081dac2b8fd1b62d,
         type: 3}
@@ -739,5 +759,15 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1148903238}
+    - target: {fileID: 2900851657005486199, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2900851657005486199, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ca0c8adf3934fb8a0edb8a1824e9f2, type: 3}
