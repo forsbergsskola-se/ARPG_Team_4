@@ -14,6 +14,9 @@ namespace UIStatsResources {
         public ColorEvent StatColorChange;
         UIStatsResource statResource;
 
+        public StringEvent MaxStatAmountChange;
+        public ColorEvent MaxStatColorChange;
+
         public void Setup(UIStatsResource statResource)
         {
             this.statResource = statResource;
@@ -22,9 +25,29 @@ namespace UIStatsResources {
             this.StatNameChange.Invoke(statResource.name);
             this.StatColorChange.Invoke(this.statResource.color);
 
+
         }
+        
+        public void MaxSetup(UIStatsResource maxStatResource)
+        {
+            this.statResource = maxStatResource;
+            this.statResource.MaxStatChange.AddListener(OnMaxStatChange);
+            OnMaxStatChange(this.statResource.CurrentMaxUIStats);
+
+
+        }
+        
         public void OnStatChange(int value) {
+            /*
+            if (this.statResource.StatAmount >= this.statResource.StatMaxAmount) {
+                this.StatAmountChange = this.MaxStatAmountChange;
+            }
+            */
             this.StatAmountChange.Invoke(value.ToString());
+        }
+        public void OnMaxStatChange(int value)
+        {
+            this.MaxStatAmountChange.Invoke(value.ToString());
         }
 
         /*

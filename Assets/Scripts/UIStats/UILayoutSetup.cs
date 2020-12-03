@@ -13,6 +13,7 @@ namespace UIStatsResources
             {
                 var instance = Instantiate(this.prefab, this.transform);
                 instance.Setup(uiStatResource);
+                instance.MaxSetup(uiStatResource);
             }
         }
     }
