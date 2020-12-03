@@ -1,57 +1,92 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
 public class PatrolThreat : MonoBehaviour {
     public Transform[] targetLocationArray;
+    [Tooltip("If not looping the movement reverses on the end node")]
     private NavMeshAgent _myAgent;
-
-    private Vector3 _targetPosition;
     private int _index = 0;
+    private bool _movingForwards = true;
+    public PatrolBehaviour patrolBehaviour;
+    public enum PatrolBehaviour { Loop, BackAndForth, Random}
+    public enum Behaviour { Patrolling, MoveTowardsPlayer, AttackPlayer}
+
+    public bool PlayerDetected {
+        get;
+        set;
+    }
+    
+    // Behaviour currentBehaviour;
+    /*
+     *Update {
+     *    switch (behavior)
+     *         case patrolling
+     *             UpdatePatrol()
+     *         case MoveTowardsPlayer
+     *             MoveTowardsPlayerUpdate();
+     *         case AttackPlayer
+     *             AttackPlayerUpdate();
+     * }
+     *
+     * UpdatePatrol {
+     *    if (PlayerInRange())
+     *     currentBehaviour = AttackPlayer;
+     * }
+     *
+     * 
+     */
+
     void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
-        // find current target position
-        _targetPosition = targetLocationArray[_index].position;
+        _myAgent.SetDestination(targetLocationArray[_index].position);
+        Debug.Log("array length: " + targetLocationArray.Length);
+        GetComponent<Rigidbody>().isKinematic = true;
+    }
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("collision");
+        if (other.transform.position == targetLocationArray[_index].position) {
+            GoToNextPosition();
+        }
+    }
+
+    private void GoToNextPosition() {
+        switch (patrolBehaviour) {
+            case PatrolBehaviour.Loop:
+                _index++;
+                _index %= (targetLocationArray.Length);
+                break;
+            case PatrolBehaviour.BackAndForth:
+                _index = _movingForwards ? _index + 1 : _index - 1;
+                //at the end
+                if (_index == targetLocationArray.Length - 1) {
+                    _movingForwards = false;
+                }
+                else if (_index == 0) {
+                    _movingForwards = true;
+                }
+                break;
+            case PatrolBehaviour.Random:
+                int randomIndex = _index;
+                while (randomIndex == _index) {
+                    randomIndex = Random.Range(0, targetLocationArray.Length);
+                }
+                _index = randomIndex;
+                break;
+        }
+        SetDestination();
+    }
+
+    private void SetDestination() {
+        Vector3 nextPosition = targetLocationArray[_index].position;
+        _myAgent.SetDestination(nextPosition);
+    }
+    bool PlayerInRange() {
+        return false;
     }
     
-    void Update() {
-
-        
-        // if there is no next position,
-            // begin from the start
-            // reverse (go backwards)
-            MoveToPosition();
-            
-            
-            
-            // later think about go random position
-    }
-
-    private void MoveToPosition() {
-        _myAgent.SetDestination(_targetPosition);
-        
-        // if current target position has been reached, get the next target.
-        Vector3 currentPosition = this.transform.position;
-        
-        if (currentPosition.x == _targetPosition.x && currentPosition.y == _targetPosition.y) {
-            //abs(currentPosition.x - _targetPosition.x) < 0.0001
-            Debug.Log("Arrived at location");
-            _index++; //update index position
-            _targetPosition = targetLocationArray[_index].position;
-        }
-        else {
-            Debug.Log("Not at location yet");
-        }
-    }
-    /*
-     *
-     * foreach (var t in targetLocationArray) {
-            Vector3 v = t.position;
-            myAgent.SetDestination(v);
-        }
-     * */
-     
+    
 }
