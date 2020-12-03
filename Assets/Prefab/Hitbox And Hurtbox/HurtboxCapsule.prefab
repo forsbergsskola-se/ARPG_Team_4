@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2390917873988594756}
   - component: {fileID: 2390917873988594757}
   - component: {fileID: 2390917873988594758}
-  - component: {fileID: 2390917873988594759}
-  - component: {fileID: 2390917873988594752}
+  - component: {fileID: 343242329265890182}
+  - component: {fileID: 2562263855560551062}
   - component: {fileID: 6695387820790949535}
   m_Layer: 0
   m_Name: HurtboxCapsule
@@ -97,7 +97,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2390917873988594759
+--- !u!114 &343242329265890182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,25 +106,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 2390917873988594755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1918a706cbbb948a8959d421dc7f7ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
---- !u!114 &2390917873988594752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2390917873988594755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfd98bcddccb4a86b5451342d992ce5, type: 3}
+  m_Script: {fileID: 11500000, guid: ab22a150771224cfd98ba36397803317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 30
   Health: 30
   HealthModifier: 1
+--- !u!114 &2562263855560551062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2390917873988594755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc677d92323f442a887e73ae3f02c5c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
 --- !u!54 &6695387820790949535
 Rigidbody:
   m_ObjectHideFlags: 0
