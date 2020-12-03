@@ -609,6 +609,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1505624486884789586, guid: 15a17bcd910c02942b4781f821bbfdc2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1778335323464621294, guid: 15a17bcd910c02942b4781f821bbfdc2,
         type: 3}
       propertyPath: Parent
@@ -709,7 +714,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7011458865724773778, guid: 15a17bcd910c02942b4781f821bbfdc2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15a17bcd910c02942b4781f821bbfdc2, type: 3}
 --- !u!1 &354897957
 GameObject:
@@ -1779,7 +1785,8 @@ PrefabInstance:
       propertyPath: Parent
       value: 
       objectReference: {fileID: 1298836915}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6695387820790949535, guid: 619cfba91664c44f4bc57c66cca5dbfc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 619cfba91664c44f4bc57c66cca5dbfc, type: 3}
 --- !u!1 &1042965307
 GameObject:
