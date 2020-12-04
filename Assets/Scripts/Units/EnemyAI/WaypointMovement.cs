@@ -2,27 +2,25 @@
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-
 // PATROLLING THREAT 
 namespace Units.EnemyAI {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Rigidbody))]
     public class WaypointMovement : MonoBehaviour {
         public Transform[] targetLocationArray;
-        [Tooltip("If not looping the movement reverses on the end node")]
         private NavMeshAgent _myAgent;
         private int _index = 0;
         private bool _movingForwards = true;
+        [Tooltip("If not looping the movement reverses on the end node")]
         public PatrolBehaviour patrolBehaviour;
         public enum PatrolBehaviour { Loop, BackAndForth, Random}
 
-        void Start()
-        {
+        void Start() {
             _myAgent = GetComponent<NavMeshAgent>();
             _myAgent.SetDestination(targetLocationArray[_index].position);
             GetComponent<Rigidbody>().isKinematic = true;
         }
-    
+
         private void OnTriggerEnter(Collider other) {
             if (other.transform.position == targetLocationArray[_index].position) {
                 GoToNextPosition();
@@ -57,7 +55,7 @@ namespace Units.EnemyAI {
         }
 
         private void SetDestination() {
-            Vector3 nextPosition = targetLocationArray[_index].position;
+            var nextPosition = targetLocationArray[_index].position;
             _myAgent.SetDestination(nextPosition);
         }
     }

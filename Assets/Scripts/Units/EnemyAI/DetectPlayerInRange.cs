@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
-// WORK IN PROGRESS. BELONGS TO TRACKING THREAT
+// TRACKING THREAT
 namespace Units.EnemyAI {
     public class DetectPlayerInRange : MonoBehaviour {
         private WaypointMovement waypointMovement;
+        private NavMeshAgent _enemy;
+        public GameObject player;
+        public float enemyViewDistance = 6f;
+        public float enemyIdleTime = 8f;
 
         private void Start() {
-            waypointMovement = GetComponentInParent<WaypointMovement>();
+            waypointMovement = GetComponent<WaypointMovement>();
             if (waypointMovement == null)
                 Debug.LogWarning("Patrol threat not found", this);
+            _enemy = GetComponent<NavMeshAgent>();
         }
 
-        private void OnTriggerEnter(Collider other) {
-            Debug.Log("Detection trigger");
-            if (other.tag == "Player") {
-                Debug.Log("Player detected");
-                //waypointMovement.PlayerDetected = true;
-            }
-        }
-    
-        private void OnTriggerExit(Collider other) {
-            Debug.Log("Detection trigger");
-            if (other.CompareTag("Player")) {
-                Debug.Log("Player left detection sphere");
-                //waypointMovement.PlayerDetected = false;
+        private void Update() {
+            var distance = Vector3.Distance(transform.position, player.transform.position);
+
+            if (distance < enemyViewDistance) {
+                var enemyPos = transform.position;
+                var dirToPlayer = enemyPos - player.transform.position;
+                var newPos = enemyPos - dirToPlayer;
+                _enemy.SetDestination(newPos);
+            } else {
+                waypointMovement.Invoke("SetDestination", enemyIdleTime);
             }
         }
     }
