@@ -2,12 +2,12 @@
 
 /// <summary>
 /// Makes menu appear and disappear when button is clicked.
-/// Handles Button Actions
+/// Handles PortalButton Actions
 /// </summary>
 
 // TODO mousover vfx, button press vfx,
 // TODO menu transition vfx, 
-// TODO Button sound effect
+// TODO PortalButton sound effect
 
 public class MenuScript : MonoBehaviour
 {
@@ -58,9 +58,13 @@ public class MenuScript : MonoBehaviour
     public void QuitButton() {
         Debug.Log("The application should quit if the game is built");
         PlayButtonSound();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
-
+    
     private void PlayButtonSound() {
         buttonSound.Play();
     }

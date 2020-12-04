@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Rigidbody))]
-public class PatrolThreat : MonoBehaviour {
+public class WaypointMovement : MonoBehaviour {
     public Transform[] targetLocationArray;
     [Tooltip("If not looping the movement reverses on the end node")]
     private NavMeshAgent _myAgent;

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Teleport : MonoBehaviour {
+public class Portal : MonoBehaviour {
     public Transform teleportTarget;
     public bool isEnabled;
 

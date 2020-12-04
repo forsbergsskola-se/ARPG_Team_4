@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Button : MonoBehaviour {
+public class PortalButton : MonoBehaviour {
     public GameObject[] portalsToActivate;
     public bool insideCollider;
     public GameObject interactText;
@@ -19,7 +19,7 @@ public class Button : MonoBehaviour {
                 Debug.Log("Pressed Space");
                 interactText.SetActive(false);
                 foreach (GameObject go in portalsToActivate) {
-                    go.GetComponent<Teleport>().isEnabled = true;
+                    go.GetComponent<Portal>().isEnabled = true;
                     go.GetComponent<ParticleSystem>().Play();
                 }
             }

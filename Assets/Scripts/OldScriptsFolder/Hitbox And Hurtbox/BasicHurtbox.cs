@@ -1,12 +1,13 @@
-﻿using Assets.Scripts.Hitbox_And_Hurtbox;
+﻿using System;
+using Assets.Scripts.Hitbox_And_Hurtbox;
 using UnityEngine;
 
 public class BasicHurtbox : MonoBehaviour {
     private const string HitBoxTag = "IsHitBox";
     public GameObject Parent;
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.tag == HitBoxTag) {
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == HitBoxTag) {
             var thisHealthScript = this.GetComponent<BasicObjectHealth>();
             var otherHitBoxScript = other.gameObject.GetComponent<BasicHitbox>();
             
@@ -14,7 +15,6 @@ public class BasicHurtbox : MonoBehaviour {
             Debug.Log("damage " + otherHitBoxScript.Damage);
             thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
             otherHitBoxScript.HasCollided();
-
         }
     }
 }

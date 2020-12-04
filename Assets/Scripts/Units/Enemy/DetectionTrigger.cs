@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 public class DetectionTrigger : MonoBehaviour {
-    private PatrolThreat _patrolThreat;
+    private WaypointMovement waypointMovement;
 
     private void Start() {
-        _patrolThreat = GetComponentInParent<PatrolThreat>();
-        if (_patrolThreat == null)
+        waypointMovement = GetComponentInParent<WaypointMovement>();
+        if (waypointMovement == null)
             Debug.LogWarning("Patrol threat not found", this);
     }
 
@@ -13,7 +13,7 @@ public class DetectionTrigger : MonoBehaviour {
         Debug.Log("Detection trigger");
         if (other.tag == "Player") {
             Debug.Log("Player detected");
-            _patrolThreat.PlayerDetected = true;
+            waypointMovement.PlayerDetected = true;
         }
     }
     
@@ -21,7 +21,7 @@ public class DetectionTrigger : MonoBehaviour {
         Debug.Log("Detection trigger");
         if (other.CompareTag("Player")) {
             Debug.Log("Player left detection sphere");
-            _patrolThreat.PlayerDetected = false;
+            waypointMovement.PlayerDetected = false;
         }
     }
 }
