@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Player {
+namespace Units.Player {
     public class ClickToMove : MonoBehaviour{
 
         public LayerMask whatCanBeClickedOn;
         private NavMeshAgent myAgent;
-        private Camera mainCamera;
+        private UnityEngine.Camera mainCamera;
         public bool isAlive = true;
         void Start() {
             myAgent = GetComponent<NavMeshAgent>();
-            mainCamera = Camera.main;
+            mainCamera = UnityEngine.Camera.main;
             
             if (mainCamera == null) {
                 throw new Exception("Main camera is null: Camera needs MainCamera tag.");
@@ -33,3 +33,4 @@ namespace Player {
         }
     }
 }
+

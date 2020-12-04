@@ -63,3 +63,9 @@ crashlytics-build.properties
 
 # Ignores a mac-specific file
 .DS_Store
+
+# Folder fix below:
+# Ignore all .meta file
+*.meta
+# But not source file with postfix. which is everything but a folder
+!*.*.meta

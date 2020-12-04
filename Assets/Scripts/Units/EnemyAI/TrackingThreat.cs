@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
-{
-    // Behaviour currentBehaviour;
-    /*
+
+// WORK IN PROGRESS. PLANNING FOR TRACKING THREAT 
+
+namespace Units.EnemyAI {
+    public class TrackingThreat : MonoBehaviour
+    {
+        // Behaviour currentBehaviour;
+        /*
      *Update {
      *    switch (behavior)
      *         case patrolling
@@ -23,4 +25,5 @@ public class EnemyBehaviour : MonoBehaviour
      *
      * 
      */
+    }
 }

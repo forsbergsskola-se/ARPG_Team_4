@@ -6,7 +6,7 @@ namespace Scenes.Ruben {
 
         public LayerMask canBeClicked;
         public NavMeshAgent myAgent;
-        public Camera mainCamera;
+        public UnityEngine.Camera mainCamera = null;
         void Awake() {
             myAgent = GetComponent<NavMeshAgent>();
         }
