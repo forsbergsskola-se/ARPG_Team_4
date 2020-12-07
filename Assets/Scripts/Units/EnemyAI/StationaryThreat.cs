@@ -8,7 +8,7 @@ using UnityEngine;
 public class StationaryThreat : MonoBehaviour {
     public int damage = 1;
     public float _ticTime = .5f;
-    public float _elapsedTime = 0.0f;
+    private float _elapsedTime;
     
     // keep track of targets inside
     private List<IDamagable> _damagableList = new List<IDamagable>();
