@@ -13,7 +13,8 @@ namespace Units.EnemyAI {
         private bool _movingForwards = true;
         [Tooltip("If not looping the movement reverses on the end node")]
         public PatrolBehaviour patrolBehaviour;
-        public enum PatrolBehaviour { Loop, BackAndForth, Random} //TODO add stationary state for clarity
+        public enum PatrolBehaviour { Loop, BackAndForth, Random} 
+        //TODO add stationary state for clarity
 
         void Start() {
             _myAgent = GetComponent<NavMeshAgent>();

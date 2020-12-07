@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 namespace Units.Player {
     public class ClickToMove : MonoBehaviour{
@@ -8,10 +9,14 @@ namespace Units.Player {
         public LayerMask whatCanBeClickedOn;
         private NavMeshAgent myAgent;
         private UnityEngine.Camera mainCamera;
-        public bool isAlive = true;
+        public HealthScriptableObject healthScriptableObject;
+        private bool _inputDisabled;
+        
         void Start() {
             myAgent = GetComponent<NavMeshAgent>();
             mainCamera = UnityEngine.Camera.main;
+
+            healthScriptableObject.OnDeath += DisableInput;
             
             if (mainCamera == null) {
                 throw new Exception("Main camera is null: Camera needs MainCamera tag.");
@@ -19,10 +24,11 @@ namespace Units.Player {
         }
 
         void Update() {
-            if (!isAlive) {
+            if (_inputDisabled) {
                 myAgent.SetDestination(transform.position);
+                return;
             }
-            if (Input.GetMouseButton(0) && isAlive) {
+            if (Input.GetMouseButton(0)) {
                 Ray myRay = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo;
             
@@ -30,6 +36,10 @@ namespace Units.Player {
                     myAgent.SetDestination(hitInfo.point);
                 }
             }
+        }
+        
+        private void DisableInput() {
+            _inputDisabled = true;
         }
     }
 }

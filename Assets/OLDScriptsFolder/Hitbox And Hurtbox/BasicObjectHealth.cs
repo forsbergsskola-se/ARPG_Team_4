@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class BasicObjectHealth : MonoBehaviour
 {
-    public int MaxHealth = 30;
+    /*public int MaxHealth = 30;
     public float CurrentHealth = 30;
     // public int HealthModifier = 1;
 
@@ -16,7 +16,7 @@ public class BasicObjectHealth : MonoBehaviour
 
         if (CurrentHealth == 0) {
             Debug.Log("Player Died");
-            this.GetComponentInParent<ClickToMove>().isAlive = false;
+            this.GetComponentInParent<ClickToMove>().IsAlive = false;
         };
-    }
+    }*/
 }

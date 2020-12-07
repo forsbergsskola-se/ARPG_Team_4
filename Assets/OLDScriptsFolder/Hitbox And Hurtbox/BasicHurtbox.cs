@@ -3,7 +3,7 @@ using Assets.Scripts.Hitbox_And_Hurtbox;
 using UnityEngine;
 
 public class BasicHurtbox : MonoBehaviour {
-    private const string HitBoxTag = "IsHitBox";
+    /*private const string HitBoxTag = "IsHitBox";
     public GameObject Parent;
 
     private void OnCollisionEnter(Collision other) {
@@ -16,5 +16,5 @@ public class BasicHurtbox : MonoBehaviour {
             thisHealthScript.UpdateHealth(otherHitBoxScript.Damage);
             otherHitBoxScript.HasCollided();
         }
-    }
+    }*/
 }
