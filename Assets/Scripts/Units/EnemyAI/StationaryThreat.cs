@@ -1,47 +1,31 @@
-﻿using System.Collections.Generic;
-using Units;
-using UnityEngine;
+﻿using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
-public class StationaryThreat : MonoBehaviour {
-    public int damage = 1;
-    public float _ticTime = .5f;
-    private float _elapsedTime;
-    
-    // keep track of targets inside
-    private List<IDamagable> _damagableList = new List<IDamagable>();
-    
-    private void Update() {
-        if (_damagableList.Count > 0)
+namespace Units.EnemyAI {
+    public class StationaryThreat : MonoBehaviour {
+        [SerializeField] private int damage = 1;
+        [SerializeField] private float ticsPerSecond = 2f;
+        [SerializeField] private float radius = 2;
+        [SerializeField] private LayerMask unitLayers;
+        private float _nextTicTime;
+
+        private void Update() {
+            if (Time.time < _nextTicTime)
+                return;
+        
             DealDamage();
-    }
+            _nextTicTime = Time.time + 1f / ticsPerSecond;
+        }
 
-    private void DealDamage() {
-        _elapsedTime += Time.deltaTime;
-        if (_elapsedTime >= _ticTime) {
-            _elapsedTime -= _ticTime;
-            for (int i = 0; i < _damagableList.Count; i++) {
-                if (_damagableList[i] == null) {
-                    _damagableList.RemoveAt(i);
-                    continue;
-                }
-                _damagableList[i].TakeDamage(damage);
+        private void DealDamage() {
+            Collider[] unitsHit = Physics.OverlapSphere(transform.position, radius, unitLayers);
+
+            foreach (var unit in unitsHit) {
+                unit.GetComponent<IDamagable>().TakeDamage(damage);
             }
         }
-    }
 
-    private void OnTriggerEnter(Collider other) {
-        IDamagable target = other.transform.GetComponent<IDamagable>();
-        if (target != null) {
-            _damagableList.Add(target);
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        
-        IDamagable target = other.transform.GetComponent<IDamagable>();
-        if (target != null) {
-            _damagableList.Remove(target);
+        private void OnDrawGizmosSelected() {
+            Gizmos.DrawWireSphere(transform.position, radius);
         }
     }
 }
