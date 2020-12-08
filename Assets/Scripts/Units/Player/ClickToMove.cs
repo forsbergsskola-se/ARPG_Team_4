@@ -11,6 +11,7 @@ namespace Units.Player {
         private UnityEngine.Camera mainCamera;
         public HealthScriptableObject healthScriptableObject;
         private bool _inputDisabled;
+        public bool InputDisabled { set => _inputDisabled = value; }
         
         void Start() {
             myAgent = GetComponent<NavMeshAgent>();
@@ -37,7 +38,7 @@ namespace Units.Player {
                 }
             }
         }
-        
+
         private void DisableInput() {
             _inputDisabled = true;
         }

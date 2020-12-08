@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 4994534235066435334}
   - component: {fileID: 4994534235066435331}
   - component: {fileID: 4994534235066435354}
+  - component: {fileID: 3104819913931059965}
   - component: {fileID: 4994534235066435330}
   - component: {fileID: 7318111326318317613}
+  - component: {fileID: 317891359}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -30,13 +32,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4994534235066435353}
-  m_LocalRotation: {x: -0, y: -0.26392597, z: -0, w: 0.964543}
+  m_LocalRotation: {x: 0, y: -0.26392356, z: 0, w: 0.9645436}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30.606, z: 0}
 --- !u!33 &4994534235066435332
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -113,7 +115,8 @@ MonoBehaviour:
   whatCanBeClickedOn:
     serializedVersion: 2
     m_Bits: 256
-  isAlive: 1
+  healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
+    type: 2}
 --- !u!114 &4994534235066435354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +131,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
     type: 2}
+  GetDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  _invulnerabilityDuration: 5
+--- !u!114 &3104819913931059965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994534235066435353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539103ee415d5a2498f072902b5a06ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeHurtboxPrefab: {fileID: 2882001793735648856, guid: 0c78922ccba5a3f48844eb8eba49d38a,
+    type: 3}
+  mouseButton: 1
+  attackDamage: 3
+  attackRange: 2
+  attackDuration: 0.1
+  attackCooldown: 1
 --- !u!195 &4994534235066435330
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -166,3 +192,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &317891359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994534235066435353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64212105b6a0b54ebb3ef666b3e73fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
+    type: 2}
+  reviveCheckpointLocation: {fileID: 0}
