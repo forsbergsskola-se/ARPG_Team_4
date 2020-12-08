@@ -1281,6 +1281,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2998622218867294218, guid: 871865645016bf94b9734e317145c9c3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 357045731}
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1726,6 +1731,16 @@ PrefabInstance:
       propertyPath: reviveCheckpointLocation
       value: 
       objectReference: {fileID: 71593446}
+    - target: {fileID: 3104819913931059965, guid: 8309ea2c95dd4954b9cc804c204247eb,
+        type: 3}
+      propertyPath: attackRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104819913931059965, guid: 8309ea2c95dd4954b9cc804c204247eb,
+        type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4994534235066435331, guid: 8309ea2c95dd4954b9cc804c204247eb,
         type: 3}
       propertyPath: healthScriptableObject
@@ -2528,6 +2543,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2998622218867294218, guid: 871865645016bf94b9734e317145c9c3,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 357045731}
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2906,6 +2926,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StationaryThreat
+      objectReference: {fileID: 0}
+    - target: {fileID: 5132854772730573391, guid: 5cf0d4ab28fc44e4795c4fba6da84e88,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5132854772730573429, guid: 5cf0d4ab28fc44e4795c4fba6da84e88,
         type: 3}
