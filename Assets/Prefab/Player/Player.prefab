@@ -148,13 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539103ee415d5a2498f072902b5a06ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeHurtboxPrefab: {fileID: 2882001793735648856, guid: 0c78922ccba5a3f48844eb8eba49d38a,
-    type: 3}
   mouseButton: 1
-  attackDamage: 3
+  attackDamage: 4
   attackRange: 2
-  attackDuration: 0.1
-  attackCooldown: 1
+  attackRadius: 2
+  attacksPerSecond: 2
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!195 &4994534235066435330
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -219,7 +220,6 @@ GameObject:
   - component: {fileID: 8304159478317061823}
   - component: {fileID: 8783467173958050360}
   - component: {fileID: 2433506321676343922}
-  - component: {fileID: 7402971727728774749}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -288,16 +288,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7402971727728774749
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9140630721870112568}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}

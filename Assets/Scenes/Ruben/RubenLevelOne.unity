@@ -2722,6 +2722,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3104819913931059965, guid: 8309ea2c95dd4954b9cc804c204247eb,
+        type: 3}
+      propertyPath: attackRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104819913931059965, guid: 8309ea2c95dd4954b9cc804c204247eb,
+        type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104819913931059965, guid: 8309ea2c95dd4954b9cc804c204247eb,
+        type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104819913931059965, guid: 8309ea2c95dd4954b9cc804c204247eb,
+        type: 3}
+      propertyPath: attacksPerSecond
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4994534235066435333, guid: 8309ea2c95dd4954b9cc804c204247eb,
         type: 3}
       propertyPath: m_LocalPosition.x
