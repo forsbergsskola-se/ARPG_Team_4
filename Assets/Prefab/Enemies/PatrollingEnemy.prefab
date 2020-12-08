@@ -106,6 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d3baf1eb838754a8af0a982e5bb4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  enemyViewDistance: 6
+  enemyIdleTime: 8
 --- !u!1 &6744319597867503743
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,6 +124,7 @@ GameObject:
   - component: {fileID: 6744319597867503741}
   - component: {fileID: 6744319597867503742}
   - component: {fileID: 6744319597867503736}
+  - component: {fileID: 8353260949224751483}
   m_Layer: 0
   m_Name: PatrollingEnemy
   m_TagString: Untagged
@@ -255,3 +259,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8353260949224751483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744319597867503743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0258bf249b11849488246a4742bcb092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

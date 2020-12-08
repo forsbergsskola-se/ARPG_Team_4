@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4994534235066435334}
   - component: {fileID: 4994534235066435331}
   - component: {fileID: 4994534235066435354}
+  - component: {fileID: 3104819913931059965}
   - component: {fileID: 4994534235066435330}
   - component: {fileID: 7318111326318317613}
   m_Layer: 9
@@ -113,7 +114,8 @@ MonoBehaviour:
   whatCanBeClickedOn:
     serializedVersion: 2
     m_Bits: 256
-  isAlive: 1
+  healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
+    type: 2}
 --- !u!114 &4994534235066435354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +130,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
     type: 2}
+--- !u!114 &3104819913931059965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4994534235066435353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539103ee415d5a2498f072902b5a06ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeHurtboxPrefab: {fileID: 2882001793735648856, guid: 0c78922ccba5a3f48844eb8eba49d38a,
+    type: 3}
+  mouseButton: 1
+  attackDamage: 3
+  attackRange: 2
+  attackDuration: 0.1
+  attackCooldown: 1
 --- !u!195 &4994534235066435330
 NavMeshAgent:
   m_ObjectHideFlags: 0
