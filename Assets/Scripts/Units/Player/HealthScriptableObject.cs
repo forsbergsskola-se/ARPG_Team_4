@@ -10,7 +10,6 @@ namespace Units.Player {
     
         public UnityAction OnDeath;
         public UnityAction<int> OnHealthChange;
-    
         public int CurrentHealth {
             get => _currentHealth;
             set {

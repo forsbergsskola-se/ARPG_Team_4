@@ -11,7 +11,6 @@ namespace Units.Player {
         private UnityEngine.Camera mainCamera;
         public HealthScriptableObject healthScriptableObject;
         private bool _inputDisabled;
-        
         void Start() {
             myAgent = GetComponent<NavMeshAgent>();
             mainCamera = UnityEngine.Camera.main;
