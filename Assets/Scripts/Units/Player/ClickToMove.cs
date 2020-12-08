@@ -1,16 +1,22 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
+
 
 namespace Units.Player {
+    [RequireComponent(typeof(Rigidbody))]
     public class ClickToMove : MonoBehaviour{
 
         public LayerMask whatCanBeClickedOn;
         private NavMeshAgent myAgent;
         private UnityEngine.Camera mainCamera;
         public HealthScriptableObject healthScriptableObject;
+        private Rigidbody _rigidbody;
+        
         private bool _inputDisabled;
+        private bool _knockbackActive = false;
+        
+        
         public bool InputDisabled {
             set {
                 _inputDisabled = value;
@@ -27,9 +33,18 @@ namespace Units.Player {
             if (mainCamera == null) {
                 throw new Exception("Main camera is null: Camera needs MainCamera tag.");
             }
+
+            _rigidbody = GetComponent<Rigidbody>();
         }
 
         void Update() {
+
+            if (_knockbackActive) {
+                if (_rigidbody.velocity.magnitude < 2f)
+                    DisableKnockback();
+                return;
+            }
+
             if (_inputDisabled) {
                 myAgent.SetDestination(transform.position);
                 return;
@@ -46,6 +61,20 @@ namespace Units.Player {
 
         private void DisableInput() {
             _inputDisabled = true;
+        }
+
+        public void Knockback(Vector3 velocity) {
+            _knockbackActive = true;
+            _rigidbody.isKinematic = false;
+            myAgent.updatePosition = false;
+            _rigidbody.velocity = velocity;
+        }
+
+        private void DisableKnockback() {
+            _knockbackActive = false;
+            _rigidbody.isKinematic = true;
+            myAgent.nextPosition = _rigidbody.position;
+            myAgent.updatePosition = true;
         }
     }
 }
