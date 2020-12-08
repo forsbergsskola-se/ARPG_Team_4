@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Units;
 using UnityEngine;
 
@@ -27,7 +25,7 @@ public class StationaryThreat : MonoBehaviour {
                     _damagableList.RemoveAt(i);
                     continue;
                 }
-                _damagableList[i].TakeDamage(damage);   
+                _damagableList[i].TakeDamage(damage);
             }
         }
     }
