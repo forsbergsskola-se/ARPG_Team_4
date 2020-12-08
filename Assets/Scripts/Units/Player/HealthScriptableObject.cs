@@ -14,15 +14,19 @@ namespace Units.Player {
             get => _currentHealth;
             set {
                 // if player dies
-                if (value < 0) {
+                if (value <= 0) {
                     _currentHealth = 0;
+                    // Notify listeners
+                    OnHealthChange(CurrentHealth);
                     OnDeath();
                 }
                 // if player gets more than max health
-                else if (value > _maxHealth)
+                else if (value > _maxHealth) {
                     _currentHealth = _maxHealth;
-                _currentHealth = value;
-            
+                }
+                else {
+                    _currentHealth = value;
+                }
                 // Notify listeners
                 OnHealthChange(CurrentHealth);
             }
@@ -32,7 +36,12 @@ namespace Units.Player {
             get => _maxHealth;
             private set => _maxHealth = value;
         }
-    
-        // TODO save playerprefs
+        
+        public void SetCurrentHealthToMax() {
+            _currentHealth = _maxHealth;
+            // quick fix. Health didn't update for some reason
+            OnHealthChange(CurrentHealth);
+        }
+
     }
 }

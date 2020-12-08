@@ -13,7 +13,7 @@ namespace Units.EnemyAI {
         private bool _movingForwards = true;
         [Tooltip("If not looping the movement reverses on the end node")]
         public PatrolBehaviour patrolBehaviour;
-        public enum PatrolBehaviour { Loop, BackAndForth, Random} 
+        public enum PatrolBehaviour { Loop, BackAndForth, Random, Stationary } 
         //TODO add stationary state for clarity
 
         void Start() {
@@ -50,12 +50,15 @@ namespace Units.EnemyAI {
                         randomIndex = Random.Range(0, targetLocationArray.Length);
                     }
                     _index = randomIndex;
+                    break;                
+                case PatrolBehaviour.Stationary:
+                    _index = 0;
                     break;
             }
             SetDestination();
         }
 
-        private void SetDestination() {
+        public void SetDestination() {
             var nextPosition = targetLocationArray[_index].position;
             _myAgent.SetDestination(nextPosition);
         }
