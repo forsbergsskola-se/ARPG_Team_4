@@ -20,7 +20,7 @@ namespace GUI {
         private ClickToMove clickToMove;
 
         private void Start() {
-            clickToMove = GameObject.Find("/Player").GetComponent<ClickToMove>();
+            clickToMove = GameObject.FindGameObjectWithTag("Player").GetComponent<ClickToMove>();
             if (clickToMove == null)
                 Debug.LogWarning("ClickToMove missing", this);
         }

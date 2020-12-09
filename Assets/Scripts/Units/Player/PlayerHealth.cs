@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-﻿using System.Collections;
-using UnityEngine;
+using System.Collections;
 
 namespace Units.Player {
     public class PlayerHealth : MonoBehaviour, IDamagable {
@@ -19,6 +18,11 @@ namespace Units.Player {
             
             healthScriptableObject.CurrentHealth -= damage;
             GetDamaged.Invoke();
+        }
+        
+        public void GainHealth(int healValue) {
+            healthScriptableObject.CurrentHealth += healValue;
+            // GetDamaged.Invoke();
         }
 
         public void TriggerInvulnerability() {
