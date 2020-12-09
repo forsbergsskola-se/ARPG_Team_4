@@ -5047,3 +5047,6 @@ MonoBehaviour:
   lengthOfLineRenderer: 20
   damage: 1
   knockbackVelocity: 5
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 3840
