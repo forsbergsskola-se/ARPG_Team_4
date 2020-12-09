@@ -74,6 +74,7 @@ namespace Units.Player {
             _knockbackActive = false;
             _rigidbody.isKinematic = true;
             myAgent.nextPosition = _rigidbody.position;
+            myAgent.ResetPath();
             myAgent.updatePosition = true;
         }
     }
