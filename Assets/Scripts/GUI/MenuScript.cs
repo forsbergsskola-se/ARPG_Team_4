@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Units.Player;
+using UnityEngine;
 
 namespace GUI {
     /// <summary>
@@ -16,7 +17,14 @@ namespace GUI {
         private readonly string menuString = "Menu";
         public AudioSource buttonSound;
         public GameObject shadow;
-    
+        // Is not working 
+        public ClickToMove clickToMove;
+
+        private void Start() {
+            clickToMove = GetComponent<ClickToMove>();
+            Debug.Log(clickToMove);
+        }
+
         void Update() {
 
             if (Input.GetButtonDown(menuString)) {
@@ -30,6 +38,7 @@ namespace GUI {
                     PauseGame();
                     menuRef.SetActive(true);
                     shadow.SetActive(true);
+                    // clickToMove.DisableInput();
                 }
             }
         }
