@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{0c9f7768-2781-40a4-b715-78c42a3a2bc5}">
+		<property name="assetPath">
+			<value>Weapons/Crowbar.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2d76e209-227a-4368-ad56-080d6ccd32c1}</destination>
+		</relationship>
+	</object>
+</objects>
