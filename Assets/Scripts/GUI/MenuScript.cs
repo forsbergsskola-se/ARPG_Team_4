@@ -82,7 +82,8 @@ namespace GUI {
         }
     
         private void PlayButtonSound() {
-            buttonSound.Play();
+            //            buttonSound.Play();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons");
         }
     
         void PauseGame ()
