@@ -17,7 +17,6 @@ namespace Units.EnemyAI {
         }
 
         private void DealDamage() {
-            //TODO explore OverlapBox option
             Collider[] unitsHit = Physics.OverlapSphere(transform.position, radius, unitLayers);
 
             foreach (var unit in unitsHit) {

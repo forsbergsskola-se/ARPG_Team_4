@@ -9,7 +9,6 @@ public class EnemyLaser : MonoBehaviour {
     public float lengthOfLineRenderer = 20.0f;
     public int damage = 1;
     public float knockbackVelocity = 5f;
-    public LayerMask hittableLayers;
 
     void Start()
     {
@@ -23,7 +22,7 @@ public class EnemyLaser : MonoBehaviour {
         Vector3 currentPosition = transform.position;
         
         // raycast hit something
-        if (Physics.Raycast(currentPosition, transform.TransformDirection(Vector3.forward), out hit, lengthOfLineRenderer, hittableLayers))
+        if (Physics.Raycast(currentPosition, transform.TransformDirection(Vector3.forward), out hit, lengthOfLineRenderer))
         {
             hitPosition = hit.point;
             var targetGameObject = hit.collider.gameObject;
