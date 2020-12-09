@@ -92,8 +92,8 @@
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>
 		</property>
-		<property name="looping">
-			<value>true</value>
+		<property name="pitch">
+			<value>1</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -101,7 +101,6 @@
 		<relationship name="sounds">
 			<destination>{c2df452f-41ff-4ec7-8c5e-ad7a4c8ddba6}</destination>
 			<destination>{8b0b38c5-a976-4172-9095-5eafb5d60a39}</destination>
-			<destination>{ed2736cf-639d-4b7c-a653-0f6e9a9350e6}</destination>
 			<destination>{912016ba-1099-4ec1-8896-5fedc787f718}</destination>
 			<destination>{670109d9-f2ec-46b9-9248-fe0d1fa97584}</destination>
 		</relationship>
@@ -137,11 +136,6 @@
 	<object class="SingleSound" id="{8b0b38c5-a976-4172-9095-5eafb5d60a39}">
 		<relationship name="audioFile">
 			<destination>{2c1b1e55-526e-4b99-a412-5ca7709f2044}</destination>
-		</relationship>
-	</object>
-	<object class="SingleSound" id="{ed2736cf-639d-4b7c-a653-0f6e9a9350e6}">
-		<relationship name="audioFile">
-			<destination>{261b7520-6d9f-4c3c-91bd-d48f7aa44fd2}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{912016ba-1099-4ec1-8896-5fedc787f718}">

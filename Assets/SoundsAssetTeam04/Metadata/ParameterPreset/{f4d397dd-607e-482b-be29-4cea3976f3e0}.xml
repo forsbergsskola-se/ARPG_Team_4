@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{f4d397dd-607e-482b-be29-4cea3976f3e0}">
+		<property name="name">
+			<value>Traps</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3e1d0dcc-8973-4f97-a043-6cd16da89690}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d180b907-7e78-4b3e-9ccb-8d9008af1566}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d180b907-7e78-4b3e-9ccb-8d9008af1566}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>None</value>
+			<value>Hazard</value>
+			<value>Laser</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
