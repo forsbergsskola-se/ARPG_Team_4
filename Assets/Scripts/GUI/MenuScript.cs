@@ -18,12 +18,12 @@ namespace GUI {
         public AudioSource buttonSound;
         public GameObject shadow;
         // Is not working 
-        public ClickToMove clickToMove;
+        // public ClickToMove clickToMove;
 
-        private void Start() {
-            clickToMove = GetComponent<ClickToMove>();
-            Debug.Log(clickToMove);
-        }
+        // private void Start() {
+        //     clickToMove = GetComponent<ClickToMove>();
+        //     Debug.Log(clickToMove);
+        // }
 
         void Update() {
 
