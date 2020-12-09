@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{ade42ab8-c83f-4e7a-8ec0-7f3071dad19b}">
+		<property name="name">
+			<value>Footsteps</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3e1d0dcc-8973-4f97-a043-6cd16da89690}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fcff7416-dffc-4d92-9f8b-8bf04c316d67}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fcff7416-dffc-4d92-9f8b-8bf04c316d67}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0.10000000000000001</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

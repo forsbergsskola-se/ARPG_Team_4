@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{77e23ce8-27c0-4b90-bb2e-ced2eb8b16d4}">
+		<property name="assetPath">
+			<value>Weapons/Plasma1_asset.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.87501133786848073</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2d76e209-227a-4368-ad56-080d6ccd32c1}</destination>
+		</relationship>
+	</object>
+</objects>
