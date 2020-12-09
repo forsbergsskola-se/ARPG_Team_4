@@ -100,8 +100,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{14c798fd-3b99-49d5-94a3-207f2c80d4ce}" />
 	<object class="SingleSound" id="{a9da3b70-487e-4bdc-acbe-0a1719424c12}">
+		<property name="triggerProbabilityEnabled">
+			<value>true</value>
+		</property>
+		<property name="isCutoff">
+			<value>true</value>
+		</property>
 		<property name="length">
-			<value>0.050000000000000003</value>
+			<value>0.014999999999999999</value>
 		</property>
 		<property name="pitch">
 			<value>-1.60000002</value>
@@ -112,11 +118,17 @@
 		<relationship name="modulators">
 			<destination>{440a1108-c7f0-46ee-9f78-5783d65f4ed7}</destination>
 		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{8f88c217-98b2-413c-8903-211e428e87c4}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{35952b4a-5241-4042-aa12-839758ad4fac}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{fe5e6124-448d-4bc0-84d8-14b75e31be70}">
+		<property name="volume">
+			<value>-0.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -157,19 +169,47 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>1.5</value>
+			<value>5.5</value>
 		</property>
+	</object>
+	<object class="FadeCurve" id="{8f88c217-98b2-413c-8903-211e428e87c4}">
+		<relationship name="startPoint">
+			<destination>{2794b4ea-b5c7-45f4-a5a8-d9df0133bcb7}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{3f91dfb3-952a-4cc4-b49e-66790f5e9b63}</destination>
+		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b1adf26f-b504-47be-a539-4cc14ce7ad48}">
 		<relationship name="effects">
 			<destination>{652e0fcb-7c14-4b74-9f04-c5c9ab2de729}</destination>
 			<destination>{385161bf-0090-4333-8b52-228c2e3c0a9d}</destination>
 			<destination>{466273ad-2081-4b6f-b86a-59a88d7911fd}</destination>
+			<destination>{4d91dd0c-4877-4822-86cc-962b3f541732}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4d25321e-688a-4ce3-9343-1ed6052f84fe}" />
 	<object class="MixerBusFader" id="{a50424da-031b-4555-a6e0-a8327fe17498}" />
 	<object class="SpatialiserEffect" id="{7949097f-99f8-43c9-bbd7-a6983bcd43d1}" />
+	<object class="AutomationPoint" id="{2794b4ea-b5c7-45f4-a5a8-d9df0133bcb7}">
+		<property name="position">
+			<value>0.0099999999999999985</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>-1.00000048</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{3f91dfb3-952a-4cc4-b49e-66790f5e9b63}">
+		<property name="position">
+			<value>0.014999999999999999</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{652e0fcb-7c14-4b74-9f04-c5c9ab2de729}" />
 	<object class="CompressorEffect" id="{385161bf-0090-4333-8b52-228c2e3c0a9d}">
 		<property name="threshold">
@@ -188,6 +228,17 @@
 		</property>
 		<property name="HFDecayRatio">
 			<value>43</value>
+		</property>
+	</object>
+	<object class="PitchShifterEffect" id="{4d91dd0c-4877-4822-86cc-962b3f541732}">
+		<property name="pitch">
+			<value>0.680000007</value>
+		</property>
+		<property name="fftSize">
+			<value>256</value>
+		</property>
+		<property name="overlap">
+			<value>29.6000004</value>
 		</property>
 	</object>
 </objects>
