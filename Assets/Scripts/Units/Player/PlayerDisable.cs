@@ -23,30 +23,33 @@ public class PlayerDisable : MonoBehaviour
     {
         if (Input.GetKeyDown(MenuButton))
         {
-            Debug.Log("Menu Button Pressed On " + I);
+            Debug.Log("Menu Button Pressed On");
+            Debug.Log("State" + I);
             I++;
         }
         else if (I == 1)
         {
             OnDisable();
+            Debug.Log("State" + I);
         }
         else if (I == 2)
         {
             I -= 2;
-            Debug.Log("Menu Button Pressed Off " + I);
+            Debug.Log("Menu Button Pressed Off");
+            Debug.Log("State" + I);
             OnEnable();
         }
     }
 
     void OnDisable()
     {
-        Debug.Log("OnDisable is On " + I);
-        _disableClickToMove.InputDisabled = true;
+        Debug.Log("OnDisable is On");
+        _disableClickToMove.InputDisabled = false;
     }
     void OnEnable()
     {
-        Debug.Log("OnDisable is Off " + I);
-        _disableClickToMove.InputDisabled = false;
+        Debug.Log("OnDisable is Off");
+        _disableClickToMove.InputDisabled = true;
     }
 }
 
