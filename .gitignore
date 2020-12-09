@@ -94,3 +94,6 @@ fmod_editor.log
 # FMOD 1.10.x (Legacy)
 /Assets/FMODAssets/*
 /Assets/FMODStudioCache.meta
+Assets/Art_Assets/UI/Button_A.png.meta
+Assets/Art_Assets/UI/Button_A1.png.meta
+Assets/Art_Assets/UI/Button_A3.png.meta
