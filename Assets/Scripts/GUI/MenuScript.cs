@@ -15,6 +15,7 @@ namespace GUI {
         public GameObject menuRef;
         private readonly string menuString = "Menu";
         public AudioSource buttonSound;
+        public GameObject shadow;
     
         void Update() {
 
@@ -22,17 +23,20 @@ namespace GUI {
                 bool theMenuIsActive = menuRef.activeSelf;
                 if (theMenuIsActive) {
                     menuRef.SetActive(false);
+                    shadow.SetActive(false);
                     ResumeGame();
                 }
                 else {
                     PauseGame();
                     menuRef.SetActive(true);
+                    shadow.SetActive(true);
                 }
             }
         }
 
         public void ResumeButton() {
             PlayButtonSound();
+            shadow.SetActive(false);
             menuRef.SetActive(false);
             ResumeGame();
         }
@@ -40,7 +44,7 @@ namespace GUI {
         public void LoadCheckpointButton() {
             //TODO
             buttonSound.Play();
-            Debug.Log("Load cehckpoint clicked");
+            Debug.Log("Load checkpoint clicked");
         }
     
         public void SettingsButton() {
