@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Art_Assets/UI/Button_1.png.meta
 guid: 5703612570bda403aad89f50ce8ad3a2
+=======
+guid: 7ce759df660704e4db37a35455018e23
+>>>>>>> f0e66d0f0ec72156c68cce05fdb481666b09ec60:Assets/Art_Assets/LaserbeamMask.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

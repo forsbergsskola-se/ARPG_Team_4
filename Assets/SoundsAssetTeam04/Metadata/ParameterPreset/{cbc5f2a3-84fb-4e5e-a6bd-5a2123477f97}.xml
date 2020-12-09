@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{cbc5f2a3-84fb-4e5e-a6bd-5a2123477f97}">
+		<property name="name">
+			<value>Ambiences</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3e1d0dcc-8973-4f97-a043-6cd16da89690}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{05564d7e-1ad8-43e1-ae1d-0afb312982b8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{05564d7e-1ad8-43e1-ae1d-0afb312982b8}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>MainBGM</value>
+			<value>MenuHUM</value>
+			<value>Level 1</value>
+			<value>Level 2</value>
+			<value>Level 3</value>
+			<value>Level 4</value>
+			<value>Death</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

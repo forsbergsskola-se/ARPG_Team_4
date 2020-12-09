@@ -5,7 +5,8 @@ public class ReviveMenuScript : MonoBehaviour {
     public HealthScriptableObject healthScriptableObject; 
     public GameObject menuRef;
     private PlayerReviveHandler _playerReviveHandler;
-    
+    public GameObject shadow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +38,11 @@ public class ReviveMenuScript : MonoBehaviour {
     
     private void ShowMenu() {
         menuRef.SetActive(true);
+        shadow.SetActive(true);
     }
 
     private void HideMenu() {
         menuRef.SetActive(false);
+        shadow.SetActive(false);
     }
 }
