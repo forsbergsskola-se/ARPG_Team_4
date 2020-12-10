@@ -17,11 +17,12 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        
+    private void OnCollisionEnter(Collision other)
+    {
         //Check if target can be damaged
         IDamagable target = other.gameObject.GetComponent<IDamagable>();
-        if (target != null) {
+        if (target != null)
+        {
             Debug.Log("hit damagable");
             target.TakeDamage(Damage);
         }

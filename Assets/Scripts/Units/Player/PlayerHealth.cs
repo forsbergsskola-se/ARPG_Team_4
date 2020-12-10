@@ -9,13 +9,6 @@ namespace Units.Player {
         [Tooltip("the duration the player is invulnerable from damage on revival")]
         [SerializeField] private float _invulnerabilityDuration = 5f;
         private bool _invulnerable = false;
-        //Player Hit Sound
-        FMOD.Studio.EventInstance PlayerHitSound;
-
-        private void Awake()
-        {
-            PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
-        }
 
         public void TakeDamage(int damage) {
             
@@ -29,7 +22,6 @@ namespace Units.Player {
         }
         
         IEnumerator DamageFeedback() {
-            PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
             var playerMesh = GetComponent<MeshRenderer>();
             playerMesh.enabled = false;
             yield return new WaitForSeconds(0.2f);

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6126901612108117509}
   - component: {fileID: 6126901612108117510}
-  m_Layer: 12
-  m_Name: PatrolWaypoint
+  m_Layer: 0
+  m_Name: TargetLocation (0)
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

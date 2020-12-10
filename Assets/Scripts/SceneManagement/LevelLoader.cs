@@ -9,7 +9,6 @@ namespace SceneManagement
 {
     public class LevelLoader : MonoBehaviour {
         public Animator animator;
-        public float transitionTime = 1f;
 
         private void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Player")) {
@@ -30,24 +29,10 @@ namespace SceneManagement
                 menuScript.enabled = false;
 
             //load next level
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            StartCoroutine(LoadLevelAsync(SceneManager.GetActiveScene().buildIndex + 1));
         }
         
-        private IEnumerator LoadLevel(int levelIndex) {
-            
-            animator.SetTrigger("ExitScene");
-            
-            yield return new WaitForSeconds(transitionTime);
-            
-            SceneManager.LoadScene(levelIndex);
-        }
-    }
-}
-
-/*
- * Davids Async solution (needs fix to wait for animation before loading)
- *
-private IEnumerator LoadLevelAsync(int levelIndex)
+        IEnumerator LoadLevelAsync(int levelIndex)
         {
             // The Application loads the Scene in the background as the current Scene runs.
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelIndex);
@@ -60,5 +45,19 @@ private IEnumerator LoadLevelAsync(int levelIndex)
             {
                 yield return null;
             }
+        }
+    }
+}
+
+
+/* Rubens old method
+ * 
+        IEnumerator LoadLevel(int levelIndex) {
+            
+            animator.SetTrigger("ExitScene");
+            
+            yield return new WaitForSeconds(transitionTime);
+            
+            SceneManager.LoadScene(levelIndex);
         }
 */
