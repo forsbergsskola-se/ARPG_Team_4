@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: doorLet_small_
+    second: {fileID: 2100000, guid: e0679628807753d448a42c055b0f5a8a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
