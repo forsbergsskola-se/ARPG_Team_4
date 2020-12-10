@@ -86,6 +86,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-4680849064338162900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Blowtorch/Blowtorch
+  m_EditorClassIdentifier: 
+  Name: Blowtorch
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4027045079084770339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +209,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.bank
   Name: Master
+<<<<<<< Updated upstream
   lastModified: 637431882029405844
+=======
+  lastModified: 637431880639480556
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -367,7 +391,11 @@ MonoBehaviour:
   - {fileID: -1641024762323779419}
   StringsBanks:
   - {fileID: 3518976109800314260}
+<<<<<<< Updated upstream
   stringsBankWriteTime: 637431882029425769
+=======
+  stringsBankWriteTime: 637431880639490570
+>>>>>>> Stashed changes
   cacheVersion: 5
 --- !u!114 &715404788911356376
 MonoBehaviour:
@@ -472,7 +500,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.strings.bank
   Name: Master.strings
+<<<<<<< Updated upstream
   lastModified: 637431882029425769
+=======
+  lastModified: 637431880639490570
+>>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -518,7 +550,11 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
+<<<<<<< Updated upstream
   - {fileID: 5002008918470575242}
+=======
+  - {fileID: -4680849064338162900}
+>>>>>>> Stashed changes
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
@@ -561,7 +597,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4558708730011965181
 MonoBehaviour:
   m_ObjectHideFlags: 0
