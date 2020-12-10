@@ -11,7 +11,7 @@ namespace Units.EnemyAI {
         
             // If health is 0, enemy dies
             if (_currentHealth == 0) {
-                Debug.Log($"{gameObject.name} has died!");
+                // Debug.Log($"{gameObject.name} has died!");
                 Destroy(gameObject);
             }
         
