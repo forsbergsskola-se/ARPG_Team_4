@@ -11,6 +11,7 @@ namespace Units.Player {
         [SerializeField] private float attacksPerSecond = 1f;
         [SerializeField] private LayerMask enemyLayers;
         private ClickToMove _clickToMove;
+        
         private UnityEngine.Camera _mainCamera;
         public LayerMask whatCanBeClickedOn;
         private float _nextAttackTime;
@@ -33,6 +34,7 @@ namespace Units.Player {
         
             if (Input.GetMouseButtonDown(mouseButton)) {
                 Attack();
+                GetComponent<FSMWorkWithAnimation>().playerIsAttacking = true;
                 _nextAttackTime = Time.time + 1f / attacksPerSecond;
             }
         }
