@@ -1,17 +1,14 @@
 fileFormatVersion: 2
-guid: a0ed5922fa62a6c40ada5730f33226cf
+guid: b4ce47969117bac41bdba4920a01b7a7
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 1827226128182048838
-    second: Take 001
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: doorLet_small_
-    second: {fileID: 2100000, guid: 952f3ed2f0a2f6644950ed2ba07950b9, type: 2}
+      name: WoodcrateMat
+    second: {fileID: 2100000, guid: a218b0b2b06068244afb6059da167bde, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

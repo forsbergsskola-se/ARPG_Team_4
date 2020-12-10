@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Door_Short
-    second: {fileID: 2100000, guid: 6d3562944d2ea4c458f5bd51a56a630a, type: 2}
+    second: {fileID: 2100000, guid: cca49c103811d704ab78971e9033dae2, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
