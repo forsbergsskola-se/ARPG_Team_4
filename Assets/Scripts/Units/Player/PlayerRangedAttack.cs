@@ -16,9 +16,10 @@ public class PlayerRangedAttack : MonoBehaviour
     private ClickToMove _clickToMove;
     
     // parameters
-    public float projectileVelocity = 10f;
-    public int damage = 10;
+    [SerializeField] private float projectileVelocity = 10f;
+    [SerializeField] private int damage = 10;
     [SerializeField] private float attacksPerSecond = 1f;
+    [SerializeField] private KeyCode keyBind = KeyCode.E;
     
     // variables
     private bool _inputDisabled;
@@ -42,15 +43,13 @@ public class PlayerRangedAttack : MonoBehaviour
         if (Time.time < _nextAttackTime) 
             return;
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        if (Input.GetKeyDown(keyBind)) {
             FireProjectile();
             _nextAttackTime = Time.time + _attackTime;
         }
     }
 
-    private void FireProjectile()
-    {
+    private void FireProjectile() {
         _clickToMove.ResetPath();
 
         Vector3 mousePos = GetMousePosition();
