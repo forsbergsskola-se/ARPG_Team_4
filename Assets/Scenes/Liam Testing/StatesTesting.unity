@@ -2708,15 +2708,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1273354779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e98e050ed89445ae8e6a180176c80a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cd1d62e836b54ebd97e9a1e7717c56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIsMoving: 0
-  playerTookDamage: 0
-  playerIsAttacking: 0
-  playerIsCrouching: 0
-  stateWeapon: 0
-  stateMove: 0
+  player: {fileID: 1273354779}
+  state: 0
 --- !u!95 &1273354781
 Animator:
   serializedVersion: 3
@@ -4780,7 +4776,7 @@ PrefabInstance:
     - target: {fileID: 4994534235066435353, guid: 8309ea2c95dd4954b9cc804c204247eb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4994534235066435354, guid: 8309ea2c95dd4954b9cc804c204247eb,
         type: 3}
@@ -4865,6 +4861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerAnimationTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714814074964655747, guid: 9e4b8ee31b2c2438886c689761a624bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4b8ee31b2c2438886c689761a624bc, type: 3}
