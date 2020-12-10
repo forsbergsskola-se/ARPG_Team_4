@@ -17,11 +17,15 @@ namespace Units.Player {
         private float _nextAttackTime;
         private bool _inputDisabled;
         private Vector3 AttackPoint => transform.TransformPoint(0, 0, attackRange);
+        private float _attackTime;
         //TODO make character turn towards mouse target when attacking
 
         private void Start() {
             _mainCamera = UnityEngine.Camera.main;
             _clickToMove = GetComponent<ClickToMove>();
+            
+            // derive attack time
+            _attackTime = 1f / attacksPerSecond;
         }
 
         private void Update() {
@@ -34,8 +38,8 @@ namespace Units.Player {
         
             if (Input.GetMouseButtonDown(mouseButton)) {
                 Attack();
+                _nextAttackTime = Time.time + _attackTime;
                 GetComponent<FSMWorkWithAnimation>().playerIsAttacking = true;
-                _nextAttackTime = Time.time + 1f / attacksPerSecond;
             }
         }
 

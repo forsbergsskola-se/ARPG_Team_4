@@ -89,15 +89,13 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 //Logic
                 break;
         }
-        //_animator.GetBool()
 
-        
         _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
-        if (playerIsAttacking) playerIsAttacking = false;
-
-            _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
+        _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
         _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
-
+        
+        if (playerIsAttacking) playerIsAttacking = false;
+        
         //set attacking state from bool attacking?
         //set take damage state if health drops, add listener?
         //set death animation with listener on death?
