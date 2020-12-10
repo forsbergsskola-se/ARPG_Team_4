@@ -10,17 +10,17 @@ namespace Camera {
         private Vector3 _verticalOffset;
 
         private void Awake() {
-            SetPosition();
+            SetRotationAndOffset();
         }
 
         private void LateUpdate() {
             // Remove SetPosition() from LateUpdate() when Designers have settled on an angle and offset value 
-            SetPosition();
+            SetRotationAndOffset();
             
             myCamera.position = target.position + _verticalOffset;
         }
         
-        private void SetPosition() {
+        private void SetRotationAndOffset() {
             transform.rotation = Quaternion.Euler(cameraAngle, 45f, 0f);
             _verticalOffset = new Vector3(offsetXZ, 20f, offsetXZ);
         }
