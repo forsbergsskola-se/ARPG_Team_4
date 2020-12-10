@@ -11,7 +11,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: doorLet_small_
-    second: {fileID: 2100000, guid: e0679628807753d448a42c055b0f5a8a, type: 2}
+    second: {fileID: 2100000, guid: f2b795af27bd9c044863c39e6146988d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
