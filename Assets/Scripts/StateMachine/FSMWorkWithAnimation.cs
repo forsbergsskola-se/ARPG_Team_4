@@ -40,6 +40,12 @@ public class FSMWorkWithAnimation : MonoBehaviour{
             playerIsMoving = true;
         }
         else playerIsMoving = false;
+
+        //playerIsMoving = Input.GetKey(KeyCode.Space);
+
+            //= GetComponent<NavMeshAgent>().velocity.magnitude > 0.1f;
+        
+        //Debug.Log(GetComponent<NavMeshAgent>().velocity.magnitude);
         //playerIsCrouching = get a bool;
         //if (check player health <= 0) stateMove = StateMove.Dead;
         
