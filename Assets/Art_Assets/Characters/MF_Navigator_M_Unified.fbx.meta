@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18f9410e2af900240bbd96782e75e959
+guid: 7041f451b11f34d52ad312e30a34afa9
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -82,7 +82,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Hips
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
