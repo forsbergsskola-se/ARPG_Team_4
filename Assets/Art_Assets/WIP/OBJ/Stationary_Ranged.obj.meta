@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 98af970ab6c0dd246bb94697a814519d
+guid: 16939692ec0a84c49bb741626c500a83
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Monster1Mat
+    second: {fileID: 2100000, guid: 73d659aa61f34b842a1ba433f593c8a0, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
