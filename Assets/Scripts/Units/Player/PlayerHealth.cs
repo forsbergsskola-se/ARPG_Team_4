@@ -22,7 +22,6 @@ namespace Units.Player {
         
         public void GainHealth(int healValue) {
             healthScriptableObject.CurrentHealth += healValue;
-            // GetDamaged.Invoke();
         }
 
         public void TriggerInvulnerability() {

@@ -19,7 +19,6 @@ namespace Units.EnemyAI {
             Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {damage} damage taken");
         }
         public void GainHealth(int healValue) {
-            // I dunno, man. Will ask tomorrow
             Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {healValue} gained?");
         }
         private void Awake() {
