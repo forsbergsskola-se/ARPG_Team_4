@@ -1,13 +1,12 @@
 ﻿using System.Collections;
-using System.Diagnostics;
 using Units.Player;
 using UnityEngine;
-using UnityEngine.AI;
 using Debug = UnityEngine.Debug;
 
 public class FSMWorkWithAnimation : MonoBehaviour{
     private Animator _animator;
     private PlayerHealth _playerHealth;
+    private Vector3 _previousPos;
     private const string stateName = "State";
     private const string AnimStateMoveBlend = "StateMove";
     private const string AnimPlayerIsAttacking = "IsAttacking";
@@ -25,18 +24,28 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     public StateWeapon stateWeapon = StateWeapon.Unarmed;
     public StateMove stateMove = StateMove.Idle;
     
-    void Start(){
+    void Start(){ 
         _animator = GetComponent<Animator>();
-        _playerHealth = GetComponent<PlayerHealth>();
+        _playerHealth = GetComponent<PlayerHealth>(); 
         
         stateWeapon = StateWeapon.Unarmed;
         stateMove = StateMove.Idle;
-
+        
+        _previousPos = transform.position;
         _playerHealth.GetDamaged.AddListener(TakeDamageState);
     }
     void Update() {
-        //Check Player movement
-        playerIsMoving = GetComponent<NavMeshAgent>().velocity.magnitude > 0.1f;
+        if (Mathf.Abs(_previousPos.x - transform.position.x) > 0.015f ||
+            Mathf.Abs(_previousPos.z - transform.position.z) > 0.015f) {
+            playerIsMoving = true;
+        }
+        else playerIsMoving = false;
+
+        //playerIsMoving = Input.GetKey(KeyCode.Space);
+
+            //= GetComponent<NavMeshAgent>().velocity.magnitude > 0.1f;
+        
+        //Debug.Log(GetComponent<NavMeshAgent>().velocity.magnitude);
         //playerIsCrouching = get a bool;
         //if (check player health <= 0) stateMove = StateMove.Dead;
         
@@ -80,16 +89,21 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 //Logic
                 break;
         }
-        //_animator.GetBool()
-        _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
-        _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon);
-        _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
 
+        _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
+        _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
+        _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
+        
+        if (playerIsAttacking) playerIsAttacking = false;
+        
         //set attacking state from bool attacking?
         //set take damage state if health drops, add listener?
         //set death animation with listener on death?
     }
-
+    void LateUpdate() {
+        _previousPos = transform.position;
+    }
+    
     void TakeDamageState() {
         playerTookDamage = true;
         _animator.SetBool(AnimPlayerTookDamage, playerTookDamage);

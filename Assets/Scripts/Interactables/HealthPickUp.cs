@@ -9,11 +9,13 @@ namespace Interactables {
 
         private void Start() {
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-            Debug.Log(playerHealth.healthScriptableObject);
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (other.CompareTag("Player")) {
+            var currentHealth = playerHealth.healthScriptableObject.CurrentHealth;
+            var maxHealth = playerHealth.healthScriptableObject.MaxHealth;
+            
+            if (other.CompareTag("Player") && currentHealth != maxHealth) {
                 other.GetComponent<IDamagable>().GainHealth(healValue);
                 Destroy(gameObject);
             }
