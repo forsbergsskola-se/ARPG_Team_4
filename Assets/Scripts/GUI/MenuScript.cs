@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Units.Player;
+using UnityEngine;
 
 namespace GUI {
     /// <summary>
@@ -16,7 +17,14 @@ namespace GUI {
         private readonly string menuString = "Menu";
         public AudioSource buttonSound;
         public GameObject shadow;
-    
+        private ClickToMove clickToMove;
+
+        private void Start() {
+            clickToMove = GameObject.FindGameObjectWithTag("Player").GetComponent<ClickToMove>();
+            if (clickToMove == null)
+                Debug.LogWarning("ClickToMove missing", this);
+        }
+
         void Update() {
 
             if (Input.GetButtonDown(menuString)) {
@@ -24,12 +32,14 @@ namespace GUI {
                 if (theMenuIsActive) {
                     menuRef.SetActive(false);
                     shadow.SetActive(false);
+                    clickToMove.InputDisabled = false;
                     ResumeGame();
                 }
                 else {
                     PauseGame();
                     menuRef.SetActive(true);
                     shadow.SetActive(true);
+                    clickToMove.InputDisabled = true;
                 }
             }
         }
@@ -38,6 +48,7 @@ namespace GUI {
             PlayButtonSound();
             shadow.SetActive(false);
             menuRef.SetActive(false);
+            clickToMove.InputDisabled = false;
             ResumeGame();
         }
 
@@ -71,7 +82,8 @@ namespace GUI {
         }
     
         private void PlayButtonSound() {
-            buttonSound.Play();
+            //            buttonSound.Play();
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons");
         }
     
         void PauseGame ()

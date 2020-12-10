@@ -22,17 +22,20 @@ public class ReviveMenuScript : MonoBehaviour {
     public void ReviveButton() {
         Debug.Log("Revive button clicked");
         _playerReviveHandler.ReviveAtLocation();
+        PlayButtonSound();
         HideMenu();
     }
     
     public void LoadCheckpointButton() {
         Debug.Log("Resurrect button clicked");
         _playerReviveHandler.ReviveAtCheckpoint();
+        PlayButtonSound();
         HideMenu();
     }
 
     public void MenuButton() {
         Debug.Log("Quit to main menu clicked");
+        PlayButtonSound();
         HideMenu();
     }
     
@@ -44,5 +47,9 @@ public class ReviveMenuScript : MonoBehaviour {
     private void HideMenu() {
         menuRef.SetActive(false);
         shadow.SetActive(false);
+    }
+    
+    private void PlayButtonSound() {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons");
     }
 }

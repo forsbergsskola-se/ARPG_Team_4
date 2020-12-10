@@ -357,7 +357,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/SoundsAssetTeam04/SoundsAssetTeam04.fspro
+  sourceProjectPath: Assets/SoundsAssetTeam04/SoundsAssetTeam04GITHUB.fspro
   sourceBankPath: Assets\SoundsAssetTeam04\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1

@@ -59,7 +59,7 @@ namespace Units.Player {
             }
         }
 
-        private void DisableInput() {
+        public void DisableInput() {
             _inputDisabled = true;
         }
 

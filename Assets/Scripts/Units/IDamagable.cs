@@ -4,5 +4,6 @@
     /// </summary>
     public interface IDamagable {
         void TakeDamage(int damage);
+        void GainHealth(int healValue);
     }
 }
