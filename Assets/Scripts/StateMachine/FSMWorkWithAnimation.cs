@@ -1,10 +1,6 @@
 ﻿using System.Collections;
-using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
 using Units.Player;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UIElements;
 using Debug = UnityEngine.Debug;
 
 public class FSMWorkWithAnimation : MonoBehaviour{
@@ -39,12 +35,6 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         _playerHealth.GetDamaged.AddListener(TakeDamageState);
     }
     void Update() {
-        //Check Player movement
-        Debug.Log(
-            Mathf.Abs(_previousPos.x - transform.position.x) +
-            "    Other abs    " +
-            Mathf.Abs(_previousPos.z - transform.position.z));
-        
         if (Mathf.Abs(_previousPos.x - transform.position.x) > 0.015f ||
             Mathf.Abs(_previousPos.z - transform.position.z) > 0.015f) {
             playerIsMoving = true;
@@ -100,8 +90,12 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 break;
         }
         //_animator.GetBool()
+
+        
         _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
-        _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
+        if (playerIsAttacking) playerIsAttacking = false;
+
+            _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
         _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
 
         //set attacking state from bool attacking?
