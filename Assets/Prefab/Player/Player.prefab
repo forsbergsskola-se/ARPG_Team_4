@@ -156,6 +156,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
+  whatCanBeClickedOn:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!195 &4994534235066435330
 NavMeshAgent:
   m_ObjectHideFlags: 0
