@@ -9,7 +9,6 @@ namespace Interactables {
 
         private void Start() {
             playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-            Debug.Log(playerHealth.healthScriptableObject);
         }
 
         private void OnTriggerEnter(Collider other) {

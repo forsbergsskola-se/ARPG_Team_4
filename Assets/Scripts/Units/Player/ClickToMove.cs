@@ -16,7 +16,6 @@ namespace Units.Player {
         private bool _inputDisabled;
         private bool _knockbackActive = false;
         
-        
         public bool InputDisabled {
             set {
                 _inputDisabled = value;
@@ -77,6 +76,10 @@ namespace Units.Player {
             myAgent.nextPosition = _rigidbody.position;
             myAgent.ResetPath();
             myAgent.updatePosition = true;
+        }
+
+        public void ResetPath() {
+            myAgent.ResetPath();
         }
     }
 }
