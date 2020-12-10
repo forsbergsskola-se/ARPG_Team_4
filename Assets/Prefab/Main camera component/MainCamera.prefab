@@ -129,3 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 3198314477662570436}
   target: {fileID: 0}
+  offset: {x: -7, y: 15, z: -7}

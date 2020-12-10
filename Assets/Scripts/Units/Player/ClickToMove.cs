@@ -52,10 +52,11 @@ namespace Units.Player {
             if (Input.GetMouseButton(0)) {
                 Ray myRay = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo;
-            
+
                 if (Physics.Raycast(myRay, out hitInfo, 1000, whatCanBeClickedOn)){
                     myAgent.SetDestination(hitInfo.point);
                 }
+                //Debug.Log("hitInfo: " + hitInfo.collider.name);
             }
         }
 
