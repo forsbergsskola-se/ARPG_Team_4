@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 18f9410e2af900240bbd96782e75e959
+<<<<<<< HEAD
+guid: 7041f451b11f34d52ad312e30a34afa9
+=======
+guid: c992f13cc4d9991478edf14106e17fcc
+>>>>>>> 9ea1263eb408b8d2fc15b87dde4e6e62e0808550
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -82,7 +86,11 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
+<<<<<<< HEAD
+    rootMotionBoneName: Hips
+=======
     rootMotionBoneName: 
+>>>>>>> 9ea1263eb408b8d2fc15b87dde4e6e62e0808550
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -90,7 +98,11 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+<<<<<<< HEAD
   avatarSetup: 1
+=======
+  avatarSetup: 0
+>>>>>>> 9ea1263eb408b8d2fc15b87dde4e6e62e0808550
   additionalBone: 0
   userData: 
   assetBundleName: 

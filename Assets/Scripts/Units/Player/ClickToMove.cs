@@ -15,7 +15,16 @@ namespace Units.Player {
         
         private bool _inputDisabled;
         private bool _knockbackActive = false;
-        
+
+        // Audio Walking Test
+        [FMODUnity.EventRef]
+        FMOD.Studio.EventInstance FootstepEvent;
+        //FMOD.Studio.EventInstance.setParameterByName(string name, float value, bool ignoreseekspeed = false);
+        public string inputSound;
+        bool playersMoving;
+        public float walkingSpeed;
+        //FMOD.Studio.par 
+
         public bool InputDisabled {
             set {
                 _inputDisabled = value;
@@ -34,6 +43,9 @@ namespace Units.Player {
             }
 
             _rigidbody = GetComponent<Rigidbody>();
+
+            // Audio Walking Test
+            InvokeRepeating("PlayerIsWalking", 0, walkingSpeed);
         }
 
         void Update() {
@@ -52,10 +64,27 @@ namespace Units.Player {
                 Ray myRay = mainCamera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hitInfo;
 
+                // Audio Walking Test
+                playersMoving = true;
+                PlayerIsWalking();
+
                 if (Physics.Raycast(myRay, out hitInfo, 1000, whatCanBeClickedOn)){
                     myAgent.SetDestination(hitInfo.point);
+
+                    // Audio Walking Test
+                    playersMoving = false;
+                    Debug.Log("Player Walking Audio Ends");
                 }
                 //Debug.Log("hitInfo: " + hitInfo.collider.name);
+            }
+        }
+        // Audio Walking Test
+        void PlayerIsWalking()
+        {
+            if (playersMoving == true)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(inputSound);
+                Debug.Log("Player Walking Audio Plays");
             }
         }
 
