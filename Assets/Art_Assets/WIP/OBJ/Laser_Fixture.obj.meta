@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 98af970ab6c0dd246bb94697a814519d
+guid: 3d41687f999b1284bae196d45650a5d2
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LASERMat
+    second: {fileID: 2100000, guid: 64b5c60b69bd0b6428a0248a8ecb941c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
