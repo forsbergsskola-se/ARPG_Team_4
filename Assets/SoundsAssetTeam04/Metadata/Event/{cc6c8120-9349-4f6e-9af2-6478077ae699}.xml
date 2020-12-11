@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{5b39d8e4-255c-4775-ab33-ef94bc802fb6}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{d193024e-addb-4c7a-8f27-281978ba13b3}</destination>
 		</relationship>
@@ -93,7 +96,7 @@
 			<value>true</value>
 		</property>
 		<property name="pitch">
-			<value>1</value>
+			<value>-0.800000012</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>

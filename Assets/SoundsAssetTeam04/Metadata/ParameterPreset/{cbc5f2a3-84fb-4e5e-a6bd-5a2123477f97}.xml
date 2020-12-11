@@ -25,7 +25,7 @@
 			<value>Level 2</value>
 			<value>Level 3</value>
 			<value>Level 4</value>
-			<value>Death</value>
+			<value>Level5</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>

@@ -14,7 +14,7 @@ public class MeleeAttackEnemy : MonoBehaviour {
         Collider[] enemiesHit = Physics.OverlapSphere(AttackPoint, attackRadius, enemyLayers);
 
         foreach (var enemy in enemiesHit) {
-            // Debug.Log($"{enemy.name} was hit for {attackDamage} damage.");
+            Debug.Log($"{enemy.name} was hit for {attackDamage} damage.");
             enemy.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }
