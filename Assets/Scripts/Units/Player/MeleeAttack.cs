@@ -52,6 +52,8 @@ namespace Units.Player {
             foreach (var enemy in enemiesHit) {
                 Debug.Log($"{enemy.name} was hit for {attackDamage} damage.");
                 enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+                //Melee Audio
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", GetComponent<Transform>().position);
             }
         }
 

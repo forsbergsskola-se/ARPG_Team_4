@@ -30,7 +30,9 @@ namespace Units.Player {
         }
         
         IEnumerator DamageFeedback() {
+            //Audio Player Hit
             FMODUnity.RuntimeManager.PlayOneShot("event:/Character/PlayerHit/PlayerHit", GetComponent<Transform>().position);
+
             var playerMesh = GetComponent<MeshRenderer>();
             playerMesh.enabled = false;
             yield return new WaitForSeconds(0.2f);
