@@ -150,6 +150,8 @@ MonoBehaviour:
     m_Bits: 256
   healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
     type: 2}
+  inputSound: 
+  walkingSpeed: 0
 --- !u!114 &4994534235066435354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,8 +184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseButton: 1
   attackDamage: 4
-  attackRange: 2
-  attackRadius: 2
+  attackRange: 1.2
+  attackRadius: 0.5
   attacksPerSecond: 2
   enemyLayers:
     serializedVersion: 2
@@ -265,6 +267,7 @@ MonoBehaviour:
   projectileVelocity: 10
   damage: 10
   attacksPerSecond: 1
+  keyBind: 101
 --- !u!1 &9140630721870112568
 GameObject:
   m_ObjectHideFlags: 0
