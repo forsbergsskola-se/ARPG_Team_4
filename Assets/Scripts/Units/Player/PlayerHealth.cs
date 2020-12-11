@@ -10,13 +10,14 @@ namespace Units.Player {
         [SerializeField] private float _invulnerabilityDuration = 5f;
         private bool _invulnerable = false;
         //Player Hit Sound
+        /*
         FMOD.Studio.EventInstance PlayerHitSound;
 
         private void Awake()
         {
             PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
         }
-
+        */
         public void TakeDamage(int damage) {
             
             //Player can be invulnerable to damage
@@ -29,7 +30,9 @@ namespace Units.Player {
         }
         
         IEnumerator DamageFeedback() {
-            PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
+            //Audio Player Hit
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Character/PlayerHit/PlayerHit", GetComponent<Transform>().position);
+
             var playerMesh = GetComponent<MeshRenderer>();
             playerMesh.enabled = false;
             yield return new WaitForSeconds(0.2f);
