@@ -89,6 +89,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         }
 
         _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
+        _animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
         _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
         _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
         
@@ -104,7 +105,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     
     void TakeDamageState() {
         playerTookDamage = true;
-        _animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
+        //_animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
         StartCoroutine(GracePeriod());
         //change to idle/attack state when damage is done...
     }
