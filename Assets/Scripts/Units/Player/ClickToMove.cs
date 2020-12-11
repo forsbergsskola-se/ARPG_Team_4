@@ -17,14 +17,20 @@ namespace Units.Player {
         private bool _knockbackActive = false;
 
         // Audio Walking Test
-        [FMODUnity.EventRef]
+        [SerializeField] [FMODUnity.EventRef] private string FootstepEventPath;
+        [SerializeField] private float _raycastDistance = 0.5f;
+        private RaycastHit raycastHit;
+
+
+
+        /*
         FMOD.Studio.EventInstance FootstepEvent;
         //FMOD.Studio.EventInstance.setParameterByName(string name, float value, bool ignoreseekspeed = false);
         public string inputSound;
         bool playersMoving;
         public float walkingSpeed;
         //FMOD.Studio.par 
-
+        */
         public bool InputDisabled {
             set {
                 _inputDisabled = value;
@@ -45,10 +51,11 @@ namespace Units.Player {
             _rigidbody = GetComponent<Rigidbody>();
 
             // Audio Walking Test
-            InvokeRepeating("PlayerIsWalking", 0, walkingSpeed);
+            // InvokeRepeating("PlayerIsWalking", 0, walkingSpeed);
         }
 
         void Update() {
+            Debug.DrawRay(transform.position, Vector3.down * _raycastDistance, Color.green);
 
             if (_knockbackActive) {
                 if (_rigidbody.velocity.magnitude < 2f)
@@ -65,20 +72,36 @@ namespace Units.Player {
                 RaycastHit hitInfo;
 
                 // Audio Walking Test
-                playersMoving = true;
-                PlayerIsWalking();
+
+                //playersMoving = true;
+                //PlayerIsWalking();
 
                 if (Physics.Raycast(myRay, out hitInfo, 1000, whatCanBeClickedOn)){
                     myAgent.SetDestination(hitInfo.point);
 
                     // Audio Walking Test
-                    playersMoving = false;
-                    Debug.Log("Player Walking Audio Ends");
+
+                    //playersMoving = false;
+                    //Debug.Log("Player Walking Audio Ends");
                 }
                 //Debug.Log("hitInfo: " + hitInfo.collider.name);
             }
         }
         // Audio Walking Test
+        void FloorCheck()
+        {
+            Physics.Raycast(transform.position, Vector3.down, out raycastHit, _raycastDistance);
+            //if(raycastHit.collider)
+                
+
+        }
+        void PlayerMoveSound()
+        {
+            FMOD.Studio.EventInstance Footstep = FMODUnity.RuntimeManager.CreateInstance(FootstepEventPath);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(Footstep, transform, GetComponent<Rigidbody>());
+        }
+
+        /*
         void PlayerIsWalking()
         {
             if (playersMoving == true)
@@ -87,7 +110,7 @@ namespace Units.Player {
                 Debug.Log("Player Walking Audio Plays");
             }
         }
-
+        */
         public void DisableInput() {
             _inputDisabled = true;
         }
