@@ -1319,21 +1319,29 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1726261712, guid: 54e067e71f449494db6c13083170b68e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6702423
+      objectReference: {fileID: 0}
+    - target: {fileID: 1726261713, guid: 54e067e71f449494db6c13083170b68e, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1993928858, guid: 54e067e71f449494db6c13083170b68e, type: 3}
       propertyPath: clickToMove
       value: 
       objectReference: {fileID: 940069704}
     - target: {fileID: 2138632187, guid: 54e067e71f449494db6c13083170b68e, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2138632187, guid: 54e067e71f449494db6c13083170b68e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2138632187, guid: 54e067e71f449494db6c13083170b68e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3932878475602504479, guid: 54e067e71f449494db6c13083170b68e,
         type: 3}
