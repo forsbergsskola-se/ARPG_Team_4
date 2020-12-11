@@ -9,6 +9,7 @@ public class MeleeAttackEnemy : MonoBehaviour {
     [SerializeField] private LayerMask enemyLayers;
     private Vector3 AttackPoint => transform.TransformPoint(0, 0, attackRange);
     
+
     public void Attack() {
         Collider[] enemiesHit = Physics.OverlapSphere(AttackPoint, attackRadius, enemyLayers);
 

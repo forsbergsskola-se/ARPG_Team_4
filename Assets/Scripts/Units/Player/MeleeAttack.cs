@@ -1,4 +1,5 @@
-﻿using Units.EnemyAI;
+﻿using System;
+using Units.EnemyAI;
 using UnityEngine;
 
 namespace Units.Player {
@@ -9,11 +10,24 @@ namespace Units.Player {
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float attacksPerSecond = 1f;
         [SerializeField] private LayerMask enemyLayers;
+        private ClickToMove _clickToMove;
+        
+        private UnityEngine.Camera _mainCamera;
+        public LayerMask whatCanBeClickedOn;
         private float _nextAttackTime;
         private bool _inputDisabled;
         private Vector3 AttackPoint => transform.TransformPoint(0, 0, attackRange);
+        private float _attackTime;
         //TODO make character turn towards mouse target when attacking
-    
+
+        private void Start() {
+            _mainCamera = UnityEngine.Camera.main;
+            _clickToMove = GetComponent<ClickToMove>();
+            
+            // derive attack time
+            _attackTime = 1f / attacksPerSecond;
+        }
+
         private void Update() {
             // Use this bool to disable input if needed
             if (_inputDisabled) 
@@ -24,21 +38,38 @@ namespace Units.Player {
         
             if (Input.GetMouseButtonDown(mouseButton)) {
                 Attack();
-                _nextAttackTime = Time.time + 1f / attacksPerSecond;
+                _nextAttackTime = Time.time + _attackTime;
+                GetComponent<FSMWorkWithAnimation>().playerIsAttacking = true;
             }
         }
 
         private void Attack() {
+            _clickToMove.ResetPath();
+            transform.LookAt(GetMousePosition());
+                
             Collider[] enemiesHit = Physics.OverlapSphere(AttackPoint, attackRadius, enemyLayers);
 
             foreach (var enemy in enemiesHit) {
                 Debug.Log($"{enemy.name} was hit for {attackDamage} damage.");
                 enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+                //Melee Audio
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", GetComponent<Transform>().position);
             }
         }
 
         private void OnDrawGizmosSelected() {
             Gizmos.DrawWireSphere(AttackPoint, attackRadius);
+        }
+
+        private Vector3 GetMousePosition() {
+            Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            Vector3 hitLocation = Vector3.zero;
+            if (Physics.Raycast(myRay, out hitInfo, 1000, whatCanBeClickedOn)) {
+                hitLocation = hitInfo.point;
+            }
+
+            return hitLocation;
         }
     }
 }

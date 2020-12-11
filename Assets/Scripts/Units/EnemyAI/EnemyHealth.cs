@@ -11,12 +11,15 @@ namespace Units.EnemyAI {
         
             // If health is 0, enemy dies
             if (_currentHealth == 0) {
-                Debug.Log($"{gameObject.name} has died!");
+                // Debug.Log($"{gameObject.name} has died!");
                 Destroy(gameObject);
             }
         
             // Placeholder Debug.Log to display enemy HP
             Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {damage} damage taken");
+        }
+        public void GainHealth(int healValue) {
+            Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {healValue} gained?");
         }
         private void Awake() {
             _currentHealth = maxHealth;

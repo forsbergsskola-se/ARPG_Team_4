@@ -129,3 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 3198314477662570436}
   target: {fileID: 0}
+  cameraAngle: 55
+  offsetXZ: -10

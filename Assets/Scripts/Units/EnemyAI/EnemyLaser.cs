@@ -7,17 +7,31 @@ using UnityEngine;
 public class EnemyLaser : MonoBehaviour {
     private LineRenderer _lineRenderer;
     public float lengthOfLineRenderer = 20.0f;
+    private float _moveSpeed;
     public int damage = 1;
     public float knockbackVelocity = 5f;
     public LayerMask hittableLayers;
 
-    void Start()
-    {
+    void Start() {
         _lineRenderer = gameObject.GetComponent<LineRenderer>();
+        // patrolDistance = Mathf.Clamp(patrolDistance, 0, 1000);
+        // transform.rotation = Quaternion.Euler(0, 0, 0);
+        // _startPosX = transform.position.x;
+        // _maxPosX = _startPosX + patrolDistance;
+        // _moveSpeed = movementSpeed;
     }
     
     private void FixedUpdate() {
+        // Flips direction bool when start and max positions are reached
+        // if (transform.position.x > _maxPosX)
+        //     _forward = false;
+        // else if (transform.position.x < _startPosX)
+        //     _forward = true;
         
+        // Sets movement speed to positive or negative depending on bool
+        // _moveSpeed = _forward ? movementSpeed : -movementSpeed;
+        // transform.Translate(new Vector3(_moveSpeed, 0f, 0f));
+
         RaycastHit hit;
         Vector3 hitPosition;
         Vector3 currentPosition = transform.position;

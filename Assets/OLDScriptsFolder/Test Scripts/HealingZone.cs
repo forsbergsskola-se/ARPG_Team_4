@@ -21,12 +21,11 @@ namespace UIStatsResources
             {
                 Debug.Log("Player being healed");
             }
-            void OnDrawGizmosSelected()
-            {
-                if (healingZoneBoxPoint == null)
-                    return;
-                Gizmos.DrawWireCube(healingZoneBoxPoint.position, transform.localScale);
-            }
+            // void OnDrawGizmosSelected() {
+            //     if (healingZoneBoxPoint == null)
+            //         return;
+            //     Gizmos.DrawWireCube(healingZoneBoxPoint.position, transform.localScale);
+            // }
         }
     }
 }

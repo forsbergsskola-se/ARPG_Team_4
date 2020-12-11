@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ruben/RubenLevelTwo.unity
     guid: dbff264ff804859439b396e0aedd5fd8
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 6d0a1227146a24b419d63444dc4b73e6
   m_configObjects: {}
