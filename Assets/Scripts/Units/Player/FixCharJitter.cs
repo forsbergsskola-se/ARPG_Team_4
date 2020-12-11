@@ -9,6 +9,7 @@ namespace Assets.Scripts.Units.Player {
         private FSMWorkWithAnimation _fsm;
         private const float TimerSeconds = 0.1f;
         private float _deltaTimer = TimerSeconds;
+        private int _ticktest = 10;
 
         void Start() {
             _fsm = GetComponent<FSMWorkWithAnimation>();
@@ -16,6 +17,14 @@ namespace Assets.Scripts.Units.Player {
             _myAgent = GetComponent<NavMeshAgent>();
         }
         void LateUpdate() {
+            //todo fix this lazy ass shit
+            if (_fsm.playerTookDamage && _ticktest < 0) {
+                //Debug.Log("works");
+                _ticktest = 10;
+                _fsm.playerTookDamage = false;
+            }
+            _ticktest--;
+            
             if (!_fsm.playerIsMoving) {
                 _deltaTimer -= Time.deltaTime;
                 if (_deltaTimer < 0f) {
