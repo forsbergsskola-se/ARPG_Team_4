@@ -19,7 +19,11 @@ namespace GUI {
         public GameObject shadow;
         private ClickToMove clickToMove;
 
+        //Audio
+        public FMOD.Studio.EventInstance MenuButtonAudio;
+
         private void Start() {
+            MenuButtonAudio = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Button/Buttons");
             clickToMove = GameObject.FindGameObjectWithTag("Player").GetComponent<ClickToMove>();
             if (clickToMove == null)
                 Debug.LogWarning("ClickToMove missing", this);
@@ -83,7 +87,8 @@ namespace GUI {
     
         private void PlayButtonSound() {
             //            buttonSound.Play();
-            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons");
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(MenuButtonAudio, transform, GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>());
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons", GetComponent<player>(GetComponent<Transform>().position);
         }
     
         void PauseGame ()
