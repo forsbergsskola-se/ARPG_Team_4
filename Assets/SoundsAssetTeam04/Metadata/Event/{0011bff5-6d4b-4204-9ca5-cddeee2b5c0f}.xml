@@ -104,11 +104,12 @@
 			<value>true</value>
 		</property>
 		<property name="length">
-			<value>0.050000000000000003</value>
+			<value>0.10000000149011612</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{134ab51c-4190-48c0-b2f0-86d312e899be}</destination>
 			<destination>{e808f623-b3b7-4305-b346-b45971f09dca}</destination>
+			<destination>{a1fb8c29-4afb-4033-981b-5688d9b01422}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{1d97dba6-bea8-49b9-b2c4-943cf267e5b7}">
@@ -168,6 +169,17 @@
 		<relationship name="modulators">
 			<destination>{ac899952-4c1c-45d3-ad2b-2ab6821fb87a}</destination>
 		</relationship>
+		<relationship name="audioFile">
+			<destination>{37cdb481-c8d0-457f-b8b9-070bc4bcc566}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{a1fb8c29-4afb-4033-981b-5688d9b01422}">
+		<property name="startOffset">
+			<value>13</value>
+		</property>
+		<property name="pitch">
+			<value>-3.60000014</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{37cdb481-c8d0-457f-b8b9-070bc4bcc566}</destination>
 		</relationship>
