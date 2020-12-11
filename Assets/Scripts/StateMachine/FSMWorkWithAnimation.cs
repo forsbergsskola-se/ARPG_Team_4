@@ -14,6 +14,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     private const string AnimPlayerTookDamage = "PlayerTookDamage";
     
     //PlayerStates
+    public float positionUpdateOffset = 0.085f;
     public bool playerIsMoving = false;
     public bool playerTookDamage = false;
     public bool playerIsAttacking = false;
@@ -35,8 +36,8 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         _playerHealth.GetDamaged.AddListener(TakeDamageState);
     }
     void Update() {
-        if (Mathf.Abs(_previousPos.x - transform.position.x) > 0.015f ||
-            Mathf.Abs(_previousPos.z - transform.position.z) > 0.015f) {
+        if (Mathf.Abs(_previousPos.x - transform.position.x) > positionUpdateOffset ||
+            Mathf.Abs(_previousPos.z - transform.position.z) > positionUpdateOffset) {
             playerIsMoving = true;
         }
         else playerIsMoving = false;
@@ -44,6 +45,9 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         //if (check player health <= 0) stateMove = StateMove.Dead;
         
         //Check Player Equipped Weapon
+        if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.Unarmed;
+        else if (Input.GetKey(KeyCode.Alpha2)) stateWeapon = StateWeapon.CrowBar;
+        else if (Input.GetKey(KeyCode.Alpha3)) stateWeapon = StateWeapon.Gun;
         //Todo Create GetEquippedWeapon() script
         //stateWeapon = GetEquippedWeapon()
 

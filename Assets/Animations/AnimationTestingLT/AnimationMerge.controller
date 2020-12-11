@@ -1681,7 +1681,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: StateMove
     m_EventTreshold: 0
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: WeaponInHand
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
@@ -2031,7 +2031,7 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: StateMove
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
@@ -2229,7 +2229,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: UpperBody
     m_StateMachine: {fileID: 8681326745943726572}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 4a90eaae26214493c99b6fbff6f36690, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -2241,13 +2241,13 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: RunFix
     m_StateMachine: {fileID: -8126068191733296125}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 872f9099dfc594d31b5b2bd731cabf27, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
     m_DefaultWeight: 1
-    m_IKPass: 0
+    m_IKPass: 1
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
@@ -2265,7 +2265,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: TakeDamage While Running
     m_StateMachine: {fileID: -7048983369258249860}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 872f9099dfc594d31b5b2bd731cabf27, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
