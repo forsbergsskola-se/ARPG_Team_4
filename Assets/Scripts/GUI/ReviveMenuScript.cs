@@ -14,7 +14,7 @@ public class ReviveMenuScript : MonoBehaviour {
         healthScriptableObject.OnDeath += ShowMenu;
         
         //get reference to revive handler
-        _playerReviveHandler = GameObject.Find("/Player").GetComponent<PlayerReviveHandler>();
+        _playerReviveHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerReviveHandler>();
         if (_playerReviveHandler == null)
             Debug.LogWarning("Couldn't find revive handler on Player OR player couldn't be found", this);
     }

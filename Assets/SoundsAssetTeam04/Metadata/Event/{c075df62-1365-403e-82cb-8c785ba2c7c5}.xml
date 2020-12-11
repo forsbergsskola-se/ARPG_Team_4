@@ -106,7 +106,7 @@
 			<value>1</value>
 		</property>
 		<property name="volume">
-			<value>4.5</value>
+			<value>3.5</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{68d3a145-8cbc-40aa-af91-594c4c886f11}</destination>
@@ -118,6 +118,9 @@
 	<object class="SingleSound" id="{d4df4936-ce14-4f3c-b05b-69be6bc420c2}">
 		<property name="start">
 			<value>2</value>
+		</property>
+		<property name="volume">
+			<value>7</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{8bbda815-4725-4daa-aea4-5db4750ee3fb}</destination>
@@ -165,12 +168,13 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>6.5</value>
+			<value>3.5</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{4bdc6788-6395-441f-9f7b-4997e54e3143}">
 		<relationship name="effects">
 			<destination>{b14cd5c6-ef71-4808-babc-ee516d70e20d}</destination>
+			<destination>{d151f602-e88e-4711-9c94-870543b6ab82}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ffe5580f-d9bf-41a7-955d-39d03f6ee543}" />
@@ -178,8 +182,16 @@
 	<object class="SpatialiserEffect" id="{51501561-ceef-4b8a-9d9b-a04c68c1f61b}" />
 	<object class="HighpassSimpleEffect" id="{86fa2be2-ae3a-455b-ba10-6d6f7f837f73}">
 		<property name="cutoff">
-			<value>500</value>
+			<value>120</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{b14cd5c6-ef71-4808-babc-ee516d70e20d}" />
+	<object class="SFXReverbEffect" id="{d151f602-e88e-4711-9c94-870543b6ab82}">
+		<property name="decayTime">
+			<value>2600</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>56</value>
+		</property>
+	</object>
 </objects>

@@ -101,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 349048898001482834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 3029682111464487296}
   - {fileID: 8545872186638679478}
@@ -247,8 +247,8 @@ CanvasGroup:
   m_GameObject: {fileID: 349048899711878252}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &349048899711878254
 Animator:
