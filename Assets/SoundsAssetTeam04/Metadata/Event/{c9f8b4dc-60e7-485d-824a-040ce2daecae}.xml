@@ -83,6 +83,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{5560bdf9-2e2e-4771-8fea-78ab4987a347}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{7ff69b01-622c-4a13-abc5-1ffb671493e4}</destination>
 		</relationship>
@@ -107,10 +110,10 @@
 			<value>true</value>
 		</property>
 		<property name="length">
-			<value>0.014999999999999999</value>
+			<value>0.10000000000000001</value>
 		</property>
 		<property name="pitch">
-			<value>-1.60000002</value>
+			<value>-3</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -127,7 +130,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{fe5e6124-448d-4bc0-84d8-14b75e31be70}">
 		<property name="volume">
-			<value>-0.5</value>
+			<value>-3.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -160,6 +163,7 @@
 		<relationship name="effects">
 			<destination>{a50424da-031b-4555-a6e0-a8327fe17498}</destination>
 			<destination>{7949097f-99f8-43c9-bbd7-a6983bcd43d1}</destination>
+			<destination>{a79de98e-c847-4890-84c1-c712e9c6b098}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{de096fb3-f7a6-4ec2-8210-37585faa5ea8}" />
@@ -190,10 +194,28 @@
 	</object>
 	<object class="MixerBusPanner" id="{4d25321e-688a-4ce3-9343-1ed6052f84fe}" />
 	<object class="MixerBusFader" id="{a50424da-031b-4555-a6e0-a8327fe17498}" />
-	<object class="SpatialiserEffect" id="{7949097f-99f8-43c9-bbd7-a6983bcd43d1}" />
+	<object class="SpatialiserEffect" id="{7949097f-99f8-43c9-bbd7-a6983bcd43d1}">
+		<property name="maximumDistance">
+			<value>3.60000014</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{a79de98e-c847-4890-84c1-c712e9c6b098}">
+		<property name="decayTime">
+			<value>1000</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>85</value>
+		</property>
+		<property name="diffusion">
+			<value>24</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>-25.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{2794b4ea-b5c7-45f4-a5a8-d9df0133bcb7}">
 		<property name="position">
-			<value>0.0099999999999999985</value>
+			<value>0.095000000000000001</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -204,7 +226,7 @@
 	</object>
 	<object class="AutomationPoint" id="{3f91dfb3-952a-4cc4-b49e-66790f5e9b63}">
 		<property name="position">
-			<value>0.014999999999999999</value>
+			<value>0.10000000000000001</value>
 		</property>
 		<property name="value">
 			<value>0</value>
