@@ -1587,7 +1587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604213368493994860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 0.74, z: 0.09}
+  m_LocalPosition: {x: 0.26, y: 1.314, z: 0.432}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8329280503942411449}
@@ -4443,7 +4443,7 @@ GameObject:
   - component: {fileID: 4900279772453235220}
   - component: {fileID: 7138203249148496844}
   m_Layer: 9
-  m_Name: PlayerChar
+  m_Name: PlayerCharWithSound
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4607,8 +4607,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseButton: 1
   attackDamage: 4
-  attackRange: 1
-  attackRadius: 1.2
+  attackRange: 0.7
+  attackRadius: 0.5
   attacksPerSecond: 2
   enemyLayers:
     serializedVersion: 2
