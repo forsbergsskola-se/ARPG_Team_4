@@ -3,7 +3,6 @@ using UnityEngine.Serialization;
 
 public class Open_And_Close : MonoBehaviour
 {
-    public float maxDistanceEnter = 4;
     public bool IsOpen {
         get => _isOpen;
         set => _triggerAnimation.SetBool(DoorIsOpen, _isOpen = value);
