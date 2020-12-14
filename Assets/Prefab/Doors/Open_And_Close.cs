@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Open_And_Close : MonoBehaviour
 {
-    
-    public GameObject Player;
-    public float Max_distance_enter = 4;
-    public bool IsOpen = true;
-    
-    private Animator _triggerAnimation;
+    public GameObject player;
+    public float maxDistanceEnter = 4;
+    public bool IsOpen {
+        get => _isOpen;
+        set => _triggerAnimation.SetBool(DoorIsOpen, _isOpen = value);
+    }
+    private bool _isOpen;
+    private const string DoorIsOpen = "doorIsOpen";
     private float _distance = 0;
-    protected const string DoorIsOpenAnim = "doorIsOpen";
+    private Animator _triggerAnimation;
 
     private void Start()
     {
@@ -19,10 +20,9 @@ public class Open_And_Close : MonoBehaviour
     }
     public void Update()
     {
-        _distance = Vector3.Distance (transform.position, Player.transform.position);
+        _distance = Vector3.Distance (transform.position, player.transform.position);
         
-        if (_distance < Max_distance_enter) _triggerAnimation.SetBool(DoorIsOpenAnim, IsOpen = true);
-        else _triggerAnimation.SetBool(DoorIsOpenAnim, IsOpen = false);
-    }    
-    
+        if (_distance < maxDistanceEnter && !IsOpen) IsOpen = true;
+        else if (_distance > maxDistanceEnter && IsOpen) IsOpen = false;
+    }
 }
