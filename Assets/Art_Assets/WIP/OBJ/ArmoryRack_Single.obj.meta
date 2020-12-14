@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Armory2Mat
     second: {fileID: 2100000, guid: 5256e02be7b87e944a7467fdc5ec13cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: modelPanel2ViewSelectedSet_Armory2Mat
+    second: {fileID: 2100000, guid: 5256e02be7b87e944a7467fdc5ec13cc, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
