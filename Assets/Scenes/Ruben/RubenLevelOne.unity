@@ -291,7 +291,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7182e08fb06544cb59f213dea5712fbc, type: 2}
+  - {fileID: 2100000, guid: 5e8705f58945f4fea9286782fb9c604b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -671,6 +671,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3351911816878647480, guid: 928ca11f24aec3948b948513fa950ddc,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 960754435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 928ca11f24aec3948b948513fa950ddc, type: 3}
 --- !u!1 &391104642
@@ -2103,8 +2108,6 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
-  mouseOverCursorTexture: {fileID: 2800000, guid: 82ff72577988cdb4a95bd92f1d0bc129,
-    type: 3}
 --- !u!1001 &1097621777
 PrefabInstance:
   m_ObjectHideFlags: 0

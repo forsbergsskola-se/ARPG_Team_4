@@ -13,7 +13,7 @@ public class PlayerRangedAttack : MonoBehaviour
     private UnityEngine.Camera _mainCamera;
     [Tooltip("The position where the projectile will be fired from")] public Transform firingPosition;
     public LayerMask whatCanBeClickedOn;
-    private ClickToMove _clickToMove;
+    private PlayerMovement _playerMovement;
     
     // parameters
     [SerializeField] private float projectileVelocity = 10f;
@@ -29,7 +29,7 @@ public class PlayerRangedAttack : MonoBehaviour
     private void Start() {
         // get references
         _mainCamera = UnityEngine.Camera.main;
-        _clickToMove = GetComponent<ClickToMove>();
+        _playerMovement = GetComponent<PlayerMovement>();
         
         // derive attack time
         _attackTime = 1f / attacksPerSecond;
@@ -50,7 +50,7 @@ public class PlayerRangedAttack : MonoBehaviour
     }
 
     private void FireProjectile() {
-        _clickToMove.ResetPath();
+        _playerMovement.ResetPath();
 
         Vector3 mousePos = GetMousePosition();
         transform.LookAt(mousePos);

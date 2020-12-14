@@ -14,7 +14,7 @@ namespace SceneManagement
         private void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Player")) {
                 other.GetComponent<NavMeshAgent>().enabled = false;
-                other.GetComponent<ClickToMove>().enabled = false;
+                other.GetComponent<PlayerMovement>().enabled = false;
                 LoadNextLevel();
             }
         }

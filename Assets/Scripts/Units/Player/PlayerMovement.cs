@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 namespace Units.Player {
     [RequireComponent(typeof(Rigidbody))]
-    public class ClickToMove : MonoBehaviour{
+    public class PlayerMovement : MonoBehaviour{
 
         private NavMeshAgent _myAgent;
         private UnityEngine.Camera _mainCamera;

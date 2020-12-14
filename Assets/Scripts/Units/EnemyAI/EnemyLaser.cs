@@ -54,7 +54,7 @@ public class EnemyLaser : MonoBehaviour {
                         targetGameObject.transform.position.z - hitPosition.z).normalized;
 
                     // knockback
-                    targetGameObject.GetComponent<ClickToMove>().Knockback(knockbackDir * knockbackVelocity);
+                    targetGameObject.GetComponent<PlayerMovement>().Knockback(knockbackDir * knockbackVelocity);
                 }
             }
                 

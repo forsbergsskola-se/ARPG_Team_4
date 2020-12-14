@@ -4,17 +4,17 @@ using UnityEngine;
 /// Controls revive mechanism for player. Triggered by ReviveMenuScript through menu buttons.
 /// </summary>
 
-[RequireComponent(typeof(ClickToMove))]
+[RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerHealth))]
 public class PlayerReviveHandler : MonoBehaviour {
     public HealthScriptableObject healthScriptableObject;
     public Transform reviveCheckpointLocation;
     private PlayerHealth _playerHealth = null;
-    private ClickToMove _clickToMoveRef = null;
+    private PlayerMovement _playerMovementRef = null;
     private void Start() {
         // Get references
         _playerHealth = GetComponent<PlayerHealth>();
-        _clickToMoveRef = GetComponent<ClickToMove>();
+        _playerMovementRef = GetComponent<PlayerMovement>();
     }
     
     public void ReviveAtLocation() {
@@ -29,6 +29,6 @@ public class PlayerReviveHandler : MonoBehaviour {
 
     private void RestoreHealthAndEnableControls() {
         healthScriptableObject.SetCurrentHealthToMax();
-        _clickToMoveRef.InputDisabled = false;
+        _playerMovementRef.InputDisabled = false;
     }
 }

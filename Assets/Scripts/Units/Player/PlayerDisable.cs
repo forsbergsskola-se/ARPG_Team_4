@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Units.Player;
 
-[RequireComponent(typeof(ClickToMove))]
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerDisable : MonoBehaviour
 {
     /*
@@ -13,11 +13,11 @@ public class PlayerDisable : MonoBehaviour
      * If var I = 2 turn off Disable and Reset var I to 0
      */
     public KeyCode MenuButton; //Bind to the same button as the Menu
-    private ClickToMove _disableClickToMove = null;
+    private PlayerMovement _disablePlayerMovement = null;
     private int I = 0;
     void Start()
     {
-        _disableClickToMove = GetComponent<ClickToMove>();
+        _disablePlayerMovement = GetComponent<PlayerMovement>();
     }
     void Update()
     {
@@ -44,12 +44,12 @@ public class PlayerDisable : MonoBehaviour
     void OnDisable()
     {
         Debug.Log("OnDisable is On");
-        _disableClickToMove.InputDisabled = false;
+        _disablePlayerMovement.InputDisabled = false;
     }
     void OnEnable()
     {
         Debug.Log("OnDisable is Off");
-        _disableClickToMove.InputDisabled = true;
+        _disablePlayerMovement.InputDisabled = true;
     }
 }
 
