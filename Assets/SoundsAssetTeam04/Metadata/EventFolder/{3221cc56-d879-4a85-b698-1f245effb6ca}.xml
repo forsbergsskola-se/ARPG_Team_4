@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{3221cc56-d879-4a85-b698-1f245effb6ca}">
+		<property name="name">
+			<value>ReviveSplit</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ba3dbfb6-1867-42d7-b0a2-02f0293ab415}</destination>
+		</relationship>
+	</object>
+</objects>
