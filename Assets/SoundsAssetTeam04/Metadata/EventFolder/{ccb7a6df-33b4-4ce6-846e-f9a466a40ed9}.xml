@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{ccb7a6df-33b4-4ce6-846e-f9a466a40ed9}">
+		<property name="name">
+			<value>AmbientSplit</value>
+		</property>
+		<relationship name="folder">
+			<destination>{b84d69ae-228d-4c27-b33f-87574415cb66}</destination>
+		</relationship>
+	</object>
+</objects>
