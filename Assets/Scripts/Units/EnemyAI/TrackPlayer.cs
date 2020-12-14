@@ -11,7 +11,7 @@ namespace Units.EnemyAI
         private WaypointMovement waypointMovement;
         private MeleeAttackEnemy meleeAttackEnemy;
         private NavMeshAgent _enemy;
-        public GameObject player;
+        private Transform _playerTransform;
         public float enemyViewDistance = 7f;
         public float enemyIdleTime = 3f;
         private bool _chasing;
@@ -20,6 +20,11 @@ namespace Units.EnemyAI
         private void Start() {
             waypointMovement = GetComponent<WaypointMovement>();
             meleeAttackEnemy = GetComponent<MeleeAttackEnemy>();
+            
+            _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            if (_playerTransform == null)
+                Debug.LogError("There is no GameObject with the Player tag in the scene", this);
+            
             if (waypointMovement == null) Debug.LogWarning("Patrol point(s) not found", this);
             _enemy = GetComponent<NavMeshAgent>();
         }
@@ -27,10 +32,10 @@ namespace Units.EnemyAI
         void FixedUpdate() {
             var enemyPos = transform.position;
             var _chasing = CanSeePlayer();
-            var distance = Vector3.Distance(enemyPos, player.transform.position);
+            var distance = Vector3.Distance(enemyPos, _playerTransform.position);
 
             if (_chasing) {
-                var dirToPlayer = enemyPos - player.transform.position;
+                var dirToPlayer = enemyPos - _playerTransform.position;
                 var newPos = enemyPos - dirToPlayer;
                 _enemy.SetDestination(newPos);
                 if (distance <= meleeAttackEnemy.attackRange) {
@@ -40,33 +45,23 @@ namespace Units.EnemyAI
                     _nextAttackTime = Time.time + 1f / meleeAttackEnemy.attacksPerSecond;
                 }
             }
-            // else if () {
-            //     StartCoroutine(wait());{
-             else {
+            else {
                 waypointMovement.SetDestination();
             }
         }
 
         bool CanSeePlayer() {
             RaycastHit hit;
-            Vector3 rayDirection = player.transform.position - transform.position;
+            Vector3 rayDirection = _playerTransform.position - transform.position;
 
-            if ((Vector3.Angle(rayDirection, transform.forward)) <= 180 * 0.5f) {
+            if (Vector3.Angle(rayDirection, transform.forward) <= 180 * 0.5f) {
                 // Detect if player is within the field of view
                 if (Physics.Raycast(transform.position, rayDirection, out hit, enemyViewDistance)) {
-                    return (hit.transform.CompareTag("Player"));
+                    return hit.transform.CompareTag("Player");
                 }
             }
-
             return false;
         }
-        
-        //  public IEnumerator wait(){
-        //      var enemyPos = transform.position;
-        //      _enemy.SetDestination(enemyPos);
-        //      yield return new WaitForSecondsRealtime(enemyIdleTime);
-        //      _chasing = false;
-        // }
     }
 } 
 
