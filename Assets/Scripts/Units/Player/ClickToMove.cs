@@ -7,9 +7,8 @@ namespace Units.Player {
     [RequireComponent(typeof(Rigidbody))]
     public class ClickToMove : MonoBehaviour{
 
-        public LayerMask whatCanBeClickedOn;
-        private NavMeshAgent myAgent;
-        private UnityEngine.Camera mainCamera;
+        private NavMeshAgent _myAgent;
+        private UnityEngine.Camera _mainCamera;
         public HealthScriptableObject healthScriptableObject;
         private Rigidbody _rigidbody;
         
@@ -19,9 +18,7 @@ namespace Units.Player {
         // Audio Walking Test
         [SerializeField] [FMODUnity.EventRef] private string FootstepEventPath;
         [SerializeField] private float _raycastDistance = 0.5f;
-        private RaycastHit raycastHit;
-
-
+        private RaycastHit _raycastHit;
 
         /*
         FMOD.Studio.EventInstance FootstepEvent;
@@ -34,17 +31,24 @@ namespace Units.Player {
         public bool InputDisabled {
             set {
                 _inputDisabled = value;
-                myAgent.ResetPath();
+                _myAgent.ResetPath();
             }
+        }
+
+        public void SetDestination(Vector3 target) {
+            if (_inputDisabled)
+                return;
+            
+            _myAgent.SetDestination(target);
         }
         
         void Start() {
-            myAgent = GetComponent<NavMeshAgent>();
-            mainCamera = UnityEngine.Camera.main;
+            _myAgent = GetComponent<NavMeshAgent>();
+            _mainCamera = UnityEngine.Camera.main;
 
             healthScriptableObject.OnDeath += DisableInput;
             
-            if (mainCamera == null) {
+            if (_mainCamera == null) {
                 throw new Exception("Main camera is null: Camera needs MainCamera tag.");
             }
 
@@ -55,8 +59,6 @@ namespace Units.Player {
         }
 
         void Update() {
-            Debug.DrawRay(transform.position, Vector3.down * _raycastDistance, Color.green);
-
             if (_knockbackActive) {
                 if (_rigidbody.velocity.magnitude < 2f)
                     DisableKnockback();
@@ -64,33 +66,13 @@ namespace Units.Player {
             }
 
             if (_inputDisabled) {
-                myAgent.SetDestination(transform.position);
                 return;
-            }
-            if (Input.GetMouseButton(0)) {
-                Ray myRay = mainCamera.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hitInfo;
-
-                // Audio Walking Test
-
-                //playersMoving = true;
-                //PlayerIsWalking();
-
-                if (Physics.Raycast(myRay, out hitInfo, 1000, whatCanBeClickedOn)){
-                    myAgent.SetDestination(hitInfo.point);
-
-                    // Audio Walking Test
-
-                    //playersMoving = false;
-                    //Debug.Log("Player Walking Audio Ends");
-                }
-                //Debug.Log("hitInfo: " + hitInfo.collider.name);
             }
         }
         // Audio Walking Test
         void FloorCheck()
         {
-            Physics.Raycast(transform.position, Vector3.down, out raycastHit, _raycastDistance);
+            Physics.Raycast(transform.position, Vector3.down, out _raycastHit, _raycastDistance);
             //if(raycastHit.collider)
                 
 
@@ -118,20 +100,20 @@ namespace Units.Player {
         public void Knockback(Vector3 velocity) {
             _knockbackActive = true;
             _rigidbody.isKinematic = false;
-            myAgent.updatePosition = false;
+            _myAgent.updatePosition = false;
             _rigidbody.velocity = velocity;
         }
 
         private void DisableKnockback() {
             _knockbackActive = false;
             _rigidbody.isKinematic = true;
-            myAgent.nextPosition = _rigidbody.position;
-            myAgent.ResetPath();
-            myAgent.updatePosition = true;
+            _myAgent.nextPosition = _rigidbody.position;
+            _myAgent.ResetPath();
+            _myAgent.updatePosition = true;
         }
 
         public void ResetPath() {
-            myAgent.ResetPath();
+            _myAgent.ResetPath();
         }
     }
 }
