@@ -1,37 +1,64 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
+//TODO check that knockback works, check that disable input from menus etc works.
 namespace Units.Player {
     [RequireComponent(typeof(MeleeAttack))]
+    [RequireComponent(typeof(PlayerRangedAttack))]
     [RequireComponent(typeof(PlayerMovement))]
     public class PlayerMouseInput : MonoBehaviour {
-        [FormerlySerializedAs("targetLayers")] [SerializeField] private LayerMask walkableLayers;
+        [SerializeField] private LayerMask walkableLayers;
         [SerializeField] private LayerMask enemyLayers;
+        public HealthScriptableObject healthScriptableObject;
         private GameObject _target;
         private UnityEngine.Camera _mainCamera;
 
         private MeleeAttack _meleeAttack;
         private PlayerMovement _playerMovement;
+        private PlayerRangedAttack _playerRangedAttack;
 
+        private bool _rangedAttackCharging = false;
+        private bool _inputDisabled = false;
+
+        public bool InputDisabled { set => _inputDisabled = value; }
+
+        public void DisableInput() {
+            _inputDisabled = true;
+        }
 
         private void Start() {
             _mainCamera = UnityEngine.Camera.main;
             _meleeAttack = GetComponent<MeleeAttack>();
             _playerMovement = GetComponent<PlayerMovement>();
+            _playerRangedAttack = GetComponent<PlayerRangedAttack>();
+            healthScriptableObject.OnDeath += DisableInput;
         }
 
         private void Update() {
+
+            if (_inputDisabled)
+                return;
+            
+            if (_rangedAttackCharging) {
+                HandleRangedAttackCharging();
+                return;
+            }
+            
             Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
         
             if (IsMouseCursorOnEnemy(myRay, out hitInfo)) {
-                var target = hitInfo.collider.gameObject;
-            
-                _meleeAttack.UpdateCursor(target.transform.position);
+                _target = hitInfo.collider.gameObject;
+
+                if (Input.GetMouseButtonDown(1)) {
+                    RangedAttackCommencing();
+                    return;
+                }
+
+                _meleeAttack.UpdateCursor(_target.transform.position);
             
                 if (Input.GetMouseButtonDown(0)) {
-                    if (_meleeAttack.WithinAttackRange(target.transform.position)) {
-                        _meleeAttack.TryAttack(target);
+                    if (_meleeAttack.WithinAttackRange(_target.transform.position)) {
+                        _meleeAttack.TryAttack(_target);
                         return;
                     }
                 }
@@ -46,6 +73,29 @@ namespace Units.Player {
             }
         }
 
+        private void RangedAttackCommencing() {
+            _playerRangedAttack.SetNextAttackTime();
+            _rangedAttackCharging = true;
+            _playerMovement.ResetPath();
+        }
+
+        private void HandleRangedAttackCharging() {
+            if (RangeChargeBroken()) {
+                _rangedAttackCharging = false;
+            }
+            else {
+                transform.LookAt(_target.transform.position);
+                if (_playerRangedAttack.ChargeIsReady)
+                    _playerRangedAttack.FireProjectile(_target.transform.position);
+            }
+        }
+
+        private bool RangeChargeBroken() {
+            return !Input.GetMouseButton(1) || 
+                   _target == null || 
+                   !_playerRangedAttack.TargetWithinAttackRange(_target.transform.position);
+        }
+
         private static void SetDefaultCursor() {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
@@ -55,9 +105,3 @@ namespace Units.Player {
         }
     }
 }
-
-
-
-
-// var mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-// var overlay = Physics.OverlapSphere(mousePos, layerMasks);

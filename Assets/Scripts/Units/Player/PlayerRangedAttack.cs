@@ -1,80 +1,47 @@
-﻿using Units.Player;
+﻿using Units.Projectiles;
 using UnityEngine;
 
-/// <summary>
-/// Fires a projectile on pressing "E"
-/// </summary>
 // TODO limited bullets.
 // TODO art for bullet or other primitive? Make sure it is rotated correctly.
-public class PlayerRangedAttack : MonoBehaviour
-{
-    // references
-    public GameObject projectilePrefab = null;
-    private UnityEngine.Camera _mainCamera;
-    [Tooltip("The position where the projectile will be fired from")] public Transform firingPosition;
-    public LayerMask whatCanBeClickedOn;
-    private PlayerMovement _playerMovement;
-    
-    // parameters
-    [SerializeField] private float projectileVelocity = 10f;
-    [SerializeField] private int damage = 10;
-    [SerializeField] private float attacksPerSecond = 1f;
-    [SerializeField] private KeyCode keyBind = KeyCode.E;
-    
-    // variables
-    private bool _inputDisabled;
-    private float _nextAttackTime;
-    private float _attackTime;
-
-    private void Start() {
-        // get references
-        _mainCamera = UnityEngine.Camera.main;
-        _playerMovement = GetComponent<PlayerMovement>();
-        
-        // derive attack time
-        _attackTime = 1f / attacksPerSecond;
-    }
-
-    void Update()
+namespace Units.Player {
+    public class PlayerRangedAttack : MonoBehaviour
     {
-        if (_inputDisabled)
-            return;
-        
-        if (Time.time < _nextAttackTime) 
-            return;
+        // references
+        public Projectile projectilePrefab = null;
+        [Tooltip("The position where the projectile will be fired from")] public Transform firingPosition;
 
-        if (Input.GetKeyDown(keyBind)) {
-            FireProjectile();
+        // parameters
+        [SerializeField] private float _attackRange = 10f; 
+        [SerializeField] private float projectileVelocity = 10f;
+        [SerializeField] private int damage = 10;
+        [SerializeField] private float attacksPerSecond = 1f;
+
+        // variables
+        private bool _inputDisabled;
+        private float _nextAttackTime;
+        private float _attackTime;
+
+        public bool ChargeIsReady => Time.time >= _nextAttackTime;
+        public void SetNextAttackTime() {
             _nextAttackTime = Time.time + _attackTime;
         }
-    }
-
-    private void FireProjectile() {
-        _playerMovement.ResetPath();
-
-        Vector3 mousePos = GetMousePosition();
-        transform.LookAt(mousePos);
-
-        //instantiate projectile
-        var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, firingPosition.rotation);
-        
-        // set the projectile damage
-        projectileInstance.GetComponent<Projectile>().Damage = damage;
-        
-        // set projectile velocity
-        Vector3 transformPos = transform.position;
-        Vector3 shootDir = new Vector3(mousePos.x - transformPos.x, 0.0f, mousePos.z - transformPos.z).normalized;
-        projectileInstance.GetComponent<Rigidbody>().velocity = shootDir * projectileVelocity;
-    }
+        private void Start() {
+            _attackTime = 1f / attacksPerSecond;
+        }
     
-    private Vector3 GetMousePosition() {
-        Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-        Vector3 hitLocation = Vector3.zero;
-        if (Physics.Raycast(myRay, out hitInfo, 1000, whatCanBeClickedOn)) {
-            hitLocation = hitInfo.point;
+        public bool TargetWithinAttackRange(Vector3 target) {
+            return (target - transform.position).magnitude <= _attackRange;
         }
 
-        return hitLocation;
+        public void FireProjectile(Vector3 target) {
+            var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, firingPosition.rotation);
+            projectileInstance.Setup(damage, projectileVelocity, GetShootDir(target));
+            _nextAttackTime = Time.time + _attackTime;
+        }
+
+        private Vector3 GetShootDir(Vector3 target) {
+            Vector3 transformPos = transform.position;
+            return new Vector3(target.x - transformPos.x, 0.0f, target.z - transformPos.z).normalized;
+        }
     }
 }

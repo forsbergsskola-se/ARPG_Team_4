@@ -4565,8 +4565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509fdc5b96eb24466875efd32439c9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
-    type: 2}
   FootstepEventPath: 
   _raycastDistance: 0.5
 --- !u!114 &209276385443896190
@@ -4581,16 +4579,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd98c45893b3afa40aaaf986341a4c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 497287968603103856, guid: 0307b07d5adcb46408fd3c63b1b7bca8,
+  projectilePrefab: {fileID: 5226552845543506164, guid: 0307b07d5adcb46408fd3c63b1b7bca8,
     type: 3}
   firingPosition: {fileID: 5461967155341931247}
-  whatCanBeClickedOn:
-    serializedVersion: 2
-    m_Bits: 256
+  _attackRange: 40
   projectileVelocity: 10
   damage: 10
   attacksPerSecond: 1
-  keyBind: 104
 --- !u!114 &469871592968579855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4610,7 +4605,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
-  mouseOverCursorTexture: {fileID: 0}
+  mouseOverCursorTexture: {fileID: 2800000, guid: d5400a23002b107479debec613434ad6,
+    type: 3}
   whatCanBeClickedOn:
     serializedVersion: 2
     m_Bits: 256
@@ -4753,6 +4749,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
+  healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
+    type: 2}
 --- !u!1 &8823497216679721511
 GameObject:
   m_ObjectHideFlags: 0

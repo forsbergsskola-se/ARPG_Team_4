@@ -487,11 +487,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8708937829773913603, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e30629ab8bf5dc5409d2aab71a52bb3b, type: 3}
 --- !u!1 &203121118 stripped
@@ -1248,6 +1243,11 @@ PrefabInstance:
       propertyPath: hittableLayers.m_Bits
       value: 3840
       objectReference: {fileID: 0}
+    - target: {fileID: 1085928859295039046, guid: 7da3d2713193257498c9217fd5cb9c3e,
+        type: 3}
+      propertyPath: knockbackVelocity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1085928859295039047, guid: 7da3d2713193257498c9217fd5cb9c3e,
         type: 3}
       propertyPath: m_Name
@@ -1256,7 +1256,7 @@ PrefabInstance:
     - target: {fileID: 1085928859295039047, guid: 7da3d2713193257498c9217fd5cb9c3e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1085928859295039065, guid: 7da3d2713193257498c9217fd5cb9c3e,
         type: 3}

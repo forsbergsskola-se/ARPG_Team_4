@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+//TODO check that knockback still works.
 
 namespace Units.Player {
     [RequireComponent(typeof(Rigidbody))]
@@ -9,7 +10,7 @@ namespace Units.Player {
 
         private NavMeshAgent _myAgent;
         private UnityEngine.Camera _mainCamera;
-        public HealthScriptableObject healthScriptableObject;
+        //public HealthScriptableObject healthScriptableObject;
         private Rigidbody _rigidbody;
         
         private bool _inputDisabled;
@@ -34,7 +35,7 @@ namespace Units.Player {
                 _myAgent.ResetPath();
             }
         }
-
+        
         public void SetDestination(Vector3 target) {
             if (_inputDisabled)
                 return;
@@ -42,11 +43,15 @@ namespace Units.Player {
             _myAgent.SetDestination(target);
         }
         
+        public void ResetPath() {
+            _myAgent.ResetPath();
+        }
+        
         void Start() {
             _myAgent = GetComponent<NavMeshAgent>();
             _mainCamera = UnityEngine.Camera.main;
 
-            healthScriptableObject.OnDeath += DisableInput;
+            //healthScriptableObject.OnDeath += DisableInput;
             
             if (_mainCamera == null) {
                 throw new Exception("Main camera is null: Camera needs MainCamera tag.");
@@ -62,13 +67,9 @@ namespace Units.Player {
             if (_knockbackActive) {
                 if (_rigidbody.velocity.magnitude < 2f)
                     DisableKnockback();
-                return;
-            }
-
-            if (_inputDisabled) {
-                return;
             }
         }
+        
         // Audio Walking Test
         void FloorCheck()
         {
@@ -93,9 +94,7 @@ namespace Units.Player {
             }
         }
         */
-        public void DisableInput() {
-            _inputDisabled = true;
-        }
+
 
         public void Knockback(Vector3 velocity) {
             _knockbackActive = true;
@@ -112,9 +111,6 @@ namespace Units.Player {
             _myAgent.updatePosition = true;
         }
 
-        public void ResetPath() {
-            _myAgent.ResetPath();
-        }
     }
 }
 

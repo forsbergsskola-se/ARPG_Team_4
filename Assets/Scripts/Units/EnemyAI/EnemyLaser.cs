@@ -1,4 +1,5 @@
-﻿using Units;
+﻿using System;
+using Units;
 using Units.Player;
 using UnityEngine;
 
@@ -6,32 +7,22 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class EnemyLaser : MonoBehaviour {
     private LineRenderer _lineRenderer;
+    [SerializeField] private float ticsPerSecond = 2f;
     public float lengthOfLineRenderer = 20.0f;
     private float _moveSpeed;
     public int damage = 1;
     public float knockbackVelocity = 5f;
     public LayerMask hittableLayers;
 
+    private float _nextTicTime;
+    private float _attackRate;
+
     void Start() {
         _lineRenderer = gameObject.GetComponent<LineRenderer>();
-        // patrolDistance = Mathf.Clamp(patrolDistance, 0, 1000);
-        // transform.rotation = Quaternion.Euler(0, 0, 0);
-        // _startPosX = transform.position.x;
-        // _maxPosX = _startPosX + patrolDistance;
-        // _moveSpeed = movementSpeed;
+        _attackRate = 1 / ticsPerSecond;
     }
-    
-    private void FixedUpdate() {
-        // Flips direction bool when start and max positions are reached
-        // if (transform.position.x > _maxPosX)
-        //     _forward = false;
-        // else if (transform.position.x < _startPosX)
-        //     _forward = true;
-        
-        // Sets movement speed to positive or negative depending on bool
-        // _moveSpeed = _forward ? movementSpeed : -movementSpeed;
-        // transform.Translate(new Vector3(_moveSpeed, 0f, 0f));
 
+    private void FixedUpdate() {
         RaycastHit hit;
         Vector3 hitPosition;
         Vector3 currentPosition = transform.position;
@@ -43,8 +34,12 @@ public class EnemyLaser : MonoBehaviour {
             var targetGameObject = hit.collider.gameObject;
             IDamagable targetDamagable = targetGameObject.GetComponent<IDamagable>();
             if (targetDamagable != null) {
-                targetDamagable.TakeDamage(damage);
-                
+                if (Time.time >= _nextTicTime) {
+                    targetDamagable.TakeDamage(damage);
+                    _nextTicTime = Time.time + _attackRate;
+                }
+                    
+
                 // if the target is a player -> knockback
                 if (targetGameObject.CompareTag("Player")) {
                     // constrain knockback to x,z axis
