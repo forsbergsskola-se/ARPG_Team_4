@@ -43,6 +43,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-4795168087710389498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Blowtorch/Blowtorch
+  m_EditorClassIdentifier: 
+  Name: Blowtorch
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4200576785886829342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +86,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &-3786025735999462490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Objects/Crates
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Objects/Crates
+  guid: 3c902da46ea0aa43927f20e81ecf1562
+  Banks:
+  - {fileID: 1850596860785900052}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &-2432080056750616968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +149,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-2011324277535809571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Traps/Traps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Traps/Traps
+  guid: 7d663fd34d925545932904ad6641af44
+  Banks:
+  - {fileID: 1850596860785900052}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1850
 --- !u!114 &-1421281935530626034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +242,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1850
+--- !u!114 &-805851698337145036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Portal/Portal_transition
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Portal/Portal_transition
+  guid: 5d92ff18564164488afed38c1e846ad2
+  Banks:
+  - {fileID: 1850596860785900052}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &-546615646139272960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,26 +308,29 @@ MonoBehaviour:
   - {fileID: -5085401433449134586}
   - {fileID: 8136603758726333115}
   - {fileID: 3604482627210699818}
-  - {fileID: -1421281935530626034}
   - {fileID: -995330569226874502}
-  - {fileID: -4200576785886829342}
   - {fileID: 4095331487292627472}
   - {fileID: 8344326889292225499}
   - {fileID: 8226453074000554156}
   - {fileID: 5494244851435948986}
-  - {fileID: -806625329626070915}
   - {fileID: 1221138809264124378}
   - {fileID: 7467731043415967285}
   - {fileID: -546615646139272960}
+  - {fileID: -3786025735999462490}
+  - {fileID: 2210549937094619443}
+  - {fileID: -805851698337145036}
+  - {fileID: -2011324277535809571}
+  - {fileID: 6275037866893151324}
   EditorParameters:
   - {fileID: -2432080056750616968}
   - {fileID: 748138673912811851}
   - {fileID: 1902702057865143871}
+  - {fileID: 1959710151355681198}
   MasterBanks:
   - {fileID: 1850596860785900052}
   StringsBanks:
   - {fileID: 8376610170007532975}
-  stringsBankWriteTime: 637431882029425769
+  stringsBankWriteTime: 637435513737692668
   cacheVersion: 5
 --- !u!114 &748138673912811851
 MonoBehaviour:
@@ -281,7 +373,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 3.6000001
   Length: 4000
 --- !u!114 &1378194104413443634
 MonoBehaviour:
@@ -303,9 +395,9 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 2.8
-  MaxDistance: 8.35
-  Length: 726
+  MinDistance: 0.3
+  MaxDistance: 7.2000003
+  Length: 826
 --- !u!114 &1850596860785900052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637431882029405844
+  lastModified: 637435513737682675
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -344,6 +436,50 @@ MonoBehaviour:
     data1: 3534926611
     data2: 1308415512
   Exists: 1
+--- !u!114 &1959710151355681198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Revive
+  m_EditorClassIdentifier: 
+  Name: Revive
+  Min: 0
+  Max: 1
+  Default: 0.1
+  ID:
+    data1: 666917218
+    data2: 2162199578
+  Exists: 1
+--- !u!114 &2210549937094619443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Blowtorch/Blowtorch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Blowtorch/Blowtorch
+  guid: 49818c3f56d96749929252324ce18cc0
+  Banks:
+  - {fileID: 1850596860785900052}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -4795168087710389498}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &2494850653276805909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,8 +520,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 75
+  MaxDistance: 8600
   Length: 500
 --- !u!114 &4095331487292627472
 MonoBehaviour:
@@ -453,6 +589,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 96000
+--- !u!114 &6275037866893151324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Revive
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Revive
+  guid: d154d9cb13dde04e8a96c143ec262c4f
+  Banks:
+  - {fileID: 1850596860785900052}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7467731043415967285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,9 +718,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637431882029425769
+  lastModified: 637435513737692668
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1944
+    Value: 2128
   Exists: 1
