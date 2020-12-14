@@ -3,21 +3,29 @@ using UnityEngine;
 
 namespace Camera {
     public class FollowTarget : MonoBehaviour {
-        public Transform myCamera;
-        public Transform target;
+        private UnityEngine.Camera _mainCamera;
+        private Transform _playerTransform;
         public float cameraAngle = 55f;
         public float offsetXZ = -10f;
         private Vector3 _verticalOffset;
 
         private void Awake() {
-            SetRotationAndOffset();
+            _mainCamera = UnityEngine.Camera.main;
+           try {
+               _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+           }
+           catch (NullReferenceException) {
+               Debug.Log($"There is no GameObject with the Player tag in the scene!");
+           }
+
+           SetRotationAndOffset();
         }
 
         private void LateUpdate() {
-            // Remove SetPosition() from LateUpdate() when Designers have settled on an angle and offset value 
+            //TODO Remove SetPosition() from LateUpdate() when Designers have settled on an angle and offset value 
             SetRotationAndOffset();
             
-            myCamera.position = target.position + _verticalOffset;
+            _mainCamera.transform.position = _playerTransform.position + _verticalOffset;
         }
         
         private void SetRotationAndOffset() {

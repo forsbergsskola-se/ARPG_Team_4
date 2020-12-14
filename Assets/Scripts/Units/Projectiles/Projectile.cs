@@ -1,32 +1,32 @@
-﻿using System;
-using Units;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Projectile : MonoBehaviour {
-    public float maxDistance = 30.0f;
-    public int Damage { get; set; }
-    private Vector3 _startPoint;
+namespace Units.Projectiles {
+    public class Projectile : MonoBehaviour {
+        public float maxDistance = 30.0f;
+        private int _damage;
+        private Vector3 _startPoint;
 
-    private void Start() {
-        _startPoint = transform.position;
-    }
+        private void Start() {
+            _startPoint = transform.position;
+        }
 
-    private void Update() {
-        if ((transform.position - _startPoint).magnitude > maxDistance) {
+        private void Update() {
+            if ((transform.position - _startPoint).magnitude > maxDistance) {
+                Destroy(gameObject);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other) {
+            IDamagable target = other.gameObject.GetComponent<IDamagable>();
+            if (target != null) {
+                target.TakeDamage(_damage);
+            }
             Destroy(gameObject);
         }
-    }
 
-    private void OnTriggerEnter(Collider other) {
-        
-        //Check if target can be damaged
-        IDamagable target = other.gameObject.GetComponent<IDamagable>();
-        if (target != null) {
-            Debug.Log("hit damagable");
-            target.TakeDamage(Damage);
+        public void Setup(int damage, float velocity, Vector3 direction) {
+            _damage = damage;
+            GetComponent<Rigidbody>().velocity = velocity * direction;
         }
-        
-        // projectile has collided with something and should be destroyed.
-        Destroy(gameObject);
     }
 }

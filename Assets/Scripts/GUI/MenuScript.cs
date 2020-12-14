@@ -18,7 +18,7 @@ namespace GUI {
         private readonly string menuString = "Menu";
         public AudioSource buttonSound;
         public GameObject shadow;
-        private ClickToMove clickToMove;
+        private PlayerMovement _playerMovement;
 
         //Audio
         /*
@@ -35,8 +35,8 @@ namespace GUI {
             playerTransform = GetComponent<AudioTest>().ButtonPress;
             */
 
-            clickToMove = GameObject.FindGameObjectWithTag("Player").GetComponent<ClickToMove>();
-            if (clickToMove == null)
+            _playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            if (_playerMovement == null)
                 Debug.LogWarning("ClickToMove missing", this);
         }
 
@@ -47,14 +47,14 @@ namespace GUI {
                 if (theMenuIsActive) {
                     menuRef.SetActive(false);
                     shadow.SetActive(false);
-                    clickToMove.InputDisabled = false;
+                    _playerMovement.InputDisabled = false;
                     ResumeGame();
                 }
                 else {
                     PauseGame();
                     menuRef.SetActive(true);
                     shadow.SetActive(true);
-                    clickToMove.InputDisabled = true;
+                    _playerMovement.InputDisabled = true;
                 }
             }
         }
@@ -63,7 +63,7 @@ namespace GUI {
             PlayButtonSound();
             shadow.SetActive(false);
             menuRef.SetActive(false);
-            clickToMove.InputDisabled = false;
+            _playerMovement.InputDisabled = false;
             ResumeGame();
         }
 
