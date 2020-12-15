@@ -20,7 +20,7 @@ GameObject:
   m_Layer: 10
   m_Name: PatrolEnemy
   m_TagString: Untagged
-  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -96,10 +96,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.652451
-  m_Height: 2.4452205
+  m_Radius: 0.7653866
+  m_Height: 2.4607978
   m_Direction: 2
-  m_Center: {x: 0, y: 0.13, z: -0.18361628}
+  m_Center: {x: 0, y: 0.60716236, z: -0.15246236}
 --- !u!114 &6750384429320539023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   ticsPerSecond: 2
-  radius: 1.4
+  radius: 1.8
   unitLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -193,12 +193,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 736dc297a03c3b84386c7f8559fcb02d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.019
+      value: 2.976
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736dc297a03c3b84386c7f8559fcb02d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: -0.008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736dc297a03c3b84386c7f8559fcb02d,
         type: 3}
