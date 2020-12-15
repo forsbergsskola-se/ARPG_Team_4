@@ -37,13 +37,6 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         _playerHealth.GetDamaged.AddListener(TakeDamageState);
     }
     void Update() {
-        if (Mathf.Abs(_previousPos.x - transform.position.x) > positionUpdateOffset ||
-            Mathf.Abs(_previousPos.z - transform.position.z) > positionUpdateOffset) {
-            playerIsMoving = true;
-        } else playerIsMoving = false;
-        //playerIsCrouching = get a bool;
-        //if (check player health <= 0) stateMove = StateMove.Dead;
-        
         //Check Player Equipped Weapon
         if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.Unarmed;
         else if (Input.GetKey(KeyCode.Alpha2)) stateWeapon = StateWeapon.CrowBar;
@@ -51,7 +44,13 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         //Todo Create GetEquippedWeapon() script
         //stateWeapon = GetEquippedWeapon()
 
-
+        if (Mathf.Abs(_previousPos.x - transform.position.x) > positionUpdateOffset ||
+            Mathf.Abs(_previousPos.z - transform.position.z) > positionUpdateOffset) {
+            playerIsMoving = true;
+        } else playerIsMoving = false;
+   
+        if (_playerHealth.healthScriptableObject.CurrentHealth <= 0) stateMove = StateMove.Dead;
+        
         //StateMove transition
         switch (stateMove) 
         {
@@ -71,7 +70,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 if (!playerIsMoving) stateMove = StateMove.CrouchIdle;
                 break;
             case StateMove.Dead:
-                //Call dead methods here
+                if (_playerHealth.healthScriptableObject.CurrentHealth > 0) stateMove = StateMove.Idle;
                 break;
         }
         
