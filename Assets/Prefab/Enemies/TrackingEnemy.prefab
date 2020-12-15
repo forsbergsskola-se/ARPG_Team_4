@@ -178,9 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d3baf1eb838754a8af0a982e5bb4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   enemyViewDistance: 7
-  enemyIdleTime: 3
 --- !u!114 &235692997006351235
 MonoBehaviour:
   m_ObjectHideFlags: 0
