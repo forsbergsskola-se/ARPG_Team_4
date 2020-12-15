@@ -15,6 +15,7 @@ namespace Units.Player {
         private MeleeAttack _meleeAttack;
         private PlayerMovement _playerMovement;
         private PlayerRangedAttack _playerRangedAttack;
+        private FSMWorkWithAnimation _FSMWorkWithAnimation;
 
         private bool _rangedAttackCharging = false;
         private bool _inputDisabled = false;
@@ -26,10 +27,12 @@ namespace Units.Player {
         }
 
         private void Start() {
+            
             _mainCamera = UnityEngine.Camera.main;
             _meleeAttack = GetComponent<MeleeAttack>();
             _playerMovement = GetComponent<PlayerMovement>();
             _playerRangedAttack = GetComponent<PlayerRangedAttack>();
+            _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
             healthScriptableObject.OnDeath += DisableInput;
         }
 
@@ -76,13 +79,15 @@ namespace Units.Player {
         private void RangedAttackCommencing() {
             _playerRangedAttack.SetNextAttackTime();
             _rangedAttackCharging = true;
+            _FSMWorkWithAnimation.playerIsAiming = _rangedAttackCharging;
             _playerMovement.ResetPath();
         }
 
         private void HandleRangedAttackCharging() {
-            if (RangeChargeBroken()) {
+            if (RangeChargeBroken())
+            {
                 _rangedAttackCharging = false;
-                //when true aim
+                _FSMWorkWithAnimation.playerIsAiming = _rangedAttackCharging;
             }
             else {
                 transform.LookAt(_target.transform.position);

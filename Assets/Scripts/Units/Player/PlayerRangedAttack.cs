@@ -17,6 +17,7 @@ namespace Units.Player {
         [SerializeField] private float attacksPerSecond = 1f;
 
         // variables
+        private FSMWorkWithAnimation _FSMWorkWithAnimation;
         private bool _inputDisabled;
         private float _nextAttackTime;
         private float _attackTime;
@@ -26,6 +27,7 @@ namespace Units.Player {
             _nextAttackTime = Time.time + _attackTime;
         }
         private void Start() {
+            _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
             _attackTime = 1f / attacksPerSecond;
         }
     
@@ -34,10 +36,11 @@ namespace Units.Player {
         }
 
         public void FireProjectile(Vector3 target) {
-            //fire bullet animation
             var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, firingPosition.rotation);
             projectileInstance.Setup(damage, projectileVelocity, GetShootDir(target));
             _nextAttackTime = Time.time + _attackTime;
+            
+            _FSMWorkWithAnimation.playerIsAttacking = true;
         }
 
         private Vector3 GetShootDir(Vector3 target) {
