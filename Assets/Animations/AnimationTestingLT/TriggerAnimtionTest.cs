@@ -4,7 +4,7 @@ public class TriggerAnimtionTest : MonoBehaviour {
     private Animator _triggerAnimation;
     private bool _walkingButtonPressed;
     private bool _attackButtonPressed;
-    private bool _TookDamage;
+    private bool _tookDamage;
     private int _weaponEquipped = 1;
 
     private void Start() {
@@ -14,7 +14,7 @@ public class TriggerAnimtionTest : MonoBehaviour {
     private void Update() {
         _walkingButtonPressed = Input.GetKey(KeyCode.Space);
         _attackButtonPressed = Input.GetKey(KeyCode.D);
-        _TookDamage = Input.GetKeyDown(KeyCode.E);
+        _tookDamage = Input.GetKeyDown(KeyCode.E);
 
         if (Input.GetKey(KeyCode.Alpha1)) _weaponEquipped = 1;
         else if (Input.GetKey(KeyCode.Alpha2)) _weaponEquipped = 2;
@@ -23,6 +23,6 @@ public class TriggerAnimtionTest : MonoBehaviour {
         _triggerAnimation.SetInteger("WeaponInHand", _weaponEquipped);
         _triggerAnimation.SetBool("IsWalking", _walkingButtonPressed);
         _triggerAnimation.SetBool("IsAttacking", _attackButtonPressed);
-        _triggerAnimation.SetBool("PlayerTookDamage", _TookDamage);
+        _triggerAnimation.SetBool("PlayerTookDamage", _tookDamage);
     }
 }

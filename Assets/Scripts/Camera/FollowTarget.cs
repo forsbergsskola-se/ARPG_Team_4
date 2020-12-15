@@ -11,26 +11,24 @@ namespace Camera {
 
         private void Awake() {
             _mainCamera = UnityEngine.Camera.main;
-           try {
-               _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-           }
-           catch (NullReferenceException) {
-               Debug.Log($"There is no GameObject with the Player tag in the scene!");
-           }
-
-           SetRotationAndOffset();
+            _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            if (_playerTransform == null)
+               Debug.LogError("There is no GameObject with the Player tag in the scene", this);
+            SetRotationAndOffset();
         }
 
         private void LateUpdate() {
-            //TODO Remove SetPosition() from LateUpdate() when Designers have settled on an angle and offset value 
-            SetRotationAndOffset();
-            
             _mainCamera.transform.position = _playerTransform.position + _verticalOffset;
         }
         
         private void SetRotationAndOffset() {
             transform.rotation = Quaternion.Euler(cameraAngle, 45f, 0f);
             _verticalOffset = new Vector3(offsetXZ, 20f, offsetXZ);
+        }
+        
+        void OnValidate()
+        {
+            SetRotationAndOffset();
         }
     }
 }
