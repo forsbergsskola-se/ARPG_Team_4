@@ -26,8 +26,7 @@ namespace Units.Player {
             _inputDisabled = true;
         }
 
-        private void Start()
-        {
+        private void Start() {
             
             _mainCamera = UnityEngine.Camera.main;
             _meleeAttack = GetComponent<MeleeAttack>();
