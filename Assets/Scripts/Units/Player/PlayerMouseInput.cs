@@ -42,7 +42,6 @@ namespace Units.Player {
                 return;
             
             if (_rangedAttackCharging) {
-                _FSMWorkWithAnimation.playerIsAiming = true;
                 HandleRangedAttackCharging();
                 return;
             }
