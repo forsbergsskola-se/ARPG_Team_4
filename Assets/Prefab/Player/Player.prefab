@@ -4432,7 +4432,7 @@ Transform:
   m_GameObject: {fileID: 8708937829773913603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.67, y: 0.00000011920929, z: -7.3493824}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4372069121263590431}
   - {fileID: 4595886793657455661}
@@ -4543,7 +4543,7 @@ NavMeshAgent:
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 500
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4583,7 +4583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
     type: 2}
-  reviveCheckpointLocation: {fileID: 0}
+  reviveCheckpointLocation: {fileID: 8329280503942411449}
 --- !u!114 &4384987372524265629
 MonoBehaviour:
   m_ObjectHideFlags: 0
