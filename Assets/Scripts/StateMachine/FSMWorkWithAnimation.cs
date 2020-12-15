@@ -7,14 +7,15 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     private Animator _animator;
     private PlayerHealth _playerHealth;
     private Vector3 _previousPos;
-    private const string stateName = "State";
+    private const string AnimPlayerIsAiming = "IsAiming";
     private const string AnimStateMoveBlend = "StateMove";
-    private const string AnimPlayerIsAttacking = "IsAttacking";
     private const string AnimPlayerWeapon = "WeaponInHand";
+    private const string AnimPlayerIsAttacking = "IsAttacking";
     private const string AnimPlayerTookDamage = "PlayerTookDamage";
     
     //PlayerStates
-    public float positionUpdateOffset = 0.085f;
+    public float positionUpdateOffset = 0.01f;
+    public bool playerIsAiming = false;
     public bool playerIsMoving = false;
     public bool playerTookDamage = false;
     public bool playerIsAttacking = false;
@@ -39,8 +40,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         if (Mathf.Abs(_previousPos.x - transform.position.x) > positionUpdateOffset ||
             Mathf.Abs(_previousPos.z - transform.position.z) > positionUpdateOffset) {
             playerIsMoving = true;
-        }
-        else playerIsMoving = false;
+        } else playerIsMoving = false;
         //playerIsCrouching = get a bool;
         //if (check player health <= 0) stateMove = StateMove.Dead;
         
@@ -88,6 +88,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 break;
         }
 
+        _animator.SetBool(AnimPlayerIsAiming, playerIsAiming);
         _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
         _animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
         _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);

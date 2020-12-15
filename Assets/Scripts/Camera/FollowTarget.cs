@@ -26,8 +26,7 @@ namespace Camera {
             _verticalOffset = new Vector3(offsetXZ, 20f, offsetXZ);
         }
         
-        void OnValidate()
-        {
+        void OnValidate() {
             SetRotationAndOffset();
         }
     }
