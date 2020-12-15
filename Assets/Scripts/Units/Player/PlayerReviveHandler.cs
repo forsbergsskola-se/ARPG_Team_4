@@ -21,6 +21,7 @@ namespace Units.Player {
         public void ReviveAtLocation() {
             RestoreHealthAndEnableControls();
             _playerHealth.TriggerInvulnerability();
+            _playerHealth.TriggerInvulnerability();
         }
 
         public void ReviveAtCheckpoint() {

@@ -9,9 +9,7 @@ namespace Units.Player {
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float attacksPerSecond = 1f;
         [SerializeField] private LayerMask enemyLayers;
-        [SerializeField] private Texture2D mouseOverCursorTexture;
-        
-        
+
         private UnityEngine.Camera _mainCamera;
         private FSMWorkWithAnimation _FSMWorkWithAnimation;
         public LayerMask whatCanBeClickedOn;
@@ -27,19 +25,10 @@ namespace Units.Player {
             // derive attack time
             _attackTime = 1f / attacksPerSecond;
         }
-        
-        public void UpdateCursor(Vector3 target) {
-            if (WithinAttackRange(target)) {
-                Cursor.SetCursor(mouseOverCursorTexture, Vector2.zero, CursorMode.Auto);
-            }
-            else {
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            }
-        }
-        
+
         public void TryAttack(GameObject target) {
-            if (CanAttack(target)) {
-                Attack();
+            if (CanAttack()) {
+                Attack(target);
             }
         }
         
@@ -48,23 +37,33 @@ namespace Units.Player {
             return attackRange > distance;
         }
 
-        private bool CanAttack(GameObject target) {
+        private bool CanAttack() {
             return !_inputDisabled && Time.time >= _nextAttackTime;
         }
 
-        private void Attack() {
+        private void Attack(GameObject target) {
             transform.LookAt(GetMousePosition());
             _nextAttackTime = Time.time + _attackTime;
-                
+            
+            DoSingleTargetDamage(target);
+
+            //Melee Audio
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", transform.position);
+            _FSMWorkWithAnimation.playerIsAttacking = true;
+        }
+
+        private void DoSingleTargetDamage(GameObject target) {
+            if (target != null)
+                target.GetComponent<IDamagable>().TakeDamage(attackDamage);
+        }
+
+        private void DoAreaDamage() {
             Collider[] enemiesHit = Physics.OverlapSphere(AttackPoint, attackRadius, enemyLayers);
 
             foreach (var enemy in enemiesHit) {
                 Debug.Log($"{enemy.name} was hit for {attackDamage} damage.");
                 enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-                //Melee Audio
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", transform.position);
             }
-            _FSMWorkWithAnimation.playerIsAttacking = true;
         }
 
         private void OnDrawGizmosSelected() {

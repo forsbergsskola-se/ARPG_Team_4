@@ -97,10 +97,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.7211947
+  m_Radius: 0.6398713
+  m_Height: 1.8111603
   m_Direction: 2
-  m_Center: {x: 0, y: 0.44, z: -0.25990152}
+  m_Center: {x: -0.00007587671, y: 0.65, z: -0.2748958}
 --- !u!114 &6744319597867503741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,9 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d3baf1eb838754a8af0a982e5bb4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   enemyViewDistance: 7
-  enemyIdleTime: 3
 --- !u!114 &235692997006351235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +213,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3310a22d30ed5d443a565136b1e11a05,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.172
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3310a22d30ed5d443a565136b1e11a05,
         type: 3}

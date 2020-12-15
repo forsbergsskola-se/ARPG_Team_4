@@ -9,7 +9,7 @@ namespace Assets.Scripts.Units.Player {
         private FSMWorkWithAnimation _fsm;
         private const float TimerSeconds = 0.1f;
         private float _deltaTimer = TimerSeconds;
-        private int _ticktest = 10;
+        private int _tickTest = 10;
 
         void Start() {
             _fsm = GetComponent<FSMWorkWithAnimation>();
@@ -18,12 +18,11 @@ namespace Assets.Scripts.Units.Player {
         }
         void LateUpdate() {
             //todo fix this lazy ass shit
-            if (_fsm.playerTookDamage && _ticktest < 0) {
-                //Debug.Log("works");
-                _ticktest = 10;
+            if (_fsm.playerTookDamage && _tickTest < 0) {
+                _tickTest = 10;
                 _fsm.playerTookDamage = false;
             }
-            _ticktest--;
+            _tickTest--;
             
             if (!_fsm.playerIsMoving) {
                 _deltaTimer -= Time.deltaTime;

@@ -8,6 +8,8 @@ namespace Units.Player {
     public class PlayerMouseInput : MonoBehaviour {
         [SerializeField] private LayerMask walkableLayers;
         [SerializeField] private LayerMask enemyLayers;
+        [SerializeField] private Texture2D meleeCursorTexture;
+        [SerializeField] private Texture2D rangedCursorTexture;
         public HealthScriptableObject healthScriptableObject;
         private GameObject _target;
         private UnityEngine.Camera _mainCamera;
@@ -15,8 +17,9 @@ namespace Units.Player {
         private MeleeAttack _meleeAttack;
         private PlayerMovement _playerMovement;
         private PlayerRangedAttack _playerRangedAttack;
+        private FSMWorkWithAnimation _FSMWorkWithAnimation;
 
-        private bool _rangedAttackCharging = false;
+        private bool _RMBCharging = false;
         private bool _inputDisabled = false;
 
         public bool InputDisabled { set => _inputDisabled = value; }
@@ -26,10 +29,12 @@ namespace Units.Player {
         }
 
         private void Start() {
+            
             _mainCamera = UnityEngine.Camera.main;
             _meleeAttack = GetComponent<MeleeAttack>();
             _playerMovement = GetComponent<PlayerMovement>();
             _playerRangedAttack = GetComponent<PlayerRangedAttack>();
+            _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
             healthScriptableObject.OnDeath += DisableInput;
         }
 
@@ -37,52 +42,88 @@ namespace Units.Player {
 
             if (_inputDisabled)
                 return;
-            
-            if (_rangedAttackCharging) {
-                HandleRangedAttackCharging();
+
+            bool LMBClickedThisTurn = Input.GetMouseButtonDown(0);
+            bool LMBHeld = Input.GetMouseButton(0);
+            bool RMBClickedThisTurn = Input.GetMouseButtonDown(1);
+            bool RMBHeld = Input.GetMouseButton(1);
+
+            SetMouseCursor();
+
+            if (LMBClickedThisTurn || RMBClickedThisTurn) {
+                HandleNewAction(LMBClickedThisTurn, RMBClickedThisTurn);
                 return;
             }
             
+            if (LMBHeld || RMBHeld) {
+                HandleButtonHeld(LMBHeld, RMBHeld);
+            }
+        }
+
+        private void SetMouseCursor() {
             Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-        
             if (IsMouseCursorOnEnemy(myRay, out hitInfo)) {
-                _target = hitInfo.collider.gameObject;
-
-                if (Input.GetMouseButtonDown(1)) {
-                    RangedAttackCommencing();
-                    return;
-                }
-
-                _meleeAttack.UpdateCursor(_target.transform.position);
-            
-                if (Input.GetMouseButtonDown(0)) {
-                    if (_meleeAttack.WithinAttackRange(_target.transform.position)) {
-                        _meleeAttack.TryAttack(_target);
-                        return;
-                    }
-                }
+                if (_meleeAttack.WithinAttackRange(hitInfo.collider.gameObject.transform.position))
+                    SetMeleeCursor();
+                else
+                    SetRangedCursor();
             }
             else {
                 SetDefaultCursor();
             }
-        
-            if (Physics.Raycast(myRay, out hitInfo, 1000, walkableLayers)) {
-                if (Input.GetMouseButton(0))
-                    _playerMovement.SetDestination(hitInfo.point);
+        }
+
+        private void SetRangedCursor() {
+            Cursor.SetCursor(rangedCursorTexture, Vector2.zero, CursorMode.Auto);
+        }
+
+        private void SetMeleeCursor() {
+            Cursor.SetCursor(meleeCursorTexture, Vector2.zero, CursorMode.Auto);
+        }
+
+        private void HandleNewAction(bool LMBClickedThisTurn, bool RMBClickedThisTurn) {
+            _playerMovement.ResetPath();
+            _RMBCharging = false;
+            
+            Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            
+            if (IsMouseCursorOnEnemy(myRay, out hitInfo)) {
+                _target = hitInfo.collider.gameObject;
+                if (LMBClickedThisTurn) {
+                    TryMeleeAttack();
+                }
+                else if (RMBClickedThisTurn) {
+                    StartRangedAttack();
+                }
             }
         }
 
-        private void RangedAttackCommencing() {
-            _playerRangedAttack.SetNextAttackTime();
-            _rangedAttackCharging = true;
+        private void WalkToMousePoint() {
+            Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(myRay, out hitInfo, 1000, walkableLayers)) {
+                _playerMovement.SetDestination(hitInfo.point);
+            }
+        }
+
+        private void HandleButtonHeld(bool LMBHeld, bool RMBheld) {
             _playerMovement.ResetPath();
+            if (RMBheld) {
+                HandleRangedAttackCharging();
+            }
+            else if (LMBHeld) {
+                TryMeleeAttack();
+            }
         }
 
         private void HandleRangedAttackCharging() {
-            if (RangeChargeBroken()) {
-                _rangedAttackCharging = false;
-                //when true aim
+            if (RangeChargeBroken())
+            {
+                Debug.Log("Range charge broken: ");
+                _RMBCharging = false;
+                _FSMWorkWithAnimation.playerIsAiming = _RMBCharging;
             }
             else {
                 transform.LookAt(_target.transform.position);
@@ -90,11 +131,9 @@ namespace Units.Player {
                     _playerRangedAttack.FireProjectile(_target.transform.position);
             }
         }
-
+        
         private bool RangeChargeBroken() {
-            return !Input.GetMouseButton(1) || 
-                   _target == null || 
-                   !_playerRangedAttack.TargetWithinAttackRange(_target.transform.position);
+            return _target == null || !_playerRangedAttack.TargetWithinAttackRange(_target.transform.position);
         }
 
         private static void SetDefaultCursor() {
@@ -103,6 +142,21 @@ namespace Units.Player {
 
         private bool IsMouseCursorOnEnemy(Ray myRay, out RaycastHit hitInfo) {
             return Physics.Raycast(myRay, out hitInfo, 1000, enemyLayers);
+        }
+        
+        private void StartRangedAttack() {
+            _playerRangedAttack.SetNextAttackTime();
+            _RMBCharging = true;
+            _FSMWorkWithAnimation.playerIsAiming = _RMBCharging;
+        }
+
+        private void TryMeleeAttack() {
+            if (_target != null && _meleeAttack.WithinAttackRange(_target.transform.position)) {
+                _meleeAttack.TryAttack(_target);
+            }
+            else {
+                WalkToMousePoint();
+            }
         }
     }
 }

@@ -369,6 +369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 3198314477662570435, guid: 5c84df193a85949e28355d557b6e3c93,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 3198314477662570436, guid: 5c84df193a85949e28355d557b6e3c93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -487,6 +492,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329280503942411449, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329280503942411449, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329280503942411449, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8708937829773913603, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
         type: 3}
@@ -1357,7 +1377,7 @@ PrefabInstance:
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7344
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
@@ -1443,6 +1463,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrackingEnemy_BackAndForth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744319597867503743, guid: 871865645016bf94b9734e317145c9c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871865645016bf94b9734e317145c9c3, type: 3}
@@ -1623,7 +1648,7 @@ PrefabInstance:
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7344
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
@@ -1709,6 +1734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrackingEnemy_Random
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744319597867503743, guid: 871865645016bf94b9734e317145c9c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871865645016bf94b9734e317145c9c3, type: 3}
@@ -2513,7 +2543,7 @@ PrefabInstance:
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7344
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 6744319597867503737, guid: 871865645016bf94b9734e317145c9c3,
         type: 3}
@@ -2599,6 +2629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TrackingEnemy_Loop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6744319597867503743, guid: 871865645016bf94b9734e317145c9c3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871865645016bf94b9734e317145c9c3, type: 3}
@@ -3194,7 +3229,7 @@ PrefabInstance:
     - target: {fileID: 6750384429320539019, guid: 39f5bd91f7e12a74397aeb866a20b481,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.92
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 6750384429320539019, guid: 39f5bd91f7e12a74397aeb866a20b481,
         type: 3}
