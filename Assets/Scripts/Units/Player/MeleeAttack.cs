@@ -11,13 +11,23 @@ namespace Units.Player {
         [SerializeField] private LayerMask enemyLayers;
         [SerializeField] private Texture2D mouseOverCursorTexture;
         
+        
         private UnityEngine.Camera _mainCamera;
+        private FSMWorkWithAnimation _FSMWorkWithAnimation;
         public LayerMask whatCanBeClickedOn;
         private float _nextAttackTime;
         private bool _inputDisabled;
         private Vector3 AttackPoint => transform.TransformPoint(0, 0, attackRange);
         private float _attackTime;
 
+        private void Start() {
+            _mainCamera = UnityEngine.Camera.main;
+            _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
+            
+            // derive attack time
+            _attackTime = 1f / attacksPerSecond;
+        }
+        
         public void UpdateCursor(Vector3 target) {
             if (WithinAttackRange(target)) {
                 Cursor.SetCursor(mouseOverCursorTexture, Vector2.zero, CursorMode.Auto);
@@ -37,13 +47,6 @@ namespace Units.Player {
             var distance = (target - transform.position).magnitude;
             return attackRange > distance;
         }
-        
-        private void Start() {
-            _mainCamera = UnityEngine.Camera.main;
-            
-            // derive attack time
-            _attackTime = 1f / attacksPerSecond;
-        }
 
         private bool CanAttack(GameObject target) {
             return !_inputDisabled && Time.time >= _nextAttackTime;
@@ -59,10 +62,9 @@ namespace Units.Player {
                 Debug.Log($"{enemy.name} was hit for {attackDamage} damage.");
                 enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
                 //Melee Audio
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", GetComponent<Transform>().position);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", transform.position);
             }
-            
-            GetComponent<FSMWorkWithAnimation>().playerIsAttacking = true;
+            _FSMWorkWithAnimation.playerIsAttacking = true;
         }
 
         private void OnDrawGizmosSelected() {
