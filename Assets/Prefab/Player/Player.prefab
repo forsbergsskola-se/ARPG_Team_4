@@ -897,7 +897,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8748892135801146194, guid: dba3e21e3adc2409f8463485a35d4e49, type: 3}
+  - {fileID: 2100000, guid: 249a0f668bc5a974c9806c3e5c598856, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -922,7 +922,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -3235860452477342259, guid: dba3e21e3adc2409f8463485a35d4e49, type: 3}
+  m_Mesh: {fileID: -4545423930167495100, guid: 97253ded6273d914c9aa7adc7e4dcfba, type: 3}
   m_Bones:
   - {fileID: 4595886793657455661}
   - {fileID: 4300699493744437182}
@@ -4699,6 +4699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionUpdateOffset: 0.01
+  playerIsAiming: 0
   playerIsMoving: 0
   playerTookDamage: 0
   playerIsAttacking: 0
