@@ -1,15 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using GUI;
 using Units.Player;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
-namespace SceneManagement
-{
+namespace SceneManagement {
     public class LevelLoader : MonoBehaviour {
         public Animator animator;
-        public float transitionTime = 1f;
+        public float transitionTime = 2f;
+        public bool PlayAnimation = false;
+        public bool SceneLoaded = false;
+        private const string animPlayAnimation = "PlayAnimation";
+        private const string animSceneLoaded = "SceneLoaded";
+
+        private void Awake() {
+            animator.SetTrigger(animPlayAnimation);
+            animator.SetBool(animSceneLoaded, SceneLoaded = false);
+        }
 
         private void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Player")) {
@@ -20,22 +29,18 @@ namespace SceneManagement
         }
 
         private void LoadNextLevel() {
-            var menuScript = GameObject.Find("/Canvas_UI").GetComponent<MenuScript>();
-            
-            // Disable menu during transition
-            if (menuScript == null) {
-                Debug.Log("MenuScript not found in /Canvas_UI", this);
-            }
-            else
-                menuScript.enabled = false;
+            var menuScript = GameObject.Find("/Canvas_PauseMenu_UI").GetComponent<Canvas>();
 
-            //load next level
+            menuScript.enabled = false;
+            animator.SetTrigger(animPlayAnimation);
+            animator.SetBool(animSceneLoaded, SceneLoaded = true);
+
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
         
         private IEnumerator LoadLevel(int levelIndex) {
             
-            animator.SetTrigger("ExitScene");
+            // animator.SetTrigger("ExitScene");
             
             yield return new WaitForSeconds(transitionTime);
             
