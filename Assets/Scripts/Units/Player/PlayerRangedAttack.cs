@@ -34,6 +34,7 @@ namespace Units.Player {
         }
 
         public void FireProjectile(Vector3 target) {
+            //fire bullet animation
             var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, firingPosition.rotation);
             projectileInstance.Setup(damage, projectileVelocity, GetShootDir(target));
             _nextAttackTime = Time.time + _attackTime;
