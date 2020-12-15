@@ -3,7 +3,7 @@ using Units.EnemyAI;
 using UnityEngine;
 
 namespace Units.Player {
-    public class MeleeAttack : MonoBehaviour {
+    public class PlayerMeleeAttack : MonoBehaviour {
         [SerializeField] private int attackDamage;
         [SerializeField] private float attackRange = 2f;
         [SerializeField] private float attackRadius = 2f;
@@ -22,7 +22,6 @@ namespace Units.Player {
             _mainCamera = UnityEngine.Camera.main;
             _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
             
-            // derive attack time
             _attackTime = 1f / attacksPerSecond;
         }
 

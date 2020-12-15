@@ -2,7 +2,7 @@
 
 //TODO check that knockback works, check that disable input from menus etc works.
 namespace Units.Player {
-    [RequireComponent(typeof(MeleeAttack))]
+    [RequireComponent(typeof(PlayerMeleeAttack))]
     [RequireComponent(typeof(PlayerRangedAttack))]
     [RequireComponent(typeof(PlayerMovement))]
     public class PlayerMouseInput : MonoBehaviour {
@@ -14,13 +14,12 @@ namespace Units.Player {
         private GameObject _target;
         private UnityEngine.Camera _mainCamera;
 
-        private MeleeAttack _meleeAttack;
+        private PlayerMeleeAttack _playerMeleeAttack;
         private PlayerMovement _playerMovement;
         private PlayerRangedAttack _playerRangedAttack;
         private FSMWorkWithAnimation _FSMWorkWithAnimation;
 
-        private bool _RMBCharging = false;
-        private bool _inputDisabled = false;
+        private bool _inputDisabled;
 
         public bool InputDisabled { set => _inputDisabled = value; }
 
@@ -31,7 +30,7 @@ namespace Units.Player {
         private void Start() {
             
             _mainCamera = UnityEngine.Camera.main;
-            _meleeAttack = GetComponent<MeleeAttack>();
+            _playerMeleeAttack = GetComponent<PlayerMeleeAttack>();
             _playerMovement = GetComponent<PlayerMovement>();
             _playerRangedAttack = GetComponent<PlayerRangedAttack>();
             _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
@@ -64,7 +63,7 @@ namespace Units.Player {
             Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (IsMouseCursorOnEnemy(myRay, out hitInfo)) {
-                if (_meleeAttack.WithinAttackRange(hitInfo.collider.gameObject.transform.position))
+                if (_playerMeleeAttack.WithinAttackRange(hitInfo.collider.gameObject.transform.position))
                     SetMeleeCursor();
                 else
                     SetRangedCursor();
@@ -84,7 +83,6 @@ namespace Units.Player {
 
         private void HandleNewAction(bool LMBClickedThisTurn, bool RMBClickedThisTurn) {
             _playerMovement.ResetPath();
-            _RMBCharging = false;
             
             Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
@@ -95,7 +93,8 @@ namespace Units.Player {
                     TryMeleeAttack();
                 }
                 else if (RMBClickedThisTurn) {
-                    StartRangedAttack();
+                    if (_playerRangedAttack.AttackIsReady)
+                        StartRangedAttack();
                 }
             }
         }
@@ -121,13 +120,11 @@ namespace Units.Player {
         private void HandleRangedAttackCharging() {
             if (RangeChargeBroken())
             {
-                Debug.Log("Range charge broken: ");
-                _RMBCharging = false;
-                _FSMWorkWithAnimation.playerIsAiming = _RMBCharging;
+                _FSMWorkWithAnimation.playerIsAiming = false;
             }
             else {
                 transform.LookAt(_target.transform.position);
-                if (_playerRangedAttack.ChargeIsReady)
+                if (_playerRangedAttack.AttackIsReady && _playerRangedAttack.BuildUpIsDone)
                     _playerRangedAttack.FireProjectile(_target.transform.position);
             }
         }
@@ -145,14 +142,13 @@ namespace Units.Player {
         }
         
         private void StartRangedAttack() {
-            _playerRangedAttack.SetNextAttackTime();
-            _RMBCharging = true;
-            _FSMWorkWithAnimation.playerIsAiming = _RMBCharging;
+            _playerRangedAttack.StartRangedAttack();
+            _FSMWorkWithAnimation.playerIsAiming = true;
         }
 
         private void TryMeleeAttack() {
-            if (_target != null && _meleeAttack.WithinAttackRange(_target.transform.position)) {
-                _meleeAttack.TryAttack(_target);
+            if (_target != null && _playerMeleeAttack.WithinAttackRange(_target.transform.position)) {
+                _playerMeleeAttack.TryAttack(_target);
             }
             else {
                 WalkToMousePoint();

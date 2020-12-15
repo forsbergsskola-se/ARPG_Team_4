@@ -1575,7 +1575,7 @@ GameObject:
   m_Layer: 9
   m_Name: Firing position
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1587,7 +1587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604213368493994860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 1.314, z: 0.432}
+  m_LocalPosition: {x: -0.003, y: 1.314, z: 0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8329280503942411449}
@@ -3781,8 +3781,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 75
+  OverrideMaxDistance: 8600
 --- !u!114 &7138203249058673917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4431,7 +4431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8708937829773913603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.67, y: 0.00000011920929, z: -7.3493824}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 4372069121263590431}
@@ -4613,10 +4613,12 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5226552845543506164, guid: 0307b07d5adcb46408fd3c63b1b7bca8,
     type: 3}
   firingPosition: {fileID: 5461967155341931247}
-  _attackRange: 40
-  projectileVelocity: 10
+  targetRange: 10
+  buildUpTime: 0.2
+  projectileVelocity: 20
+  projectileMaxDistance: 30
   damage: 10
-  attacksPerSecond: 1
+  attackCoolDown: 1
 --- !u!114 &469871592968579855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4630,7 +4632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 4
-  attackRange: 2
+  attackRange: 3
   attackRadius: 0.5
   attacksPerSecond: 2
   enemyLayers:
