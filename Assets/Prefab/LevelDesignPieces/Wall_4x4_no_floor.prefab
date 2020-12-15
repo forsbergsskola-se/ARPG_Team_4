@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9090142486512908092}
   - component: {fileID: 9090142486512908093}
   - component: {fileID: 4638227336670931826}
-  m_Layer: 0
-  m_Name: Wall_4x4_no_floor (41)
+  m_Layer: 11
+  m_Name: Wall_4x4_no_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
