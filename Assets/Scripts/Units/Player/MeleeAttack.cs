@@ -9,7 +9,6 @@ namespace Units.Player {
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float attacksPerSecond = 1f;
         [SerializeField] private LayerMask enemyLayers;
-        [SerializeField] private Texture2D mouseOverCursorTexture;
 
         private UnityEngine.Camera _mainCamera;
         private FSMWorkWithAnimation _FSMWorkWithAnimation;
@@ -26,16 +25,7 @@ namespace Units.Player {
             // derive attack time
             _attackTime = 1f / attacksPerSecond;
         }
-        
-        public void UpdateCursor(Vector3 target) {
-            if (WithinAttackRange(target)) {
-                Cursor.SetCursor(mouseOverCursorTexture, Vector2.zero, CursorMode.Auto);
-            }
-            else {
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            }
-        }
-        
+
         public void TryAttack(GameObject target) {
             if (CanAttack()) {
                 Attack(target);
