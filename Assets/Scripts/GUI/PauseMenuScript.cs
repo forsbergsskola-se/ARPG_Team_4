@@ -3,20 +3,12 @@ using UnityEngine;
 //using AudioScripts.AudioTest;
 
 namespace GUI {
-    /// <summary>
-    /// Makes menu appear and disappear when button is clicked.
-    /// Handles PortalButton Actions
-    /// </summary>
-
-// TODO mousover vfx, button press vfx,
-// TODO menu transition vfx, 
 // TODO PortalButton sound effect
 
-    public class MenuScript : MonoBehaviour
+    public class PauseMenuScript : MonoBehaviour
     {
-        public GameObject menuRef;
-        private readonly string menuString = "Menu";
-        public AudioSource buttonSound;
+        public GameObject pauseMenuRef;
+        private readonly string menuInputString = "Menu";
         public GameObject shadow;
         private PlayerMovement _playerMovement;
 
@@ -42,17 +34,17 @@ namespace GUI {
 
         void Update() {
 
-            if (Input.GetButtonDown(menuString)) {
-                bool theMenuIsActive = menuRef.activeSelf;
+            if (Input.GetButtonDown(menuInputString)) {
+                bool theMenuIsActive = pauseMenuRef.activeSelf;
                 if (theMenuIsActive) {
-                    menuRef.SetActive(false);
+                    pauseMenuRef.SetActive(false);
                     shadow.SetActive(false);
                     _playerMovement.InputDisabled = false;
                     ResumeGame();
                 }
                 else {
                     PauseGame();
-                    menuRef.SetActive(true);
+                    pauseMenuRef.SetActive(true);
                     shadow.SetActive(true);
                     _playerMovement.InputDisabled = true;
                 }
@@ -60,38 +52,21 @@ namespace GUI {
         }
 
         public void ResumeButton() {
-            PlayButtonSound();
+            //PlayButtonSound();
             shadow.SetActive(false);
-            menuRef.SetActive(false);
+            pauseMenuRef.SetActive(false);
             _playerMovement.InputDisabled = false;
             ResumeGame();
         }
 
         public void LoadCheckpointButton() {
-            //TODO
-            buttonSound.Play(); 
             //PlayButtonSound();
-            Debug.Log("Load checkpoint clicked");
         }
-    
-        public void SettingsButton() {
-            //TODO
-            buttonSound.Play();
-            //PlayButtonSound();
-            Debug.Log("Settings clicked");
-        }
-    
-        public void QuitToMainMenuButton() {
-            //TODO
-            //buttonSound.Play();
-            PlayButtonSound();
-            Debug.Log("Quit to main menu clicked");
-        }
-    
 
+    
+     
         public void QuitButton() {
-            Debug.Log("The application should quit if the game is built");
-            PlayButtonSound();
+            //PlayButtonSound();
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
