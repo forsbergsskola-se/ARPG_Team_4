@@ -7,13 +7,15 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     private Animator _animator;
     private PlayerHealth _playerHealth;
     private Vector3 _previousPos;
+    private const string AnimPlayerIsAiming = "IsAiming";
     private const string AnimStateMoveBlend = "StateMove";
-    private const string AnimPlayerIsAttacking = "IsAttacking";
     private const string AnimPlayerWeapon = "WeaponInHand";
+    private const string AnimPlayerIsAttacking = "IsAttacking";
     private const string AnimPlayerTookDamage = "PlayerTookDamage";
     
     //PlayerStates
     public float positionUpdateOffset = 0.01f;
+    public bool playerIsAiming = false;
     public bool playerIsMoving = false;
     public bool playerTookDamage = false;
     public bool playerIsAttacking = false;
@@ -86,6 +88,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 break;
         }
 
+        _animator.SetBool(AnimPlayerIsAiming, playerIsAiming);
         _animator.SetBool(AnimPlayerIsAttacking, playerIsAttacking);
         _animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
         _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
