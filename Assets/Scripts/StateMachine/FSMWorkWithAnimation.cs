@@ -95,6 +95,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
         
         if (playerIsAttacking) playerIsAttacking = false;
+        if (playerIsAiming) FixTiltOfCharacter();
         
         //set attacking state from bool attacking?
         //set take damage state if health drops, add listener?
@@ -115,6 +116,13 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         yield return new WaitForSecondsRealtime(1.5f);
         playerIsAttacking = false;
         Debug.Log("Player exit damage sector");
+    }
+    
+    private void FixTiltOfCharacter() {
+        //Lazy fix, fixes character tilt
+        Vector3 eulerAngles = transform.eulerAngles;
+        eulerAngles = new Vector3(0, eulerAngles.y, eulerAngles.z);
+        transform.eulerAngles = eulerAngles;
     }
 }
 
