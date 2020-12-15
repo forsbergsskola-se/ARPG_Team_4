@@ -10,9 +10,9 @@ namespace Units.Player {
     public class PlayerReviveHandler : MonoBehaviour {
         public HealthScriptableObject healthScriptableObject;
         public Transform reviveCheckpointLocation;
-        private PlayerHealth _playerHealth = null;
+        private PlayerHealth _playerHealth;
         //private PlayerMovement _playerMovementRef = null;
-        private PlayerMouseInput _playerMouseInputRef = null;
+        private PlayerMouseInput _playerMouseInputRef;
         private void Start() {
             _playerHealth = GetComponent<PlayerHealth>();
             _playerMouseInputRef = GetComponent<PlayerMouseInput>();
@@ -21,12 +21,14 @@ namespace Units.Player {
         public void ReviveAtLocation() {
             RestoreHealthAndEnableControls();
             _playerHealth.TriggerInvulnerability();
-            _playerHealth.TriggerInvulnerability();
+            SendMessage("ShowReviveVFX", SendMessageOptions.DontRequireReceiver);
         }
 
         public void ReviveAtCheckpoint() {
             RestoreHealthAndEnableControls();
+            _playerHealth.TriggerInvulnerability();
             this.gameObject.transform.position = reviveCheckpointLocation.position;
+            SendMessage("ShowReviveVFX", SendMessageOptions.DontRequireReceiver);
         }
 
         private void RestoreHealthAndEnableControls() {

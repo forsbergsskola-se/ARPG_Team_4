@@ -25,6 +25,7 @@ namespace Units.Player {
                 return;
             
             healthScriptableObject.CurrentHealth -= damage;
+            SendMessage("ShowBloodVFX", SendMessageOptions.DontRequireReceiver);
             GetDamaged.Invoke();
             StartCoroutine(DamageFeedback());
         }
@@ -42,6 +43,7 @@ namespace Units.Player {
         
         public void GainHealth(int healValue) {
             healthScriptableObject.CurrentHealth += healValue;
+            SendMessage("ShowHealthVFX", SendMessageOptions.DontRequireReceiver);
         }
 
         public void TriggerInvulnerability() {
