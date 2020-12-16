@@ -12,24 +12,7 @@ namespace GUI {
         public GameObject shadow;
         private PlayerMovement _playerMovement;
 
-        //Audio
-        /*
-        [FMODUnity.EventRef]
-        public string MenuBGMEvent = "";
-        FMOD.Studio.EventInstance MenuBGM;
-        public GameObject _player;
-        public FMOD.Studio.EventInstance MenuButtonAudio;
-        private bool playerTransform;
-        */
-
         private void Start() {
-            //Audio Button
-            
-            /*
-            MenuButtonAudio = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Button/Buttons");
-            playerTransform = GetComponent<AudioTest>().ButtonPress;
-            */
-
             _playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
             if (_playerMovement == null)
                 Debug.LogWarning("ClickToMove missing", this);
@@ -87,30 +70,12 @@ namespace GUI {
             var aTposition = AT.gameObject.transform.position;
             FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2", aTposition);
 
-            /*
-            AT.MenuQuitButtonPress = 0;
-            AT.MenuQuitButtonPress += 1;
-            */
         }
         private void PlayButtonSound() {
             var AT = FindObjectOfType<AudioTest>();
             Debug.Log("Calling for Audio Test");
             var aTposition = AT.gameObject.transform.position;
             FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1", aTposition);
-
-            /*
-            AT.MenuButtonPress = 0;
-            AT.MenuButtonPress += 1;
-
-            //Debug.Log("ButtonPress True ");
-            /*
-            playerTransform = true;
-            Debug.Log("ButtonPress " + playerTransform);
-            //            buttonSound.Play();
-            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(MenuButtonAudio, transform, GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>());
-            //FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons", _player.GetComponent<Transform>().position);
-            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(MenuButtonAudio, transform, GameObject.FindObjectOfType<player>.GetComponent<Rigidbody>()); 
-            */
         }
     
         void PauseGame ()
@@ -118,13 +83,6 @@ namespace GUI {
             var AT = FindObjectOfType<AudioTest>();
             AT.MenuBGMSoundOn += 1;
             
-            /*
-            AT.MenuBGMSoundOn += 1;
-            FMODUnity.RuntimeManager.
-            FMOD.Studio.EventInstance MenuBGMEvent;
-            MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
-            MenuBGM.Start();
-            */
             Time.timeScale = 0f;
         }
 
@@ -141,5 +99,40 @@ namespace GUI {
             var audioTest = FindObjectOfType<AudioTest>();
             audioTest.MenuActive(menuActive);
         }
+
+        /*
+        //Audio
+        [FMODUnity.EventRef]
+        public string MenuBGMEvent = "";
+        FMOD.Studio.EventInstance MenuBGM;
+        public GameObject _player;
+        public FMOD.Studio.EventInstance MenuButtonAudio;
+        private bool playerTransform;
+        
+        //Audio Button
+        MenuButtonAudio = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Button/Buttons");
+            playerTransform = GetComponent<AudioTest>().ButtonPress;
+            
+            AT.MenuQuitButtonPress = 0;
+            AT.MenuQuitButtonPress += 1;    
+
+            AT.MenuBGMSoundOn += 1;
+            FMODUnity.RuntimeManager.
+            FMOD.Studio.EventInstance MenuBGMEvent;
+            MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+            MenuBGM.Start();
+            
+            AT.MenuButtonPress = 0;
+            AT.MenuButtonPress += 1;
+
+            Debug.Log("ButtonPress True ");
+            
+            playerTransform = true;
+            Debug.Log("ButtonPress " + playerTransform);
+            buttonSound.Play();
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(MenuButtonAudio, transform, GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>());
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons", _player.GetComponent<Transform>().position);
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(MenuButtonAudio, transform, GameObject.FindObjectOfType<player>.GetComponent<Rigidbody>()); 
+        */
     }
 }
