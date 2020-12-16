@@ -88,6 +88,7 @@ namespace Units.Player {
 
         private void HandleNewAction(bool LMBClickedThisTurn, bool RMBClickedThisTurn) {
             _playerMovement.ResetPath();
+            _target = null;
             
             Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
@@ -134,7 +135,6 @@ namespace Units.Player {
                 transform.LookAt(_target.transform.position);
                 if (_playerRangedAttack.AttackIsReady && _playerRangedAttack.BuildUpIsDone) {
                     _playerRangedAttack.FireProjectile(_target.transform.position);
-                    _target = null;
                 }
             }
         }
@@ -152,7 +152,7 @@ namespace Units.Player {
         }
         
         private void StartRangedAttack() {
-            if (_FSMWorkWithAnimation.gunIsReady) return;
+            if (!_FSMWorkWithAnimation.gunIsReady) return;
             _playerRangedAttack.StartRangedAttack();
         }
 

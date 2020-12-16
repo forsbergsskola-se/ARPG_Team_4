@@ -42,7 +42,7 @@ namespace Units.Player {
             var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, Quaternion.identity);
             projectileInstance.Setup(damage, projectileVelocity, projectileMaxDistance, GetShootDir(target));
             _nextAttackTime = Time.time + attackCoolDown;
-            
+            _buildUpTimer = Time.time + buildUpTime + attackCoolDown;
             _FSMWorkWithAnimation.playerIsAttacking = true;
         }
 
