@@ -9,6 +9,7 @@ namespace Units.Player {
         [SerializeField] private float attackRadius = 2f;
         [SerializeField] private float attacksPerSecond = 1f;
         [SerializeField] private LayerMask enemyLayers;
+        private GameObject _target;
 
         private UnityEngine.Camera _mainCamera;
         private FSMWorkWithAnimation _FSMWorkWithAnimation;
@@ -44,16 +45,18 @@ namespace Units.Player {
             transform.LookAt(GetMousePosition());
             _nextAttackTime = Time.time + _attackTime;
             
-            DoSingleTargetDamage(target);
+            //DoSingleTargetDamage(target);
+            _target = target;
 
             //Melee Audio
             FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", transform.position);
             _FSMWorkWithAnimation.playerIsAttacking = true;
         }
 
-        private void DoSingleTargetDamage(GameObject target) {
-            if (target != null)
-                target.GetComponent<IDamagable>().TakeDamage(attackDamage);
+        private void DoSingleTargetDamage() {
+            Debug.Log("Do single target damage");
+            if (_target != null)
+                _target.GetComponent<IDamagable>().TakeDamage(attackDamage);
         }
 
         private void DoAreaDamage() {
@@ -80,5 +83,12 @@ namespace Units.Player {
 
             return hitLocation;
         }
+
+        /*
+        public void DoSingleTargetDamage() {
+            Debug.Log("Do single target damage");
+            if (_target != null)
+                _target.GetComponent<IDamagable>().TakeDamage(attackDamage);
+        }*/
     }
 }

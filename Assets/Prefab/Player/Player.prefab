@@ -4727,8 +4727,10 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
-  meleeCursorTexture: {fileID: 0}
-  rangedCursorTexture: {fileID: 0}
+  defaultCursorTexture: {fileID: 2800000, guid: e49858feafaceee4f8eb58796663fbc0,
+    type: 3}
+  meleeCursorTexture: {fileID: 2800000, guid: 3f103c9a92d11454388a12a5ea2fbc57, type: 3}
+  rangedCursorTexture: {fileID: 2800000, guid: 8ccb6ec41e7c71649b4c66ffb40a4c38, type: 3}
   healthScriptableObject: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7,
     type: 2}
 --- !u!114 &8341489397942856597
