@@ -265,6 +265,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flyingtrackerspike
       objectReference: {fileID: 0}
+    - target: {fileID: 4758137610991119557, guid: 736dc297a03c3b84386c7f8559fcb02d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758137610991119557, guid: 736dc297a03c3b84386c7f8559fcb02d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758137610991119557, guid: 736dc297a03c3b84386c7f8559fcb02d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758137610991119557, guid: 736dc297a03c3b84386c7f8559fcb02d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758137610991119557, guid: 736dc297a03c3b84386c7f8559fcb02d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -300.536
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736dc297a03c3b84386c7f8559fcb02d, type: 3}
 --- !u!4 &1858666946934678113 stripped
