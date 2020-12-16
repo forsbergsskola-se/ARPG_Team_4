@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class AudioTest : MonoBehaviour
 {
-    /*
-    FMOD.Studio.EventInstance ambience;
-    public Transform TestHitBox;
-    public LayerMask Layer;
-    */
     public int MenuButtonPress = 0;
     public int MenuBGMSoundOn = 0;
     public int Menu = 0;
@@ -20,19 +15,46 @@ public class AudioTest : MonoBehaviour
     void Start()
     {
         MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
-        
-        /*
-        var MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
-        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiences/Ambiences");
-        ambience.start();
-        */
+
         MenuBGMSoundOn = 0;
         MenuButtonPress = 0;
         MenuQuitButtonPress = 0;
     }
     void Update()
     {
-        /*
+    }
+    public void MenuActive(bool menuIsActive)
+    {
+        if (menuIsActive)
+        {
+            GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+            MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+            MenuBGM.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            MenuBGM.start();
+        }
+        else
+        {
+            MenuBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            GetComponent<FMODUnity.StudioEventEmitter>().Play();
+        }
+    }
+}
+
+    /*
+    void MenuButtonSound() 
+    {
+        
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons", GetComponent<Transform>().position);
+    
+    FMOD.Studio.EventInstance ambience;
+    public Transform TestHitBox;
+    public LayerMask Layer;
+    
+       
+        var MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiences/Ambiences");
+        ambience.start();
+
         if(MenuButtonPress >= 1)
         {
             MenuButtonSound();
@@ -54,35 +76,12 @@ public class AudioTest : MonoBehaviour
             MenuQuit();
             MenuQuitButtonPress -= 1;
         }
-        /*
+
         else if (MenuBGMSoundOn == 0)
         {
             MenuBGMOff();
         }
-        */
-    }
-    public void MenuActive(bool menuIsActive)
-    {
-        if (menuIsActive)
-        {
-        GetComponent<FMODUnity.StudioEventEmitter>().Stop();
-        MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
-        MenuBGM.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-        MenuBGM.start();
-        }
-        else
-        {
-            MenuBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            GetComponent<FMODUnity.StudioEventEmitter>().Play();
-        }
-    }
 
-
-    /*
-    void MenuButtonSound() 
-    {
-        
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons", GetComponent<Transform>().position);
     }
     void MenuQuit()
     {
@@ -144,4 +143,3 @@ public class AudioTest : MonoBehaviour
             playersMoving = false;
         }
         */
-}
