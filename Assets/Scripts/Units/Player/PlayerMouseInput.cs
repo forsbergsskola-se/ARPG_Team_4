@@ -129,11 +129,8 @@ namespace Units.Player {
         }
 
         private void HandleRangedAttackCharging() {
-            if (RangeChargeBroken())
+            if (!RangeChargeBroken())
             {
-               
-            }
-            else {
                 transform.LookAt(_target.transform.position);
                 if (_playerRangedAttack.AttackIsReady && _playerRangedAttack.BuildUpIsDone) {
                     _playerRangedAttack.FireProjectile(_target.transform.position);

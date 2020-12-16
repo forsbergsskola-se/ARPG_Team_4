@@ -45,10 +45,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.082718074
-  m_Height: 0.33827105
-  m_Direction: 2
-  m_Center: {x: -0.000000007450581, y: 0.0008329749, z: 0.0005043298}
+  m_Radius: 0.088057995
+  m_Height: 1.9009622
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.052324355, z: 1.6025281}
 --- !u!114 &5226552845543506164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dfb575808143364689e8f2282a09026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 30
 --- !u!54 &106366651987909704
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,8 +126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381980351621585190}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.035, z: -0.316}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: -0.035, z: -0.776}
+  m_LocalScale: {x: 0.59273714, y: 10.687933, z: 0.59273714}
   m_Children: []
   m_Father: {fileID: 488469411911290799}
   m_RootOrder: 0
@@ -159,7 +158,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9260fdc7ca6f9a46b3fcb84ae83c4b9, type: 2}
+  - {fileID: 2100000, guid: beb0cd1507385cc4a922789b426ed691, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
