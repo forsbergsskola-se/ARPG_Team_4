@@ -3795,7 +3795,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de2fbafd52af994bb7db24f464dad58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonPress: 0
+  MenuButtonPress: 0
+  MenuBGMSoundOn: 0
+  Menu: 0
+  MenuQuitButtonPress: 0
+  MenuBGMEvent: event:/THESPLIT/AmbientSplit/MenuHUMSplit
 --- !u!1 &7138203249085300318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,12 +4573,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _invulnerabilityDuration: 5
-  deadPlayerLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  alivePlayerLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &4944435242784873940
 MonoBehaviour:
   m_ObjectHideFlags: 0

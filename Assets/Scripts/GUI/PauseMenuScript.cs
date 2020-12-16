@@ -44,12 +44,14 @@ namespace GUI {
                     shadow.SetActive(false);
                     _playerMovement.InputDisabled = false;
                     ResumeGame();
+                    SetMenuSoundActive(false);
                 }
                 else {
                     PauseGame();
                     pauseMenuRef.SetActive(true);
                     shadow.SetActive(true);
                     _playerMovement.InputDisabled = true;
+                    SetMenuSoundActive(true);
                 }
             }
         }
@@ -60,6 +62,7 @@ namespace GUI {
             pauseMenuRef.SetActive(false);
             _playerMovement.InputDisabled = false;
             ResumeGame();
+            SetMenuSoundActive(false);
         }
 
         public void LoadCheckpointButton() {
@@ -112,15 +115,31 @@ namespace GUI {
     
         void PauseGame ()
         {
-            //FMOD.Studio.EventInstance MenuBGMEvent;
-            //MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
-            //MenuBGM.Start();
+            var AT = FindObjectOfType<AudioTest>();
+            AT.MenuBGMSoundOn += 1;
+            
+            /*
+            AT.MenuBGMSoundOn += 1;
+            FMODUnity.RuntimeManager.
+            FMOD.Studio.EventInstance MenuBGMEvent;
+            MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+            MenuBGM.Start();
+            */
             Time.timeScale = 0f;
         }
 
         void ResumeGame ()
         {
+            var AT = FindObjectOfType<AudioTest>();
+            AT.MenuBGMSoundOn -= 1;
             Time.timeScale = 1;
+        }
+
+        private void SetMenuSoundActive(bool menuActive)
+        {
+            Debug.Log("Trigger menu sound: " + menuActive);
+            var audioTest = FindObjectOfType<AudioTest>();
+            audioTest.MenuActive(menuActive);
         }
     }
 }

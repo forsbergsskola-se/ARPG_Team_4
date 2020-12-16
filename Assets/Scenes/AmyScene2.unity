@@ -322,22 +322,37 @@ PrefabInstance:
     - target: {fileID: 7138203249058673916, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
         type: 3}
       propertyPath: OverrideMinDistance
-      value: 75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7138203249058673916, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
         type: 3}
       propertyPath: OverrideMaxDistance
-      value: 8600
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7138203249058673916, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
         type: 3}
       propertyPath: Event
-      value: event:/THESPLIT/AmbientSplit/MenuHUMSplit
+      value: event:/THESPLIT/AmbientSplit/Level1Split
       objectReference: {fileID: 0}
     - target: {fileID: 7138203249058673916, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
         type: 3}
       propertyPath: PlayEvent
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138203249058673916, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
+        type: 3}
+      propertyPath: TriggerOnce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138203249058673916, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
+        type: 3}
+      propertyPath: StopEvent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138203249058673917, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
+        type: 3}
+      propertyPath: MenuBGMEvent
+      value: event:/THESPLIT/AmbientSplit/MenuHUMSplit
       objectReference: {fileID: 0}
     - target: {fileID: 7138203249058673918, guid: e30629ab8bf5dc5409d2aab71a52bb3b,
         type: 3}
