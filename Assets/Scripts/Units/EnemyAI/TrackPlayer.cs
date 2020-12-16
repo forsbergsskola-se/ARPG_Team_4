@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Units.Player;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 using UnityEngine.AI;
 
 // TRACKING THREAT
@@ -12,6 +14,7 @@ namespace Units.EnemyAI
         private Transform _playerTransform;
         public float enemyViewDistance = 8f;
         private float _nextAttackTime;
+        public HealthScriptableObject playerHealth;
 
         private void Start() {
             waypointMovement = GetComponent<WaypointMovement>();
@@ -35,6 +38,7 @@ namespace Units.EnemyAI
                 var newPos = enemyPos - dirToPlayer;
                     _enemy.SetDestination(newPos);
                 if (distance <= meleeAttackEnemy.attackRange) {
+                    _enemy.ResetPath();
                     if (Time.time < _nextAttackTime) return;
                     meleeAttackEnemy.Attack();
                     _nextAttackTime = Time.time + 1f / meleeAttackEnemy.attacksPerSecond;
@@ -57,8 +61,9 @@ namespace Units.EnemyAI
 
             if (Vector3.Angle(rayDirection, transform.forward) <= 140 * 0.5f) {
                 if (Physics.Raycast(transform.position, rayDirection, out hit, enemyViewDistance)) {
-                    Debug.DrawLine(transform.position, hit.point, Color.red);
-                    return hit.transform.CompareTag("Player");
+                    if (hit.transform.CompareTag("Player") && playerHealth.CurrentHealth > 0){
+                        return true;
+                    }
                 }
             }
             return false;
