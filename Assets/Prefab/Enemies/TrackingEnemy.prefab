@@ -179,6 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyViewDistance: 7
+  playerHealth: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7, type: 2}
 --- !u!114 &235692997006351235
 MonoBehaviour:
   m_ObjectHideFlags: 0
