@@ -38,6 +38,7 @@ namespace Units.EnemyAI
                 var newPos = enemyPos - dirToPlayer;
                     _enemy.SetDestination(newPos);
                 if (distance <= meleeAttackEnemy.attackRange) {
+                    _enemy.ResetPath();
                     if (Time.time < _nextAttackTime) return;
                     meleeAttackEnemy.Attack();
                     _nextAttackTime = Time.time + 1f / meleeAttackEnemy.attacksPerSecond;
