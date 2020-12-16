@@ -16,6 +16,10 @@ namespace Units.EnemyAI
         private float _nextAttackTime;
         public HealthScriptableObject playerHealth;
 
+        //Audio
+        public int enemyAudioInterval = 0;
+        public float _enemyAudioInterval = 0f;
+
         private void Start() {
             waypointMovement = GetComponent<WaypointMovement>();
             meleeAttackEnemy = GetComponent<MeleeAttackEnemy>();
@@ -38,6 +42,7 @@ namespace Units.EnemyAI
                 var newPos = enemyPos - dirToPlayer;
                     _enemy.SetDestination(newPos);
                 if (distance <= meleeAttackEnemy.attackRange) {
+                    
                     _enemy.ResetPath();
                     if (Time.time < _nextAttackTime) return;
                     meleeAttackEnemy.Attack();
@@ -50,6 +55,8 @@ namespace Units.EnemyAI
         
         private bool PathComplete() {
             if (_enemy.remainingDistance < 1) {
+                Debug.Log("Enemy Reset ");
+                enemyAudioInterval -= 1;
                 return true;
             }
             return false;
@@ -62,11 +69,20 @@ namespace Units.EnemyAI
             if (Vector3.Angle(rayDirection, transform.forward) <= 140 * 0.5f) {
                 if (Physics.Raycast(transform.position, rayDirection, out hit, enemyViewDistance)) {
                     if (hit.transform.CompareTag("Player") && playerHealth.CurrentHealth > 0){
+                        EnemyAudio();
                         return true;
                     }
                 }
             }
             return false;
+        }
+        void EnemyAudio()
+        {
+            if(enemyAudioInterval < 1)
+            {
+                enemyAudioInterval += 1;
+                FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit", GetComponent<Transform>().position);
+            }
         }
     }
 } 
