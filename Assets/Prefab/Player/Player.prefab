@@ -3754,8 +3754,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7138203249058673919}
-  m_LocalRotation: {x: -0, y: -0.26392356, z: 0, w: 0.9645436}
-  m_LocalPosition: {x: 9.67, y: -2, z: 7.3493824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8329280503942411449}
@@ -3774,7 +3774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Ambiences/Ambiences
+  Event: event:/THESPLIT/AmbientSplit/Level1Split
   PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
