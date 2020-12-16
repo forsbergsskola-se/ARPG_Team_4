@@ -1587,9 +1587,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604213368493994860}
-  m_LocalRotation: {x: -2.842171e-14, y: -1, z: -1.2003709e-20, w: -0.00000018725349}
-  m_LocalPosition: {x: -898.9966, y: 220.01443, z: -6.427783}
-  m_LocalScale: {x: 5000, y: 4999.9995, z: 4999.9995}
+  m_LocalRotation: {x: -1.6077748e-13, y: -0.7071068, z: 1.6077748e-13, w: 0.7071068}
+  m_LocalPosition: {x: -1370, y: 169, z: -19}
+  m_LocalScale: {x: 4999.998, y: 4999.9995, z: 4999.9985}
   m_Children: []
   m_Father: {fileID: 1219270108737903480}
   m_RootOrder: 0
@@ -3796,7 +3796,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de2fbafd52af994bb7db24f464dad58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonPress: 0
+  MenuButtonPress: 0
+  MenuBGMSoundOn: 0
+  Menu: 0
+  MenuQuitButtonPress: 0
+  MenuBGMEvent: event:/THESPLIT/AmbientSplit/MenuHUMSplit
 --- !u!1 &7138203249085300318
 GameObject:
   m_ObjectHideFlags: 0

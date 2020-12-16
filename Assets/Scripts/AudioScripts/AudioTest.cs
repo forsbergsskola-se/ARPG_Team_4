@@ -19,14 +19,20 @@ public class AudioTest : MonoBehaviour
     FMOD.Studio.EventInstance MenuBGM;
     void Start()
     {
-        //ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiences/Ambiences");
-        //ambience.start();
+        MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        
+        /*
+        var MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        ambience = FMODUnity.RuntimeManager.CreateInstance("event:/Ambiences/Ambiences");
+        ambience.start();
+        */
         MenuBGMSoundOn = 0;
         MenuButtonPress = 0;
         MenuQuitButtonPress = 0;
     }
     void Update()
     {
+        /*
         if(MenuButtonPress >= 1)
         {
             MenuButtonSound();
@@ -34,12 +40,13 @@ public class AudioTest : MonoBehaviour
         }
         if(MenuBGMSoundOn >= 1)
         {
+            //  Problem might be that it keep updating and calling the On for the BGM insted of just once need to be changed to once.
             Debug.Log("Menu BGM On");
             MenuBGMOn();
         }
-        else
+        else if(MenuBGMSoundOn == 0)
         {
-            //Debug.Log("Menu BGM Off");
+            Debug.Log("Menu BGM Off");
             MenuBGMOff();
         }
         if(MenuQuitButtonPress >= 1)
@@ -54,6 +61,24 @@ public class AudioTest : MonoBehaviour
         }
         */
     }
+    public void MenuActive(bool menuIsActive)
+    {
+        if (menuIsActive)
+        {
+        GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+        MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        MenuBGM.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        MenuBGM.start();
+        }
+        else
+        {
+            MenuBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            GetComponent<FMODUnity.StudioEventEmitter>().Play();
+        }
+    }
+
+
+    /*
     void MenuButtonSound() 
     {
         
@@ -65,17 +90,34 @@ public class AudioTest : MonoBehaviour
     }
     void MenuBGMOn()
     {
-        FMOD.Studio.EventInstance MenuBGM;
+        FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        //MenuBGM.start(FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent));
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(MenuBGM, GetComponentInParent<Transform>(), GetComponentInParent<Rigidbody>());
+
+        GetComponent<FMODUnity.StudioEventEmitter>().Play();
+        //GetComponent<FMODUnity.StudioParameterTrigger>().TriggerParameters();
 
         /*
+        var MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        MenuBGM.start();
+        FMOD.Studio.EventInstance MenuBGM;
         MenuBGM = FMODUnity.RuntimeManager.CreateInstance("event:/THESPLIT/AmbientSplit/MenuHUMSplit");
         //GetComponent<FMODUnity.StudioEventEmitter>().Play();
         //FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/AmbientSplit/MenuHUMSplit", GetComponent<Transform>().position);
-        */
+        
     }
     void MenuBGMOff()
     {
+        MenuBGM.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+        
+
+        /*
+        var MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+        MenuBGM.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        
+        //GetComponent<FMODUnity.StudioEventEmitter>().Stop();
+        
     }
     void MenuPauseAudio()
     {

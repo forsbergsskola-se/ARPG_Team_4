@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.Serialization;
 
 namespace Units.Player {
     public class PlayerHealth : MonoBehaviour, IDamagable {
@@ -8,20 +10,28 @@ namespace Units.Player {
         public UnityEvent GetDamaged;
         [Tooltip("the duration the player is invulnerable from damage on revival")]
         [SerializeField] private float _invulnerabilityDuration = 5f;
-        private bool _invulnerable = false;
-        //Player Hit Sound
-        /*
-        FMOD.Studio.EventInstance PlayerHitSound;
+        private bool _invulnerable = false; 
+        LayerMask _deadPlayerLayer;
+        LayerMask _alivePlayerLayer;
 
-        private void Awake()
-        {
-            PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
+        private void Start() {
+            _deadPlayerLayer = 0;
+            _alivePlayerLayer = 9;
         }
-        */
+
+        private void FixedUpdate()
+        {
+            if (healthScriptableObject.CurrentHealth > 0 && gameObject.layer != _alivePlayerLayer) {
+                gameObject.layer = _alivePlayerLayer;
+            }
+            else if (gameObject.layer != _deadPlayerLayer) {
+                gameObject.layer = _deadPlayerLayer;
+            }
+        }
+
         public void TakeDamage(int damage) {
             
-            //Player can be invulnerable to damage
-            if (_invulnerable)
+            if (_invulnerable && healthScriptableObject.CurrentHealth == 0)
                 return;
             
             healthScriptableObject.CurrentHealth -= damage;
@@ -52,32 +62,10 @@ namespace Units.Player {
             StartCoroutine(InvulnerabilityTimer());
         }
 
-        // Deactivates invulnerable after duration.
         private IEnumerator InvulnerabilityTimer() {
             yield return new WaitForSeconds(_invulnerabilityDuration);
             _invulnerable = false;
             Debug.Log("Player invulnerable: " + _invulnerable);
         }
-
-        // private IEnumerator FlashObject(MeshRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed) {
-        //     var flashingFor = 0;
-        //     var newColor = flashColor;
-        //         while(flashingFor < flashTime)
-        //     {
-        //         toFlash.color = newColor;
-        //         flashingFor += Time.deltaTime;
-        //         yield return new WaitForSecons(flashSpeed);
-        //         flashingFor += flashSpeed;
-        //         if(newColor == flashColor)
-        //         {
-        //             newColor = originalColor;
-        //         }
-        //         else
-        //         {
-        //             newColor = flashColor;
-        //         }
-        //     }
-        // }
-        
     }
 }

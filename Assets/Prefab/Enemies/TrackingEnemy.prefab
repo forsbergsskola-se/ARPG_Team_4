@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8353260949224751483}
   - component: {fileID: 2998622218867294218}
   - component: {fileID: 235692997006351235}
+  - component: {fileID: 1605834365768586771}
   m_Layer: 10
   m_Name: TrackingEnemy
   m_TagString: Untagged
@@ -199,6 +200,20 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &1605834365768586771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6744319597867503743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19caddc656514cf08c1603b74a18f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageBloodVFX: {fileID: 2167627289507765755, guid: 098f29803ac4043eba34b507c82d31c8,
+    type: 3}
 --- !u!1001 &164005311236728482
 PrefabInstance:
   m_ObjectHideFlags: 0

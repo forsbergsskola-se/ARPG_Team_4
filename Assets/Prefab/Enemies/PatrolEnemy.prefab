@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6750384429320539018}
   - component: {fileID: 8348040642433948297}
   - component: {fileID: 7234552052443642281}
+  - component: {fileID: 1075906487785162743}
   m_Layer: 10
   m_Name: PatrolEnemy
   m_TagString: Untagged
@@ -183,6 +184,20 @@ MonoBehaviour:
   unitLayers:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &1075906487785162743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750384429320539021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19caddc656514cf08c1603b74a18f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageBloodVFX: {fileID: 2167627289507765755, guid: 098f29803ac4043eba34b507c82d31c8,
+    type: 3}
 --- !u!1001 &2180295003034633610
 PrefabInstance:
   m_ObjectHideFlags: 0
