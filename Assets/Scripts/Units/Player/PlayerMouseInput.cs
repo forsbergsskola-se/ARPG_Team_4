@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 //TODO check that knockback works, check that disable input from menus etc works.
 namespace Units.Player {
@@ -28,13 +29,16 @@ namespace Units.Player {
         }
 
         private void Start() {
-            
             _mainCamera = UnityEngine.Camera.main;
             _playerMeleeAttack = GetComponent<PlayerMeleeAttack>();
             _playerMovement = GetComponent<PlayerMovement>();
             _playerRangedAttack = GetComponent<PlayerRangedAttack>();
             _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
             healthScriptableObject.OnDeath += DisableInput;
+        }
+
+        private void OnDestroy() {
+            healthScriptableObject.OnDeath -= DisableInput;
         }
 
         private void Update() {

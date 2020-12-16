@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
-using UnityEngine.Serialization;
 
 namespace Units.Player {
     public class PlayerHealth : MonoBehaviour, IDamagable {
@@ -58,14 +56,12 @@ namespace Units.Player {
 
         public void TriggerInvulnerability() {
             _invulnerable = true;
-            Debug.Log("Player invulnerable: " + _invulnerable);
             StartCoroutine(InvulnerabilityTimer());
         }
 
         private IEnumerator InvulnerabilityTimer() {
             yield return new WaitForSeconds(_invulnerabilityDuration);
             _invulnerable = false;
-            Debug.Log("Player invulnerable: " + _invulnerable);
         }
     }
 }

@@ -3,22 +3,19 @@ using UnityEngine;
 
 public class ReviveMenuScript : MonoBehaviour {
     public HealthScriptableObject healthScriptableObject; 
-    public GameObject menuRef;
-    private PlayerReviveHandler _playerReviveHandler;
+    [SerializeField] private GameObject menuRef;
+    private PlayerReviveHandler _playerReviveHandler => GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerReviveHandler>();
     public GameObject shadow;
-
-    // Start is called before the first frame update
-    void Start()
-    {
+    
+    void Start() {
         // Register for player death event
         healthScriptableObject.OnDeath += ShowMenu;
-        
-        //get reference to revive handler
-        _playerReviveHandler = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerReviveHandler>();
-        if (_playerReviveHandler == null)
-            Debug.LogWarning("Couldn't find revive handler on Player OR player couldn't be found", this);
     }
-    
+
+    private void OnDestroy() {
+        healthScriptableObject.OnDeath -= ShowMenu;
+    }
+
     public void ReviveButton() {
         Debug.Log("Revive button clicked");
         _playerReviveHandler.ReviveAtLocation();
