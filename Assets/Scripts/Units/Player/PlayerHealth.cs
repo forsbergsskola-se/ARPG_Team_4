@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.Serialization;
 
 namespace Units.Player {
     public class PlayerHealth : MonoBehaviour, IDamagable {
@@ -8,7 +10,9 @@ namespace Units.Player {
         public UnityEvent GetDamaged;
         [Tooltip("the duration the player is invulnerable from damage on revival")]
         [SerializeField] private float _invulnerabilityDuration = 5f;
-        private bool _invulnerable = false;
+        private bool _invulnerable = false; 
+        LayerMask _deadPlayerLayer;
+        LayerMask _alivePlayerLayer;
         //Player Hit Sound
         /*
         FMOD.Studio.EventInstance PlayerHitSound;
@@ -18,10 +22,29 @@ namespace Units.Player {
             PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
         }
         */
+        private void Start()
+        {
+            _deadPlayerLayer = 0;
+            _alivePlayerLayer = 9;
+        }
+
+        private void FixedUpdate()
+        {
+            
+            if (healthScriptableObject.CurrentHealth > 0 && gameObject.layer != alivePlayerLayer)
+            {
+                gameObject.layer = alivePlayerLayer;
+            }
+            else if (gameObject.layer != deadPlayerLayer)
+            {
+                gameObject.layer = deadPlayerLayer;
+            }
+        }
+
         public void TakeDamage(int damage) {
             
             //Player can be invulnerable to damage
-            if (_invulnerable)
+            if (_invulnerable && healthScriptableObject.CurrentHealth == 0)
                 return;
             
             healthScriptableObject.CurrentHealth -= damage;
