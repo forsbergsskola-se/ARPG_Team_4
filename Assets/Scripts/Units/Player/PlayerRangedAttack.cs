@@ -24,16 +24,17 @@ namespace Units.Player {
         private bool _inputDisabled;
         private float _nextAttackTime;
         private float _buildUpTimer;
-
         public bool AttackIsReady => Time.time >= _nextAttackTime;
         public bool BuildUpIsDone => Time.time >= _buildUpTimer;
-        public void StartRangedAttack() {
-            _buildUpTimer = Time.time + buildUpTime;
-        }
+        
         private void Start() {
             _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
         }
-    
+        
+        
+        public void StartRangedAttack() {
+            _buildUpTimer = Time.time + buildUpTime;
+        }
         public bool TargetWithinAttackRange(Vector3 target) {
             return (target - transform.position).magnitude <= targetRange;
         }

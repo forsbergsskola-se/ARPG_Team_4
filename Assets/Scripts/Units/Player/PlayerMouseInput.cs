@@ -63,9 +63,10 @@ namespace Units.Player {
             Ray myRay = _mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (IsMouseCursorOnEnemy(myRay, out hitInfo)) {
-                if (_playerMeleeAttack.WithinAttackRange(hitInfo.collider.gameObject.transform.position))
+                if (_playerMeleeAttack.WithinAttackRange(hitInfo.collider.gameObject.transform.position) &&
+                    _FSMWorkWithAnimation.crowbarIsReady)
                     SetMeleeCursor();
-                else
+                else if (_FSMWorkWithAnimation.gunIsReady)
                     SetRangedCursor();
             }
             else {
@@ -93,7 +94,7 @@ namespace Units.Player {
                     TryMeleeAttack();
                 }
                 else if (RMBClickedThisTurn) {
-                    if (_playerRangedAttack.AttackIsReady)
+                    if (_playerRangedAttack.AttackIsReady && _FSMWorkWithAnimation.gunIsReady)
                         StartRangedAttack();
                 }
             }
@@ -109,8 +110,11 @@ namespace Units.Player {
 
         private void HandleButtonHeld(bool LMBHeld, bool RMBheld) {
             _playerMovement.ResetPath();
-            if (RMBheld) {
+            if (RMBheld)
+            {
+                if (!_FSMWorkWithAnimation.gunIsReady) return;
                 HandleRangedAttackCharging();
+
             }
             else if (LMBHeld) {
                 TryMeleeAttack();
@@ -120,7 +124,7 @@ namespace Units.Player {
         private void HandleRangedAttackCharging() {
             if (RangeChargeBroken())
             {
-                _FSMWorkWithAnimation.playerIsAiming = false;
+               
             }
             else {
                 transform.LookAt(_target.transform.position);
@@ -142,12 +146,13 @@ namespace Units.Player {
         }
         
         private void StartRangedAttack() {
+            if (_FSMWorkWithAnimation.gunIsReady) return;
             _playerRangedAttack.StartRangedAttack();
-            _FSMWorkWithAnimation.playerIsAiming = true;
         }
 
         private void TryMeleeAttack() {
-            if (_target != null && _playerMeleeAttack.WithinAttackRange(_target.transform.position)) {
+            if (_target != null && _playerMeleeAttack.WithinAttackRange(_target.transform.position) &&
+                _FSMWorkWithAnimation.crowbarIsReady) {
                 _playerMeleeAttack.TryAttack(_target);
             }
             else {

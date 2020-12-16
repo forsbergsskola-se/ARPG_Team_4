@@ -20,6 +20,27 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     public bool playerTookDamage = false;
     public bool playerIsAttacking = false;
     public bool playerIsCrouching = false;
+
+    private bool _gunIsReady;
+    public bool gunIsReady
+    {
+        get => _gunIsReady;
+        set {
+            _gunIsReady = value;
+            _crowbarIsReady = !value;
+        }
+    }
+    
+    private bool _crowbarIsReady;
+    public bool crowbarIsReady
+    {
+        get => _crowbarIsReady;
+        set {
+            _crowbarIsReady = value;
+            _gunIsReady = !value;
+        }
+    }
+    
     public enum StateWeapon{Unarmed, CrowBar, Gun}
     public enum StateMove{Idle, Running, CrouchIdle, CrouchMove, Dead}
     
@@ -41,6 +62,12 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.Unarmed;
         else if (Input.GetKey(KeyCode.Alpha2)) stateWeapon = StateWeapon.CrowBar;
         else if (Input.GetKey(KeyCode.Alpha3)) stateWeapon = StateWeapon.Gun;
+
+        if (stateWeapon == StateWeapon.Gun && Input.GetMouseButton(1)) playerIsAiming = true;
+        else playerIsAiming = false;
+
+        //if (playerIsAiming) Debug.Log("Player is aiming");
+        
         //Todo Create GetEquippedWeapon() script
         //stateWeapon = GetEquippedWeapon()
 
@@ -80,10 +107,12 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 //Logic
                 break;
             case StateWeapon.CrowBar:
-                //Logic
+                if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Draw Crowbar")) 
+                    crowbarIsReady = true;
                 break;
             case StateWeapon.Gun:
-                //Logic
+                if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Drawing Gun"))
+                    gunIsReady = true;
                 break;
         }
 
@@ -94,7 +123,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
         
         if (playerIsAttacking) playerIsAttacking = false;
-        if (playerIsAiming) FixTiltOfCharacter();
+        //if (playerIsAiming) FixTiltOfCharacter();
         
         //set attacking state from bool attacking?
         //set take damage state if health drops, add listener?
