@@ -28,6 +28,10 @@ namespace Units.Player {
         public void DisableInput() {
             _inputDisabled = true;
         }
+        
+        public void EnableInput() {
+            _inputDisabled = false;
+        }
 
         private void Start() {
             _mainCamera = UnityEngine.Camera.main;

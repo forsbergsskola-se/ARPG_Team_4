@@ -19,21 +19,22 @@ namespace Units.Player {
         }
     
         public void ReviveAtLocation() {
-            RestoreHealthAndEnableControls();
+            RestoreHealth();
             _playerHealth.TriggerInvulnerability();
             SendMessage("ShowReviveVFX", SendMessageOptions.DontRequireReceiver);
         }
 
         public void ReviveAtCheckpoint() {
-            RestoreHealthAndEnableControls();
+            RestoreHealth();
             _playerHealth.TriggerInvulnerability();
             this.gameObject.transform.position = reviveCheckpointLocation.position;
             SendMessage("ShowReviveVFX", SendMessageOptions.DontRequireReceiver);
         }
 
-        private void RestoreHealthAndEnableControls() {
+        private void RestoreHealth() {
             healthScriptableObject.SetCurrentHealthToMax();
-            _playerMouseInputRef.InputDisabled = false;
+            //_playerMouseInputRef.InputDisabled = false;
         }
+        
     }
 }

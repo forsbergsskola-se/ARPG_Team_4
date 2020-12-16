@@ -123,7 +123,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
         
         if (playerIsAttacking) playerIsAttacking = false;
-        //if (playerIsAiming) FixTiltOfCharacter();
+        if (playerIsAiming) FixTiltOfCharacter();
         
         //set attacking state from bool attacking?
         //set take damage state if health drops, add listener?
