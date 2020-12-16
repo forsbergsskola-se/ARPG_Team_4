@@ -1238,9 +1238,9 @@ RectTransform:
   m_Children:
   - {fileID: 4749539343161426595}
   - {fileID: 5702475276695064680}
-  - {fileID: 3727721349696180324}
   - {fileID: 3587983757501153162}
   - {fileID: 6404852403367780848}
+  - {fileID: 3727721349696180324}
   - {fileID: 2762998828820972075}
   - {fileID: 2884971610701307507}
   m_Father: {fileID: 0}
@@ -2008,7 +2008,7 @@ RectTransform:
   - {fileID: 6404852403194228878}
   - {fileID: 6233736934994292600}
   m_Father: {fileID: 4400853184024323153}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -2321,7 +2321,7 @@ GameObject:
   - component: {fileID: 8352349209857911565}
   m_Layer: 0
   m_Name: ReviveMenu
-  m_TagString: Untagged
+  m_TagString: ReviveMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2341,7 +2341,7 @@ RectTransform:
   - {fileID: 4591209020201827065}
   - {fileID: 1341293875085958005}
   m_Father: {fileID: 4400853184024323153}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3689,7 +3689,7 @@ RectTransform:
   - {fileID: 5885162510793146344}
   - {fileID: 5405810724457402890}
   m_Father: {fileID: 4400853184024323153}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}

@@ -7,13 +7,12 @@ namespace SceneManagement {
     public class LevelLoader : MonoBehaviour {
         public Animator animator;
         public float transitionTime = 2f;
-        public bool SceneLoaded;
         private const string animPlayAnimation = "PlayAnimation";
         private const string animSceneLoaded = "SceneLoaded";
 
         private void Awake() {
             animator.SetTrigger(animPlayAnimation);
-            animator.SetBool(animSceneLoaded, SceneLoaded = false);
+            animator.SetBool(animSceneLoaded, false);
         }
 
         private void OnTriggerEnter(Collider other) {
@@ -25,7 +24,7 @@ namespace SceneManagement {
 
         private void LoadNextLevel() {
             animator.SetTrigger(animPlayAnimation);
-            animator.SetBool(animSceneLoaded, SceneLoaded = true);
+            animator.SetBool(animSceneLoaded, true);
 
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
