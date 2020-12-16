@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 636b3b0be04084ade8df84d70eb42bf8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -333,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5635276}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.74, y: 0, z: 11.622}
+  m_LocalPosition: {x: 24.93, y: -0, z: 2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 382966102}
@@ -5898,7 +5898,6 @@ GameObject:
   m_Component:
   - component: {fileID: 37757068}
   - component: {fileID: 37757067}
-  - component: {fileID: 37757069}
   m_Layer: 0
   m_Name: Spot Light (11)
   m_TagString: Untagged
@@ -5981,22 +5980,6 @@ Transform:
   m_Father: {fileID: 1575436814}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 90.00001}
---- !u!114 &37757069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37757066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62760712303a942ec8a63bb6f7012edd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  light: {fileID: 0}
-  minIntensity: 0.52
-  maxIntensity: 2.78
-  smoothing: 5
 --- !u!1001 &50357601
 PrefabInstance:
   m_ObjectHideFlags: 0
