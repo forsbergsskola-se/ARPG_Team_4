@@ -257,8 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8926218143849893551}
-  transitionTime: 3
-  PlayAnimation: 0
+  transitionTime: 2
   SceneLoaded: 0
 --- !u!65 &8901655968372447179
 BoxCollider:
@@ -271,8 +270,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.031157553, y: 2.4997435, z: 3.1638567}
-  m_Center: {x: 0.29113796, y: 1.2519836, z: -0.019874692}
+  m_Size: {x: 1, y: 3, z: 3}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!95 &8926218143849893551
 Animator:
   serializedVersion: 3
