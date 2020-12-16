@@ -132,8 +132,10 @@ namespace Units.Player {
             }
             else {
                 transform.LookAt(_target.transform.position);
-                if (_playerRangedAttack.AttackIsReady && _playerRangedAttack.BuildUpIsDone)
+                if (_playerRangedAttack.AttackIsReady && _playerRangedAttack.BuildUpIsDone) {
                     _playerRangedAttack.FireProjectile(_target.transform.position);
+                    _target = null;
+                }
             }
         }
         

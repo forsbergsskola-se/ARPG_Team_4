@@ -4621,7 +4621,7 @@ MonoBehaviour:
   buildUpTime: 0.2
   projectileVelocity: 20
   projectileMaxDistance: 30
-  damage: 10
+  damage: 6
   attackCoolDown: 1
 --- !u!114 &469871592968579855
 MonoBehaviour:

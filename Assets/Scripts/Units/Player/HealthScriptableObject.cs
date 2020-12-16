@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Units.Player {
@@ -31,7 +32,7 @@ namespace Units.Player {
                 OnHealthChange(CurrentHealth);
             }
         }
-    
+
         public int MaxHealth {
             get => _maxHealth;
             private set => _maxHealth = value;

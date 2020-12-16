@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 
@@ -11,6 +12,13 @@ namespace Units.Player {
         private bool _invulnerable = false; 
         LayerMask _deadPlayerLayer;
         LayerMask _alivePlayerLayer;
+
+
+        private void Awake() {
+            if (healthScriptableObject.CurrentHealth == 0) {
+                healthScriptableObject.CurrentHealth = healthScriptableObject.MaxHealth;
+            }
+        }
 
         private void Start() {
             _deadPlayerLayer = 0;

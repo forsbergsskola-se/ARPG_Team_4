@@ -31,7 +31,6 @@ namespace Units.Player {
             _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
         }
         
-        
         public void StartRangedAttack() {
             _buildUpTimer = Time.time + buildUpTime;
         }
@@ -40,7 +39,7 @@ namespace Units.Player {
         }
 
         public void FireProjectile(Vector3 target) {
-            var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, firingPosition.rotation);
+            var projectileInstance = Instantiate(projectilePrefab, firingPosition.position, Quaternion.identity);
             projectileInstance.Setup(damage, projectileVelocity, projectileMaxDistance, GetShootDir(target));
             _nextAttackTime = Time.time + attackCoolDown;
             
