@@ -63,11 +63,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
         else if (Input.GetKey(KeyCode.Alpha2)) stateWeapon = StateWeapon.CrowBar;
         else if (Input.GetKey(KeyCode.Alpha3)) stateWeapon = StateWeapon.Gun;
 
-        if (stateWeapon == StateWeapon.Gun && Input.GetMouseButton(1))
-        {
-            playerIsAiming = true;
-            if (playerIsAiming) Debug.Log("Player is aiming");
-        }
+        if (stateWeapon == StateWeapon.Gun && Input.GetMouseButton(1)) playerIsAiming = true;
         else playerIsAiming = false;
 
         //if (playerIsAiming) Debug.Log("Player is aiming");
@@ -111,7 +107,7 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 //Logic
                 break;
             case StateWeapon.CrowBar:
-                if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Draw Sword"))
+                if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Draw Crowbar")) 
                     crowbarIsReady = true;
                 break;
             case StateWeapon.Gun:

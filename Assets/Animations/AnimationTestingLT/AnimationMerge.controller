@@ -1771,7 +1771,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Great Sword Idle
+  m_Name: Crowbar Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -2740,7 +2740,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Draw A Great Sword 2
+  m_Name: Draw Crowbar
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -3477,7 +3477,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-  m_ExitTime: 0.6875
+  m_ExitTime: 0.7969679
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -3507,8 +3507,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: b775bc832252149bd81e411a45289184,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 7b06513a772109743a60d4abec429169, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -3698,6 +3697,12 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: IsAttacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 6
+    m_ConditionEvent: WeaponInHand
+    m_EventTreshold: 3
+  - m_ConditionMode: 3
+    m_ConditionEvent: StateMove
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5027407440048778744}
@@ -3959,7 +3964,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Great Sword Slash
+  m_Name: Crowbar Slash
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -4085,7 +4090,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sheath A Great Sword
+  m_Name: sheath Crowbar Sword
   m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
