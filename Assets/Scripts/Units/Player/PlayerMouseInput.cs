@@ -9,6 +9,7 @@ namespace Units.Player {
     public class PlayerMouseInput : MonoBehaviour {
         [SerializeField] private LayerMask walkableLayers;
         [SerializeField] private LayerMask enemyLayers;
+        [SerializeField] private Texture2D defaultCursorTexture;
         [SerializeField] private Texture2D meleeCursorTexture;
         [SerializeField] private Texture2D rangedCursorTexture;
         public HealthScriptableObject healthScriptableObject;
@@ -35,6 +36,7 @@ namespace Units.Player {
             _playerRangedAttack = GetComponent<PlayerRangedAttack>();
             _FSMWorkWithAnimation = GetComponent<FSMWorkWithAnimation>();
             healthScriptableObject.OnDeath += DisableInput;
+            SetDefaultCursor();
         }
 
         private void OnDestroy() {
@@ -143,8 +145,8 @@ namespace Units.Player {
             return _target == null || !_playerRangedAttack.TargetWithinAttackRange(_target.transform.position);
         }
 
-        private static void SetDefaultCursor() {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        private void SetDefaultCursor() {
+            Cursor.SetCursor(defaultCursorTexture, Vector2.zero, CursorMode.Auto);
         }
 
         private bool IsMouseCursorOnEnemy(Ray myRay, out RaycastHit hitInfo) {
