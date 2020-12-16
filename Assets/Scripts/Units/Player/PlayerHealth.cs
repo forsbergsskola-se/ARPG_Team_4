@@ -13,37 +13,24 @@ namespace Units.Player {
         private bool _invulnerable = false; 
         LayerMask _deadPlayerLayer;
         LayerMask _alivePlayerLayer;
-        //Player Hit Sound
-        /*
-        FMOD.Studio.EventInstance PlayerHitSound;
 
-        private void Awake()
-        {
-            PlayerHitSound = FMODUnity.RuntimeManager.CreateInstance("event:/Character/PlayerHit/PlayerHit");
-        }
-        */
-        private void Start()
-        {
+        private void Start() {
             _deadPlayerLayer = 0;
             _alivePlayerLayer = 9;
         }
 
         private void FixedUpdate()
         {
-            
-            if (healthScriptableObject.CurrentHealth > 0 && gameObject.layer != alivePlayerLayer)
-            {
-                gameObject.layer = alivePlayerLayer;
+            if (healthScriptableObject.CurrentHealth > 0 && gameObject.layer != _alivePlayerLayer) {
+                gameObject.layer = _alivePlayerLayer;
             }
-            else if (gameObject.layer != deadPlayerLayer)
-            {
-                gameObject.layer = deadPlayerLayer;
+            else if (gameObject.layer != _deadPlayerLayer) {
+                gameObject.layer = _deadPlayerLayer;
             }
         }
 
         public void TakeDamage(int damage) {
             
-            //Player can be invulnerable to damage
             if (_invulnerable && healthScriptableObject.CurrentHealth == 0)
                 return;
             
@@ -75,32 +62,10 @@ namespace Units.Player {
             StartCoroutine(InvulnerabilityTimer());
         }
 
-        // Deactivates invulnerable after duration.
         private IEnumerator InvulnerabilityTimer() {
             yield return new WaitForSeconds(_invulnerabilityDuration);
             _invulnerable = false;
             Debug.Log("Player invulnerable: " + _invulnerable);
         }
-
-        // private IEnumerator FlashObject(MeshRenderer toFlash, Color originalColor, Color flashColor, float flashTime, float flashSpeed) {
-        //     var flashingFor = 0;
-        //     var newColor = flashColor;
-        //         while(flashingFor < flashTime)
-        //     {
-        //         toFlash.color = newColor;
-        //         flashingFor += Time.deltaTime;
-        //         yield return new WaitForSecons(flashSpeed);
-        //         flashingFor += flashSpeed;
-        //         if(newColor == flashColor)
-        //         {
-        //             newColor = originalColor;
-        //         }
-        //         else
-        //         {
-        //             newColor = flashColor;
-        //         }
-        //     }
-        // }
-        
     }
 }
