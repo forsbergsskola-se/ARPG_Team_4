@@ -14,11 +14,14 @@ namespace GUI {
 
         //Audio
         /*
+        [FMODUnity.EventRef]
+        public string MenuBGMEvent = "";
+        FMOD.Studio.EventInstance MenuBGM;
         public GameObject _player;
         public FMOD.Studio.EventInstance MenuButtonAudio;
         private bool playerTransform;
         */
-        
+
         private void Start() {
             //Audio Button
             
@@ -52,7 +55,7 @@ namespace GUI {
         }
 
         public void ResumeButton() {
-            //PlayButtonSound();
+            PlayButtonSound();
             shadow.SetActive(false);
             pauseMenuRef.SetActive(false);
             _playerMovement.InputDisabled = false;
@@ -60,24 +63,42 @@ namespace GUI {
         }
 
         public void LoadCheckpointButton() {
-            //PlayButtonSound();
+            PlayButtonSound();
         }
 
     
      
         public void QuitButton() {
-            //PlayButtonSound();
+            PlayButtonQuit();
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
         }
-    
+        private void PlayButtonQuit()
+        {
+
+            var AT = FindObjectOfType<AudioTest>();
+            Debug.Log("Calling for Audio Quit Test");
+            var aTposition = AT.gameObject.transform.position;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2", aTposition);
+
+            /*
+            AT.MenuQuitButtonPress = 0;
+            AT.MenuQuitButtonPress += 1;
+            */
+        }
         private void PlayButtonSound() {
             var AT = FindObjectOfType<AudioTest>();
-            AT.ButtonPress = 0;
-            AT.ButtonPress += 1;
+            Debug.Log("Calling for Audio Test");
+            var aTposition = AT.gameObject.transform.position;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1", aTposition);
+
+            /*
+            AT.MenuButtonPress = 0;
+            AT.MenuButtonPress += 1;
+
             //Debug.Log("ButtonPress True ");
             /*
             playerTransform = true;
@@ -91,6 +112,9 @@ namespace GUI {
     
         void PauseGame ()
         {
+            //FMOD.Studio.EventInstance MenuBGMEvent;
+            //MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
+            //MenuBGM.Start();
             Time.timeScale = 0f;
         }
 

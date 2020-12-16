@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections;
-using GUI;
+﻿using System.Collections;
 using Units.Player;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 namespace SceneManagement {
     public class LevelLoader : MonoBehaviour {
         public Animator animator;
         public float transitionTime = 2f;
-        public bool PlayAnimation = false;
-        public bool SceneLoaded = false;
+        public bool SceneLoaded;
         private const string animPlayAnimation = "PlayAnimation";
         private const string animSceneLoaded = "SceneLoaded";
 
@@ -22,16 +18,12 @@ namespace SceneManagement {
 
         private void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Player")) {
-                other.GetComponent<NavMeshAgent>().enabled = false;
-                other.GetComponent<PlayerMovement>().enabled = false;
+                other.GetComponent<PlayerMovement>().InputDisabled = true;
                 LoadNextLevel();
             }
         }
 
         private void LoadNextLevel() {
-            var menuScript = GameObject.Find("/Canvas_PauseMenu_UI").GetComponent<Canvas>();
-
-            menuScript.enabled = false;
             animator.SetTrigger(animPlayAnimation);
             animator.SetBool(animSceneLoaded, SceneLoaded = true);
 
@@ -39,11 +31,7 @@ namespace SceneManagement {
         }
         
         private IEnumerator LoadLevel(int levelIndex) {
-            
-            // animator.SetTrigger("ExitScene");
-            
             yield return new WaitForSeconds(transitionTime);
-            
             SceneManager.LoadScene(levelIndex);
         }
     }
