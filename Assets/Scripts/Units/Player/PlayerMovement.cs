@@ -48,6 +48,7 @@ namespace Units.Player {
         }
         
         void Start() {
+            GetComponent<Rigidbody>().isKinematic = true;
             _myAgent = GetComponent<NavMeshAgent>();
             _mainCamera = UnityEngine.Camera.main;
 
