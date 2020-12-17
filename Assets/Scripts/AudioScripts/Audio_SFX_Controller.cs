@@ -182,10 +182,12 @@ public class Audio_SFX_Controller : MonoBehaviour
     }
     public void LaserTrapSFXSet(bool setLaserTrapSFX)
     {
+        var LP = FindObjectOfType<Audio_Laser_Position>();
+        var lPposition = LP.gameObject.transform.position;
         if (setLaserTrapSFX)
         {
             LaserTrapSFX = FMODUnity.RuntimeManager.CreateInstance(LaserTrapEvent);
-            LaserTrapSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            LaserTrapSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(lPposition));
             LaserTrapSFX.start();
         }
         else

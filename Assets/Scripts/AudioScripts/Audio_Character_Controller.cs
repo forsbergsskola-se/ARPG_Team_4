@@ -54,10 +54,12 @@ public class Audio_Character_Controller : MonoBehaviour
     }
     public void EnemySFXSet(bool setEnemySFX)
     {
+        var TP = FindObjectOfType<Units.EnemyAI.TrackPlayer>();
+        var tPposition = TP.gameObject.transform.position;
         if (setEnemySFX)
         {
             EnemySFX = FMODUnity.RuntimeManager.CreateInstance(EnemyEvent);
-            EnemySFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            EnemySFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tPposition));
             EnemySFX.start();
         }
         else

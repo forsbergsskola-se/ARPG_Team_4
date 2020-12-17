@@ -81,9 +81,31 @@ namespace Units.EnemyAI
             if(enemyAudioInterval < 1)
             {
                 enemyAudioInterval += 1;
-                FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit", GetComponent<Transform>().position);
+                EnemySound(true);
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit", GetComponent<Transform>().position);
             }
         }
+        private void EnemySound(bool setEnemySFX)
+        {
+            var AT = FindObjectOfType<Audio_Character_Controller>();
+            AT.EnemySFXSet(setEnemySFX);
+        }
+        /*
+        public void EnemySFXSet(bool setEnemySFX)
+        {
+            var AT = FindObjectOfType<Audio_Character_Controller>();
+            if (setEnemySFX)
+            {
+                EnemySFX = FMODUnity.RuntimeManager.CreateInstance(EnemyEvent);
+                EnemySFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+                EnemySFX.start();
+            }
+            else
+            {
+                EnemySFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            }
+        }
+        */
     }
 } 
 
