@@ -37,7 +37,7 @@ namespace Units.Player {
 
         public void TakeDamage(int damage) {
             
-            if (_invulnerable && healthScriptableObject.CurrentHealth == 0)
+            if (_invulnerable || healthScriptableObject.CurrentHealth == 0)
                 return;
             
             healthScriptableObject.CurrentHealth -= damage;
