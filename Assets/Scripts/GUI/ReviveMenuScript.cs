@@ -17,14 +17,14 @@ public class ReviveMenuScript : MonoBehaviour {
     }
 
     public void ReviveButton() {
-        Debug.Log("Revive button clicked");
+        //Debug.Log("Revive button clicked");
         _playerReviveHandler.ReviveAtLocation();
         PlayButtonSound();
         HideMenu();
     }
     
     public void LoadCheckpointButton() {
-        Debug.Log("Resurrect button clicked");
+        //Debug.Log("Resurrect button clicked");
         _playerReviveHandler.ReviveAtCheckpoint();
         PlayButtonSound();
         HideMenu();
@@ -47,6 +47,13 @@ public class ReviveMenuScript : MonoBehaviour {
     }
     
     private void PlayButtonSound() {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Button/Buttons");
+        var AT = FindObjectOfType<AudioTest>();
+        var aTposition = AT.gameObject.transform.position;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit", aTposition);
+        /*
+        string BusString = "Bus:/";
+        FMOD.Studio.Bus masterBus;
+        masterBus = FMODUnity.RuntimeManager.GetBus("event:/SFX/Button/Buttons");
+        */
     }
 }

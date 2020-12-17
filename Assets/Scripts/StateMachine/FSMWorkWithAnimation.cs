@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Units.Player;
 using UnityEngine;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 public class FSMWorkWithAnimation : MonoBehaviour{
@@ -21,23 +22,27 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     public bool playerIsAttacking = false;
     public bool playerIsCrouching = false;
 
+    public UnityAction OnWeaponSwitch;
+
     private bool _gunIsReady;
-    public bool gunIsReady
+    public bool GunIsReady
     {
         get => _gunIsReady;
-        set {
+        private set {
             _gunIsReady = value;
             _crowbarIsReady = !value;
+            OnWeaponSwitch();
         }
     }
-    
+
     private bool _crowbarIsReady;
-    public bool crowbarIsReady
+    public bool CrowbarIsReady
     {
         get => _crowbarIsReady;
-        set {
+        private set {
             _crowbarIsReady = value;
             _gunIsReady = !value;
+            OnWeaponSwitch();
         }
     }
     
@@ -59,9 +64,9 @@ public class FSMWorkWithAnimation : MonoBehaviour{
     }
     void Update() {
         //Check Player Equipped Weapon
-        if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.Unarmed;
-        else if (Input.GetKey(KeyCode.Alpha2)) stateWeapon = StateWeapon.CrowBar;
-        else if (Input.GetKey(KeyCode.Alpha3)) stateWeapon = StateWeapon.Gun;
+        //if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.Unarmed;
+        if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.CrowBar;
+        else if (Input.GetKey(KeyCode.Alpha2)) stateWeapon = StateWeapon.Gun;
 
         if (stateWeapon == StateWeapon.Gun && Input.GetMouseButton(1)) playerIsAiming = true;
         else playerIsAiming = false;
@@ -108,11 +113,11 @@ public class FSMWorkWithAnimation : MonoBehaviour{
                 break;
             case StateWeapon.CrowBar:
                 if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Draw Crowbar")) 
-                    crowbarIsReady = true;
+                    CrowbarIsReady = true;
                 break;
             case StateWeapon.Gun:
                 if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Drawing Gun"))
-                    gunIsReady = true;
+                    GunIsReady = true;
                 break;
         }
 

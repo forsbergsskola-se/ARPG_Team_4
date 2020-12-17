@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 7577956594892135859}
   - component: {fileID: 7577956594892135861}
   - component: {fileID: 7577956594892135860}
+  - component: {fileID: 2778732663276145528}
   m_Layer: 0
   m_Name: HealthKit
   m_TagString: Untagged
@@ -152,6 +153,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &2778732663276145528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577956594892135863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425399fab76aad24d80d8381b903a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
 --- !u!1001 &1548382867
 PrefabInstance:
   m_ObjectHideFlags: 0
