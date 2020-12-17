@@ -15,7 +15,7 @@ public class Audio_Weapon_Controller : MonoBehaviour
     [FMODUnity.EventRef]
     public string HandGunEvent = "event:/THESPLIT/WeaponsSplit/HAndGun";
     FMOD.Studio.EventInstance HandGunSFX;
-
+    /*
     [FMODUnity.EventRef]
     public string PlasmaEvent = "event:/THESPLIT/WeaponsSplit/Plasma";
     FMOD.Studio.EventInstance PlasmaSFX;
@@ -23,23 +23,23 @@ public class Audio_Weapon_Controller : MonoBehaviour
     [FMODUnity.EventRef]
     public string ShotgunEvent = "event:/THESPLIT/WeaponsSplit/Shotgun";
     FMOD.Studio.EventInstance ShotgunSFX;
-
+    */
     void Start()
     {
         //WeaponVolume = 0f;
 
         CrowbarSFX = FMODUnity.RuntimeManager.CreateInstance(CrowbarEvent);
         HandGunSFX = FMODUnity.RuntimeManager.CreateInstance(HandGunEvent);
-        PlasmaSFX = FMODUnity.RuntimeManager.CreateInstance(PlasmaEvent);
-        ShotgunSFX = FMODUnity.RuntimeManager.CreateInstance(ShotgunEvent);
+        //PlasmaSFX = FMODUnity.RuntimeManager.CreateInstance(PlasmaEvent);
+        //ShotgunSFX = FMODUnity.RuntimeManager.CreateInstance(ShotgunEvent);
 
     }
     void Update()
     {
         CrowbarSFX.setVolume(DecibelToLinear(WeaponVolume));
         HandGunSFX.setVolume(DecibelToLinear(WeaponVolume));
-        PlasmaSFX.setVolume(DecibelToLinear(WeaponVolume));
-        ShotgunSFX.setVolume(DecibelToLinear(WeaponVolume));
+        //PlasmaSFX.setVolume(DecibelToLinear(WeaponVolume));
+        //ShotgunSFX.setVolume(DecibelToLinear(WeaponVolume));
     }
     private float DecibelToLinear(float db)
     {
@@ -74,6 +74,7 @@ public class Audio_Weapon_Controller : MonoBehaviour
             HandGunSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
     }
+    /*
     public void PlasmaSet(bool setPlasmaSFX)
     {
         if (setPlasmaSFX)
@@ -100,4 +101,5 @@ public class Audio_Weapon_Controller : MonoBehaviour
             ShotgunSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
     }
+    */
 }

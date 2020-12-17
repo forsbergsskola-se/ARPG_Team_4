@@ -21,6 +21,14 @@ public class Audio_BGM_Controller : MonoBehaviour
     public string LevelBGMEvent3 = "event:/THESPLIT/AmbientSplit/Level 3Split";
     FMOD.Studio.EventInstance LevelBGM3;
 
+    [FMODUnity.EventRef]
+    public string LevelBGMEvent4 = "event:/THESPLIT/AmbientSplit/Level4Split";
+    FMOD.Studio.EventInstance LevelBGM4;
+
+    [FMODUnity.EventRef]
+    public string LevelBGMEvent5 = "event:/THESPLIT/AmbientSplit/Level5Split";
+    FMOD.Studio.EventInstance LevelBGM5;
+
     //Menus:
     [FMODUnity.EventRef]
     public string MenuBGMEvent = "event:/THESPLIT/AmbientSplit/MenuHUMSplit";
@@ -34,6 +42,8 @@ public class Audio_BGM_Controller : MonoBehaviour
         LevelBGM1 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent1);
         LevelBGM2 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent2);
         LevelBGM3 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent3);
+        LevelBGM4 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent4);
+        LevelBGM5 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent5);
 
     }
     void Update()
@@ -42,6 +52,8 @@ public class Audio_BGM_Controller : MonoBehaviour
         LevelBGM1.setVolume(DecibelToLinear(BGMVolume));
         LevelBGM2.setVolume(DecibelToLinear(BGMVolume));
         LevelBGM3.setVolume(DecibelToLinear(BGMVolume));
+        LevelBGM4.setVolume(DecibelToLinear(BGMVolume));
+        LevelBGM5.setVolume(DecibelToLinear(BGMVolume));
     }
     private float DecibelToLinear(float db)
     {
@@ -98,6 +110,32 @@ public class Audio_BGM_Controller : MonoBehaviour
         else
         {
             LevelBGM3.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+    }
+    public void LevelAudioSet4(bool setLevel4)
+    {
+        if (setLevel4)
+        {
+            LevelBGM4 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent4);
+            LevelBGM4.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            LevelBGM4.start();
+        }
+        else
+        {
+            LevelBGM4.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
+    }
+    public void LevelAudioSet5(bool setLevel5)
+    {
+        if (setLevel5)
+        {
+            LevelBGM5 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent5);
+            LevelBGM5.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            LevelBGM5.start();
+        }
+        else
+        {
+            LevelBGM5.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
     }
 }
