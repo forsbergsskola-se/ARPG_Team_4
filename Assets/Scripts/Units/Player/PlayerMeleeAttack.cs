@@ -50,8 +50,12 @@ namespace Units.Player {
             _target = target;
 
             //Melee Audio
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Weapons/Crowbar", transform.position);
-            _FSMWorkWithAnimation.playerIsAttacking = true;
+            PlayMeleeAudio(true);
+        }
+        private void PlayMeleeAudio(bool setCrowbarSFX)
+        {
+            var AT = FindObjectOfType<Audio_Weapon_Controller>();
+            AT.CrowbarSet(setCrowbarSFX);
         }
 
         private void DoSingleTargetDamage() {

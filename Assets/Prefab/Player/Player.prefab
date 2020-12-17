@@ -3741,6 +3741,7 @@ GameObject:
   - component: {fileID: 7487681355912461529}
   - component: {fileID: 7169067835674428352}
   - component: {fileID: 8468052800730504686}
+  - component: {fileID: 6004955214858036891}
   m_Layer: 0
   m_Name: Audio_Test
   m_TagString: Untagged
@@ -3831,6 +3832,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19af20a6fb2bc9418220a78f9f88cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6004955214858036891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138203249058673919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01902b47744b05a4dab63d835c43389a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponVolume: 0
+  CrowbarEvent: event:/THESPLIT/WeaponsSplit/Crowbar
+  HandGunEvent: event:/THESPLIT/WeaponsSplit/HAndGun
+  PlasmaEvent: event:/THESPLIT/WeaponsSplit/Plasma
+  ShotgunEvent: event:/THESPLIT/WeaponsSplit/Shotgun
 --- !u!1 &7195989051238147033
 GameObject:
   m_ObjectHideFlags: 0
@@ -5035,15 +5053,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 044fd58683188b44fb2ba333e2fe5cab, type: 3}
---- !u!1 &8163469565131565858 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
-    type: 3}
-  m_PrefabInstance: {fileID: 9046343520782915187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8791493755788161432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+    type: 3}
+  m_PrefabInstance: {fileID: 9046343520782915187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8163469565131565858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
     type: 3}
   m_PrefabInstance: {fileID: 9046343520782915187}
   m_PrefabAsset: {fileID: 0}
