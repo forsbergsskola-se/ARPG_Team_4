@@ -3472,7 +3472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d3baf1eb838754a8af0a982e5bb4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyViewDistance: 7
+  enemyViewDistance: 6
   playerHealth: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7, type: 2}
   enemyAudioInterval: 0
   _enemyAudioInterval: 0

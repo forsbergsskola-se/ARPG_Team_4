@@ -12,7 +12,7 @@ namespace Units.EnemyAI
         private MeleeAttackEnemy meleeAttackEnemy;
         private NavMeshAgent _enemy;
         private Transform _playerTransform;
-        public float enemyViewDistance = 8f;
+        public float enemyViewDistance = 6f;
         private float _nextAttackTime;
         public HealthScriptableObject playerHealth;
 
@@ -42,31 +42,30 @@ namespace Units.EnemyAI
                 var newPos = enemyPos - dirToPlayer;
                     _enemy.SetDestination(newPos);
                 if (distance <= meleeAttackEnemy.attackRange) {
-                    
                     _enemy.ResetPath();
                     if (Time.time < _nextAttackTime) return;
                     meleeAttackEnemy.Attack();
                     _nextAttackTime = Time.time + 1f / meleeAttackEnemy.attacksPerSecond;
                 }
-            } else if (PathComplete()){
+            } else {
                 waypointMovement.SetDestination();
             }
         }
         
-        private bool PathComplete() {
-            if (_enemy.remainingDistance < 1) {
-                Debug.Log("Enemy Reset ");
-                enemyAudioInterval -= 1;
-                return true;
-            }
-            return false;
-        }
+        // private bool PathComplete() {
+        //     if (_enemy.remainingDistance < 1) {
+        //         Debug.Log("Enemy Reset ");
+        //         enemyAudioInterval -= 1;
+        //         return true;
+        //     }
+        //     return false;
+        // }
 
         bool CanSeePlayer() {
             RaycastHit hit;
             Vector3 rayDirection = _playerTransform.position - transform.position;
 
-            if (Vector3.Angle(rayDirection, transform.forward) <= 140 * 0.5f) {
+            if (Vector3.Angle(rayDirection, transform.forward) <= 360 * 0.5f) {
                 if (Physics.Raycast(transform.position, rayDirection, out hit, enemyViewDistance)) {
                     if (hit.transform.CompareTag("Player") && playerHealth.CurrentHealth > 0){
                         EnemyAudio();
@@ -76,6 +75,7 @@ namespace Units.EnemyAI
             }
             return false;
         }
+        
         void EnemyAudio()
         {
             if(enemyAudioInterval < 1)
