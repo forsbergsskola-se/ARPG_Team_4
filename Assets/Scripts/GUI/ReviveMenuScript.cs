@@ -47,7 +47,7 @@ public class ReviveMenuScript : MonoBehaviour {
     }
     
     private void PlayButtonSound() {
-        var AT = FindObjectOfType<AudioTest>();
+        var AT = FindObjectOfType<Audio_SFX_Controller>();
         var aTposition = AT.gameObject.transform.position;
         FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit", aTposition);
         /*
