@@ -16,7 +16,7 @@ namespace Units.EnemyAI {
             }
         
             // Placeholder Debug.Log to display enemy HP
-            Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {damage} damage taken");
+            // Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {damage} damage taken");
         }
         public void GainHealth(int healValue) {
             Debug.Log($"{name} : {_currentHealth}/{maxHealth} Health : {healValue} gained?");
