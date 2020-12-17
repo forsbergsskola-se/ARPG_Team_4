@@ -11,7 +11,7 @@ namespace GUI {
     public class HealthBarScript : MonoBehaviour {
         public HealthScriptableObject healthScriptableObject;
         private Slider _healthBar;
-        private void Start() {
+        private void Awake() {
             _healthBar = GetComponent<Slider>();
         
             // Set initial value
