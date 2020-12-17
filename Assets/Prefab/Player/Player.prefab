@@ -3737,8 +3737,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7138203249058673918}
-  - component: {fileID: 7138203249058673916}
-  - component: {fileID: 7138203249058673917}
+  - component: {fileID: 7457281474386643226}
+  - component: {fileID: 7487681355912461529}
+  - component: {fileID: 7169067835674428352}
+  - component: {fileID: 8468052800730504686}
   m_Layer: 0
   m_Name: Audio_Test
   m_TagString: Untagged
@@ -3760,30 +3762,7 @@ Transform:
   m_Father: {fileID: 8329280503942411449}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7138203249058673916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249058673919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/THESPLIT/AmbientSplit/Level1Split
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 75
-  OverrideMaxDistance: 8600
---- !u!114 &7138203249058673917
+--- !u!114 &7457281474386643226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3795,11 +3774,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de2fbafd52af994bb7db24f464dad58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuButtonPress: 0
-  MenuBGMSoundOn: 0
-  Menu: 0
-  MenuQuitButtonPress: 0
+  BGMVolume: 0
+  LevelBGMEvent1: event:/THESPLIT/AmbientSplit/Level1Split
+  LevelBGMEvent2: event:/THESPLIT/AmbientSplit/Level2Split
+  LevelBGMEvent3: event:/THESPLIT/AmbientSplit/Level 3Split
   MenuBGMEvent: event:/THESPLIT/AmbientSplit/MenuHUMSplit
+--- !u!114 &7487681355912461529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138203249058673919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d81e5347b55fa94ab9d2eb9fd2dc529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterSFXVolume: 0
+  EnemyEvent: event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit
+  FootStepEvent: event:/THESPLIT/CharacterSplit/FootstepsSplit/FootstepsSplit
+  PlayerHitEvent: event:/THESPLIT/CharacterSplit/PlayerHitSplit/PlayerHitSplit
+  ReviveEvent: event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit
+  PlayerVoiceEvent: event:/THESPLIT/CharacterSplit/VoiceSplit/PlayerVoiceSplit
+--- !u!114 &7169067835674428352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138203249058673919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9635ab087ff835a42a855dab1301231e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXVolume: 0
+  BlowtorchEvent: event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit
+  Button_1_Event: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1
+  Button_2_Event: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2
+  FlashlightOFF_Event: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightOFFSplit
+  FlashlightON_Event: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightONSplit
+  CratesEvent: event:/THESPLIT/SFXSplit/ObjectsSplit/CratesSplit
+  PortalTransitionEvent: event:/THESPLIT/SFXSplit/PortalSplit/Portal_transitionSplit
+  HazerdTrapEvent: event:/THESPLIT/SFXSplit/TrapsSplit/HazardTrapSplit
+  LaserTrapEvent: event:/THESPLIT/SFXSplit/TrapsSplit/LaserTrapSplit
+--- !u!114 &8468052800730504686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138203249058673919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19af20a6fb2bc9418220a78f9f88cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7195989051238147033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,8 +4509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  attackRange: 3
-  attackRadius: 0.5
+  attackRange: 2.8
+  attackRadius: 1.5
   attacksPerSecond: 2
   enemyLayers:
     serializedVersion: 2

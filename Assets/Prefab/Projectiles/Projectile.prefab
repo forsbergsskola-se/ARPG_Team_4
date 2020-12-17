@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1041063137715771070}
   - component: {fileID: 5226552845543506164}
   - component: {fileID: 106366651987909704}
-  - component: {fileID: 2364141116465966397}
+  - component: {fileID: 6613240531659621027}
   m_Layer: 13
   m_Name: Projectile
   m_TagString: Untagged
@@ -77,7 +77,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2364141116465966397
+--- !u!114 &6613240531659621027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,20 +86,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 497287968603103856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Script: {fileID: 11500000, guid: 081bc447ccef6274493b604b55bcb01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Weapons/HAndGun
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0.3
-  OverrideMaxDistance: 7.2000003
 --- !u!1 &2381980351621585190
 GameObject:
   m_ObjectHideFlags: 0
