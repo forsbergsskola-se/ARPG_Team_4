@@ -65,15 +65,15 @@ namespace GUI {
         private void PlayButtonQuit()
         {
 
+            //Debug.Log("Calling for Audio Quit Test");
             var AT = FindObjectOfType<AudioTest>();
-            Debug.Log("Calling for Audio Quit Test");
             var aTposition = AT.gameObject.transform.position;
             FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2", aTposition);
 
         }
         private void PlayButtonSound() {
             var AT = FindObjectOfType<AudioTest>();
-            Debug.Log("Calling for Audio Test");
+            //Debug.Log("Calling for Audio Test");
             var aTposition = AT.gameObject.transform.position;
             FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1", aTposition);
         }
