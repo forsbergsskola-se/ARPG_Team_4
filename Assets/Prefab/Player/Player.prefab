@@ -1902,7 +1902,7 @@ Transform:
   - {fileID: 6164157225621656486}
   - {fileID: 3346527150473170752}
   - {fileID: 1594724927439416015}
-  - {fileID: 7138203249318612938}
+  - {fileID: 8791493755788161432}
   m_Father: {fileID: 7256032464023024470}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.2091866, y: -1.2988995, z: -1.0544755}
@@ -3226,7 +3226,7 @@ Transform:
   - {fileID: 761464289148056670}
   - {fileID: 83074931103991724}
   - {fileID: 1219270108737903480}
-  - {fileID: 7138203249085300317}
+  - {fileID: 4273696494407415255}
   m_Father: {fileID: 6309098776054195962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -2.4327712, y: -27.721466, z: -8.924838}
@@ -3800,164 +3800,6 @@ MonoBehaviour:
   Menu: 0
   MenuQuitButtonPress: 0
   MenuBGMEvent: event:/THESPLIT/AmbientSplit/MenuHUMSplit
---- !u!1 &7138203249085300318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7138203249085300317}
-  - component: {fileID: 7138203249085300314}
-  - component: {fileID: 7138203249085300315}
-  m_Layer: 9
-  m_Name: CrowBar In Hand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7138203249085300317
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249085300318}
-  m_LocalRotation: {x: -0.08615735, y: 0.22070955, z: -0.02473778, w: 0.9712118}
-  m_LocalPosition: {x: 0.16, y: -0.004, z: 0.187}
-  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7901734647133138074}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -9, y: 26, z: -5}
---- !u!33 &7138203249085300314
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249085300318}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7138203249085300315
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249085300318}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 6c602fba776607c42a37d64843db40dd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!1 &7138203249318612939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7138203249318612938}
-  - component: {fileID: 7138203249318612023}
-  - component: {fileID: 7138203249318612936}
-  m_Layer: 9
-  m_Name: CrowBar In Holster
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7138203249318612938
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249318612939}
-  m_LocalRotation: {x: 0.6963643, y: -0.1227878, z: -0.1227878, w: 0.6963643}
-  m_LocalPosition: {x: -0.031, y: 0.077, z: -0.084}
-  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8145287011385983805}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 110, y: 90, z: 90}
---- !u!33 &7138203249318612023
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249318612939}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7138203249318612936
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7138203249318612939}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 6c602fba776607c42a37d64843db40dd, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1 &7195989051238147033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,10 +4501,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemHand:
   - {fileID: 1990704390996181442}
-  - {fileID: 7138203249085300318}
+  - {fileID: 3460146587190964077}
   ItemHolster:
   - {fileID: 1990704391441785535}
-  - {fileID: 7138203249318612939}
+  - {fileID: 8163469565131565858}
 --- !u!114 &7138203250173386186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4972,3 +4814,200 @@ Transform:
   m_Father: {fileID: 8329280503942411449}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 9.16521, y: 54.432552, z: 0.9141023}
+--- !u!1001 &4379048242629907004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7901734647133138074}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.141
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.019
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.152
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06877925
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.21516095
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0151930805
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9740351
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -8.078
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 24.913002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.007999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.008000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_Name
+      value: Crowbar In Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 044fd58683188b44fb2ba333e2fe5cab, type: 3}
+--- !u!1 &3460146587190964077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
+    type: 3}
+  m_PrefabInstance: {fileID: 4379048242629907004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4273696494407415255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+    type: 3}
+  m_PrefabInstance: {fileID: 4379048242629907004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9046343520782915187
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8145287011385983805}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.111
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.081
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.012895321
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7345714
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6320595
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.24645369
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -249.219
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -282.952
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 235.557
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.007999999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.008000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
+        type: 3}
+      propertyPath: m_Name
+      value: Crowbar In Holster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 044fd58683188b44fb2ba333e2fe5cab, type: 3}
+--- !u!1 &8163469565131565858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 044fd58683188b44fb2ba333e2fe5cab,
+    type: 3}
+  m_PrefabInstance: {fileID: 9046343520782915187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8791493755788161432 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 044fd58683188b44fb2ba333e2fe5cab,
+    type: 3}
+  m_PrefabInstance: {fileID: 9046343520782915187}
+  m_PrefabAsset: {fileID: 0}
