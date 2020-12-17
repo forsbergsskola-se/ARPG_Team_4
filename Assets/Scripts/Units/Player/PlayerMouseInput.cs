@@ -1,4 +1,4 @@
-﻿using System;
+﻿using StateMachine;
 using UnityEngine;
 
 //TODO check that knockback works, check that disable input from menus etc works.
@@ -23,9 +23,7 @@ namespace Units.Player {
 
         private bool _inputDisabled;
 
-        public bool InputDisabled { set => _inputDisabled = value; }
-
-        public void DisableInput() {
+        private void DisableInput() {
             _inputDisabled = true;
         }
         

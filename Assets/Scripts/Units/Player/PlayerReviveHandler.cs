@@ -11,11 +11,8 @@ namespace Units.Player {
         public HealthScriptableObject healthScriptableObject;
         public Transform reviveCheckpointLocation;
         private PlayerHealth _playerHealth;
-        //private PlayerMovement _playerMovementRef = null;
-        private PlayerMouseInput _playerMouseInputRef;
         private void Start() {
             _playerHealth = GetComponent<PlayerHealth>();
-            _playerMouseInputRef = GetComponent<PlayerMouseInput>();
         }
     
         public void ReviveAtLocation() {
@@ -33,7 +30,6 @@ namespace Units.Player {
 
         private void RestoreHealth() {
             healthScriptableObject.SetCurrentHealthToMax();
-            //_playerMouseInputRef.InputDisabled = false;
         }
         
     }

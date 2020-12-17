@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using StateMachine;
+using UnityEngine;
 using UnityEngine.AI;
 
-namespace Assets.Scripts.Units.Player {
+namespace Units.Player {
     public class FixCharJitter : MonoBehaviour
     {
         private NavMeshAgent _myAgent;
