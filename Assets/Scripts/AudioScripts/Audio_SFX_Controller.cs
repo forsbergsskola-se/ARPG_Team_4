@@ -6,7 +6,7 @@ public class Audio_SFX_Controller : MonoBehaviour
 {
     [SerializeField]
     [Range(-30f, 10f)]
-    public float SFXVolume;
+    public float SFXVolume = 0f; //Default
     //SFX:
     [FMODUnity.EventRef]
     public string BlowtorchEvent = "event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit";
@@ -46,7 +46,7 @@ public class Audio_SFX_Controller : MonoBehaviour
 
     void Start()
     {
-        SFXVolume = 0f;
+        //SFXVolume = 0f;
 
         BlowtorchSFX = FMODUnity.RuntimeManager.CreateInstance(BlowtorchEvent);
         Button_1_SFX = FMODUnity.RuntimeManager.CreateInstance(Button_1_Event);
@@ -182,10 +182,12 @@ public class Audio_SFX_Controller : MonoBehaviour
     }
     public void LaserTrapSFXSet(bool setLaserTrapSFX)
     {
+        var LP = FindObjectOfType<Audio_Laser_Position>();
+        var lPposition = LP.gameObject.transform.position;
         if (setLaserTrapSFX)
         {
             LaserTrapSFX = FMODUnity.RuntimeManager.CreateInstance(LaserTrapEvent);
-            LaserTrapSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            LaserTrapSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(lPposition));
             LaserTrapSFX.start();
         }
         else

@@ -6,7 +6,7 @@ public class Audio_Character_Controller : MonoBehaviour
 {
     [SerializeField]
     [Range(-30f, 10f)]
-    public float CharacterSFXVolume;
+    public float CharacterSFXVolume = 0f;//Default
     //Character:
     [FMODUnity.EventRef]
     public string EnemyEvent = "event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit";
@@ -30,7 +30,7 @@ public class Audio_Character_Controller : MonoBehaviour
 
     void Start()
     {
-        CharacterSFXVolume = 0f;
+        //CharacterSFXVolume = 0f;
 
         EnemySFX = FMODUnity.RuntimeManager.CreateInstance(EnemyEvent);
         FootStepSFX = FMODUnity.RuntimeManager.CreateInstance(FootStepEvent);
@@ -54,10 +54,12 @@ public class Audio_Character_Controller : MonoBehaviour
     }
     public void EnemySFXSet(bool setEnemySFX)
     {
+        var TP = FindObjectOfType<Units.EnemyAI.TrackPlayer>();
+        var tPposition = TP.gameObject.transform.position;
         if (setEnemySFX)
         {
             EnemySFX = FMODUnity.RuntimeManager.CreateInstance(EnemyEvent);
-            EnemySFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            EnemySFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tPposition));
             EnemySFX.start();
         }
         else

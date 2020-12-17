@@ -1,260 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9035055392388558364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/CharacterSplit/PlayerHitSplit/PlayerHitSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/CharacterSplit/PlayerHitSplit/PlayerHitSplit
-  guid: e751c8c6fc0af64498a6b7622a3b8176
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
---- !u!114 &-7950995917635708796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Traps/Traps
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Traps/Traps
-  guid: 7d663fd34d925545932904ad6641af44
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1850
---- !u!114 &-7807378713675975693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/PlayerHit/PlayerHit
-  m_EditorClassIdentifier: 
-  Path: event:/Character/PlayerHit/PlayerHit
-  guid: 20816ccc49936e4f9af26478077ae699
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1000
---- !u!114 &-7297743237319546914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/AmbientSplit/Level4Split
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/AmbientSplit/Level4Split
-  guid: cf6720a04e4e404d8fc5c514a8298707
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 270000
---- !u!114 &-7024528531292934738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit
-  guid: c60e5508dbb928468ae01dd2f5d484da
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4000
---- !u!114 &-6900988597624378392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/AmbientSplit/MainBGMSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/AmbientSplit/MainBGMSplit
-  guid: e051d5dbaa7be24f9b9ee80c271e6521
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 72000
---- !u!114 &-6573563854881506264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/WeaponsSplit/Shotgun
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/WeaponsSplit/Shotgun
-  guid: a5f748c63b2ae74fa315adbad36316a7
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 900
---- !u!114 &-6571519870501904078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_4
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_4
-  guid: 8059e6912f182243ba5269408b244dbd
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 125
---- !u!114 &-6361233512820122247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Blowtorch/Blowtorch
-  guid: 49818c3f56d96749929252324ce18cc0
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 264919513774669982}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8000
---- !u!114 &-5922698000709890329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Button/Buttons
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Button/Buttons
-  guid: 62df75c065133e4082cb8c785ba2c7c5
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 520
---- !u!114 &-5898064658275632608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Footsteps/Footsteps
-  m_EditorClassIdentifier: 
-  Path: event:/Character/Footsteps/Footsteps
-  guid: dcb4f8c9e7605d48824a040ce2daecae
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 3.6000001
-  Length: 4000
---- !u!114 &-5242537195396535604
+--- !u!114 &-8207069069497711368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,7 +15,7 @@ MonoBehaviour:
   Path: event:/THESPLIT/CharacterSplit/FootstepsSplit/FootstepsSplit
   guid: a77efab46e2d3e4f89d79f7255c265e2
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -277,7 +23,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 3.6000001
   Length: 873
---- !u!114 &-5136910498546781203
+--- !u!114 &-7577168559843349110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,40 +33,66 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/AmbientSplit/Level5Split
+  m_Name: event:/THESPLIT/WeaponsSplit/Shotgun
   m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/AmbientSplit/Level5Split
-  guid: bf87d54a00f3604992dbc047bf57d597
+  Path: event:/THESPLIT/WeaponsSplit/Shotgun
+  guid: a5f748c63b2ae74fa315adbad36316a7
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 900
+--- !u!114 &-7285274938589344735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/CharacterSplit/ReviveSplit/ReviveSplit
+  guid: c60e5508dbb928468ae01dd2f5d484da
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-6577994683633424743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/AmbientSplit/Level 3Split
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/AmbientSplit/Level 3Split
+  guid: c0ab7cb76e6ab148a7bef13d4e1a7673
+  Banks:
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 35500
---- !u!114 &-4590724845424450383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Name: Blowtorch
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 0
---- !u!114 &-4236123707313124486
+  Length: 146000
+--- !u!114 &-6226623614205915344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,40 +102,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapons/Plasma
+  m_Name: event:/THESPLIT/SFXSplit/PortalSplit/Portal_transitionSplit
   m_EditorClassIdentifier: 
-  Path: event:/Weapons/Plasma
-  guid: 4defc751ab97894899b5123918d1817f
+  Path: event:/THESPLIT/SFXSplit/PortalSplit/Portal_transitionSplit
+  guid: c4cf60940478e24d97a76681c9c6e513
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 750
---- !u!114 &-3774470186843588422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Footsteps
-  m_EditorClassIdentifier: 
-  Name: Footsteps
-  Min: 0
-  Max: 1
-  Default: 0.1
-  ID:
-    data1: 646512916
-    data2: 1256180836
-  Exists: 1
---- !u!114 &-3317439580881642251
+  Length: 10000
+--- !u!114 &-6148068549498096344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -373,66 +125,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1
+  m_Name: event:/THESPLIT/AmbientSplit/MainBGMSplit
   m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1
-  guid: ac80e44c06800f418605486f1bca4123
+  Path: event:/THESPLIT/AmbientSplit/MainBGMSplit
+  guid: e051d5dbaa7be24f9b9ee80c271e6521
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1624
---- !u!114 &-3211871432320886669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/WeaponsSplit/HAndGun
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/WeaponsSplit/HAndGun
-  guid: 48b900d30699bd48a4e785511b2475b0
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0.3
-  MaxDistance: 7.2000003
-  Length: 826
---- !u!114 &-3178751998995108718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Flashlight/Flashlight
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Flashlight/Flashlight
-  guid: 268d27ec4dd84742a1806b781abb6844
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 4000
---- !u!114 &-2967340301308602538
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 72000
+--- !u!114 &-5679601172883385831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -442,86 +148,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/ObjectsSplit/CratesSplit
+  m_Name: event:/THESPLIT/AmbientSplit/MenuHUMSplit
   m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/ObjectsSplit/CratesSplit
-  guid: 7e4b3ee5fe11c64d81b70e33b17e9e73
+  Path: event:/THESPLIT/AmbientSplit/MenuHUMSplit
+  guid: d36edcfae2271240ba0c0354493109f9
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 500
---- !u!114 &-2796340452632766804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2
-  guid: 60a18e2b5e0a5146bf8cbff61cd95b7c
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 1624
---- !u!114 &-2787172700249306577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Name: Blowtorch
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
---- !u!114 &-2596441058078295459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightOFFSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightOFFSplit
-  guid: afbac231754eaf42b06ae7d4f72fa8e6
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &-2398750773141022251
+--- !u!114 &-5126539754601486503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -536,7 +176,7 @@ MonoBehaviour:
   Path: event:/Weapons/Crowbar
   guid: 6ea7204bab3f7541873d37d747a205d4
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -544,30 +184,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
---- !u!114 &-2074779693442390863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Objects/Crates
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Objects/Crates
-  guid: 3c902da46ea0aa43927f20e81ecf1562
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 6000
---- !u!114 &-1440196414960655428
+--- !u!114 &-4941948678059646560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -587,7 +204,7 @@ MonoBehaviour:
     data1: 666917218
     data2: 2162199578
   Exists: 1
---- !u!114 &-897666657767933207
+--- !u!114 &-3306108173327587040
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -597,40 +214,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapons/Shotgun
+  m_Name: event:/THESPLIT/CharacterSplit/PlayerHitSplit/PlayerHitSplit
   m_EditorClassIdentifier: 
-  Path: event:/Weapons/Shotgun
-  guid: ed4b7b8f67a5474bb66265df4028efd5
+  Path: event:/THESPLIT/CharacterSplit/PlayerHitSplit/PlayerHitSplit
+  guid: e751c8c6fc0af64498a6b7622a3b8176
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 900
---- !u!114 &-728031323607456366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Name: Blowtorch
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 0
---- !u!114 &-597656805482309529
+  Length: 1000
+--- !u!114 &-2707972727895900954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -640,442 +237,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/WeaponsSplit/Crowbar
+  m_Name: event:/Weapons/Plasma
   m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/WeaponsSplit/Crowbar
-  guid: 9d120a27192cb04da5803a525197b15a
+  Path: event:/Weapons/Plasma
+  guid: 4defc751ab97894899b5123918d1817f
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 500
---- !u!114 &-416369040778189678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapons/WeaponTimeline
-  m_EditorClassIdentifier: 
-  Path: event:/Weapons/WeaponTimeline
-  guid: 6fd8130876b0e4488dc61766d7c368f6
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 1665732798677564100}
-  - {fileID: 2622318482156506805}
-  EditorEvents:
-  - {fileID: 4953234001534173242}
-  - {fileID: 3057401776026162927}
-  - {fileID: 7447324839466799044}
-  - {fileID: 7988008784111532901}
-  - {fileID: -7807378713675975693}
-  - {fileID: -3178751998995108718}
-  - {fileID: 1495051721203144139}
-  - {fileID: -2074779693442390863}
-  - {fileID: 1074583627031049382}
-  - {fileID: -3211871432320886669}
-  - {fileID: -6361233512820122247}
-  - {fileID: -4236123707313124486}
-  - {fileID: 8007988934290885515}
-  - {fileID: -2796340452632766804}
-  - {fileID: -5922698000709890329}
-  - {fileID: 587038015867273570}
-  - {fileID: -2398750773141022251}
-  - {fileID: -416369040778189678}
-  - {fileID: 7475215849096332704}
-  - {fileID: -7950995917635708796}
-  - {fileID: 7676489850857928242}
-  - {fileID: -2967340301308602538}
-  - {fileID: -6571519870501904078}
-  - {fileID: 2954168161733458892}
-  - {fileID: 6594957108509413907}
-  - {fileID: 7507942998575860256}
-  - {fileID: 4220371725322964037}
-  - {fileID: -597656805482309529}
-  - {fileID: -6573563854881506264}
-  - {fileID: -5242537195396535604}
-  - {fileID: -3317439580881642251}
-  - {fileID: -2596441058078295459}
-  - {fileID: 6882570893049658207}
-  - {fileID: -5136910498546781203}
-  - {fileID: 7089035847396478686}
-  - {fileID: 3640423160461938893}
-  - {fileID: 3260525993791120492}
-  - {fileID: -7024528531292934738}
-  - {fileID: -7297743237319546914}
-  - {fileID: 1448479738796894752}
-  - {fileID: 746097969239641305}
-  - {fileID: -5898064658275632608}
-  - {fileID: -6900988597624378392}
-  - {fileID: -9035055392388558364}
-  - {fileID: -897666657767933207}
-  - {fileID: 1668727316726851595}
-  EditorParameters:
-  - {fileID: -3774470186843588422}
-  - {fileID: 1918797308474612960}
-  - {fileID: 5830284997493881133}
-  - {fileID: -1440196414960655428}
-  MasterBanks:
-  - {fileID: 2622318482156506805}
-  StringsBanks:
-  - {fileID: 1665732798677564100}
-  stringsBankWriteTime: 637435672430000000
-  cacheVersion: 5
---- !u!114 &264919513774669982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Name: Blowtorch
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
---- !u!114 &587038015867273570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_2
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_2
-  guid: 6722edc2bc648f44ba9ac297049f354d
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 125
---- !u!114 &746097969239641305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/AmbientSplit/MenuHUMSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/AmbientSplit/MenuHUMSplit
-  guid: d36edcfae2271240ba0c0354493109f9
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1624
---- !u!114 &1074583627031049382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiences/Ambiences
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiences/Ambiences
-  guid: 42ba2054c0bcda4da6acb4ae81bada37
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 75
-  MaxDistance: 8600
-  Length: 500
---- !u!114 &1448479738796894752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Revive
-  m_EditorClassIdentifier: 
-  Path: event:/Character/Revive
-  guid: d154d9cb13dde04e8a96c143ec262c4f
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1495051721203144139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/AmbientSplit/Level2Split
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/AmbientSplit/Level2Split
-  guid: 397a428c2f0e18429ce8ec332c975b14
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 57010
---- !u!114 &1665732798677564100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  lastModified: 637435672430000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &1668727316726851595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/EnemyScreech/EnemyScreech
-  m_EditorClassIdentifier: 
-  Path: event:/EnemyScreech/EnemyScreech
-  guid: f5bf11004b6d04429ca5cddeee2b5c0f
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 6.2000003
-  MaxDistance: 650
-  Length: 4000
---- !u!114 &1918797308474612960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Enemy
-  m_EditorClassIdentifier: 
-  Name: Enemy
-  Min: 0
-  Max: 1
-  Default: 0.1
-  ID:
-    data1: 2868927833
-    data2: 2025266559
-  Exists: 1
---- !u!114 &2193492040528763964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Name: Blowtorch
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 1
---- !u!114 &2622318482156506805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.bank
-  Name: Master
-  lastModified: 637435672430000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &2954168161733458892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_3
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_3
-  guid: 86c4827503ef1944828b04de60bad9db
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 125
---- !u!114 &3057401776026162927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_5
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_5
-  guid: 00ec2a6d7c433a45b9ac3514f092b361
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 125
---- !u!114 &3260525993791120492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/PortalSplit/Portal_transitionSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/PortalSplit/Portal_transitionSplit
-  guid: c4cf60940478e24d97a76681c9c6e513
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 10000
---- !u!114 &3640423160461938893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/TrapsSplit/LaserTrapSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/TrapsSplit/LaserTrapSplit
-  guid: c2416d4f217c014189c7793b203ee1d2
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1280
---- !u!114 &4220371725322964037
+  Length: 750
+--- !u!114 &-2609014844021728653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1090,7 +265,7 @@ MonoBehaviour:
   Path: event:/THESPLIT/WeaponsSplit/Plasma
   guid: 998af0c42b65144bb2295398c22fd4fd
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1098,27 +273,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
---- !u!114 &4273926085250815848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Blowtorch/Blowtorch
-  m_EditorClassIdentifier: 
-  Name: Blowtorch
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 0
-    data2: 0
-  Exists: 0
---- !u!114 &4953234001534173242
+--- !u!114 &-2572420949060999471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1133,7 +288,7 @@ MonoBehaviour:
   Path: event:/THESPLIT/CharacterSplit/VoiceSplit/PlayerVoiceSplit
   guid: 007b01b67e20784a9ff37920f1dfbd32
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1141,7 +296,233 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
---- !u!114 &5830284997493881133
+--- !u!114 &-2378399605037001433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Revive
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Revive
+  guid: d154d9cb13dde04e8a96c143ec262c4f
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2159743401351564470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Portal/Portal_transition
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Portal/Portal_transition
+  guid: 5d92ff18564164488afed38c1e846ad2
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-2010584343779191700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/TrapsSplit/LaserTrapSplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/TrapsSplit/LaserTrapSplit
+  guid: c2416d4f217c014189c7793b203ee1d2
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1280
+--- !u!114 &-1372380366983162183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/AmbientSplit/Level2Split
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/AmbientSplit/Level2Split
+  guid: 397a428c2f0e18429ce8ec332c975b14
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 57010
+--- !u!114 &-1003826177748609035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Blowtorch/Blowtorch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Blowtorch/Blowtorch
+  guid: 49818c3f56d96749929252324ce18cc0
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7446443799283765430}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &-769358012383596813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/WeaponsSplit/Crowbar
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/WeaponsSplit/Crowbar
+  guid: 9d120a27192cb04da5803a525197b15a
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &-742271745611416258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Objects/Crates
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Objects/Crates
+  guid: 3c902da46ea0aa43927f20e81ecf1562
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-634331027073229152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Traps/Traps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Traps/Traps
+  guid: 7d663fd34d925545932904ad6641af44
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1850
+--- !u!114 &-620240994951451138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.bank
+  Name: Master
+  lastModified: 637435610799063123
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-348376530494498472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/WeaponsSplit/HAndGun
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/WeaponsSplit/HAndGun
+  guid: 48b900d30699bd48a4e785511b2475b0
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.3
+  MaxDistance: 7.2000003
+  Length: 826
+--- !u!114 &-219652782085096969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1161,7 +542,416 @@ MonoBehaviour:
     data1: 3534926611
     data2: 1308415512
   Exists: 1
---- !u!114 &6594957108509413907
+--- !u!114 &-128396076267589308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/AmbientSplit/Level4Split
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/AmbientSplit/Level4Split
+  guid: cf6720a04e4e404d8fc5c514a8298707
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 270000
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 4612785840896116955}
+  - {fileID: -620240994951451138}
+  EditorEvents:
+  - {fileID: -2572420949060999471}
+  - {fileID: 1163628204818883288}
+  - {fileID: 9169756065715810528}
+  - {fileID: 3157362110520409280}
+  - {fileID: 5276975143639481754}
+  - {fileID: 941985062893537150}
+  - {fileID: -1372380366983162183}
+  - {fileID: -742271745611416258}
+  - {fileID: 4007173864109267986}
+  - {fileID: -348376530494498472}
+  - {fileID: -1003826177748609035}
+  - {fileID: -2707972727895900954}
+  - {fileID: -2159743401351564470}
+  - {fileID: 6850224209194030920}
+  - {fileID: 1986886953966594459}
+  - {fileID: 8443650122402851287}
+  - {fileID: -5126539754601486503}
+  - {fileID: 4647544390477912923}
+  - {fileID: 3073331338858409103}
+  - {fileID: -634331027073229152}
+  - {fileID: 7451168215795233345}
+  - {fileID: 6668187812977629493}
+  - {fileID: 8150958586506215483}
+  - {fileID: 7886555633104121994}
+  - {fileID: 5194654338423161916}
+  - {fileID: 7041896115636101775}
+  - {fileID: -2609014844021728653}
+  - {fileID: -769358012383596813}
+  - {fileID: -7577168559843349110}
+  - {fileID: -8207069069497711368}
+  - {fileID: 7173429462139654194}
+  - {fileID: 3633503466226616192}
+  - {fileID: 6716498970360436796}
+  - {fileID: 3675928980245103986}
+  - {fileID: -6577994683633424743}
+  - {fileID: -2010584343779191700}
+  - {fileID: -6226623614205915344}
+  - {fileID: -7285274938589344735}
+  - {fileID: -128396076267589308}
+  - {fileID: -2378399605037001433}
+  - {fileID: -5679601172883385831}
+  - {fileID: 1852386835428080813}
+  - {fileID: -6148068549498096344}
+  - {fileID: -3306108173327587040}
+  - {fileID: 6106810799164761069}
+  - {fileID: 1097604638206853026}
+  EditorParameters:
+  - {fileID: 2007863886085150053}
+  - {fileID: 4696894557344900729}
+  - {fileID: -219652782085096969}
+  - {fileID: -4941948678059646560}
+  MasterBanks:
+  - {fileID: -620240994951451138}
+  StringsBanks:
+  - {fileID: 4612785840896116955}
+  stringsBankWriteTime: 637435610799082818
+  cacheVersion: 5
+--- !u!114 &941985062893537150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Flashlight/Flashlight
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Flashlight/Flashlight
+  guid: 268d27ec4dd84742a1806b781abb6844
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &1097604638206853026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemyScreech/EnemyScreech
+  m_EditorClassIdentifier: 
+  Path: event:/EnemyScreech/EnemyScreech
+  guid: f5bf11004b6d04429ca5cddeee2b5c0f
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 6.2000003
+  MaxDistance: 650
+  Length: 4000
+--- !u!114 &1163628204818883288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_5
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_5
+  guid: 00ec2a6d7c433a45b9ac3514f092b361
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 125
+--- !u!114 &1852386835428080813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/Footsteps/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Character/Footsteps/Footsteps
+  guid: dcb4f8c9e7605d48824a040ce2daecae
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 3.6000001
+  Length: 4000
+--- !u!114 &1986886953966594459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Button/Buttons
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Button/Buttons
+  guid: 62df75c065133e4082cb8c785ba2c7c5
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 520
+--- !u!114 &2007863886085150053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps
+  m_EditorClassIdentifier: 
+  Name: Footsteps
+  Min: 0
+  Max: 1
+  Default: 0.1
+  ID:
+    data1: 646512916
+    data2: 1256180836
+  Exists: 1
+--- !u!114 &3073331338858409103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit
+  guid: 7240411a1ca6a54b8a7e7c8698f8477d
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 6.2000003
+  MaxDistance: 650
+  Length: 1500
+--- !u!114 &3157362110520409280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/HAndGun
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/HAndGun
+  guid: 1ae11e38a0271c449d523d3019532969
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0.3
+  MaxDistance: 7.2000003
+  Length: 826
+--- !u!114 &3633503466226616192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightOFFSplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightOFFSplit
+  guid: afbac231754eaf42b06ae7d4f72fa8e6
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &3675928980245103986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/AmbientSplit/Level5Split
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/AmbientSplit/Level5Split
+  guid: bf87d54a00f3604992dbc047bf57d597
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 35500
+--- !u!114 &4007173864109267986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiences/Ambiences
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiences/Ambiences
+  guid: 42ba2054c0bcda4da6acb4ae81bada37
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 75
+  MaxDistance: 8600
+  Length: 500
+--- !u!114 &4612785840896116955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  lastModified: 637435610799082818
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 3672
+  Exists: 1
+--- !u!114 &4647544390477912923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/WeaponTimeline
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/WeaponTimeline
+  guid: 6fd8130876b0e4488dc61766d7c368f6
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4696894557344900729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Enemy
+  m_EditorClassIdentifier: 
+  Name: Enemy
+  Min: 0
+  Max: 1
+  Default: 0.1
+  ID:
+    data1: 2868927833
+    data2: 2025266559
+  Exists: 1
+--- !u!114 &5194654338423161916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1176,7 +966,7 @@ MonoBehaviour:
   Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_1
   guid: 928b08d9aaea62408f3825be2303692d
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1184,7 +974,76 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 125
---- !u!114 &6882570893049658207
+--- !u!114 &5276975143639481754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/PlayerHit/PlayerHit
+  m_EditorClassIdentifier: 
+  Path: event:/Character/PlayerHit/PlayerHit
+  guid: 20816ccc49936e4f9af26478077ae699
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &6106810799164761069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Weapons/Shotgun
+  m_EditorClassIdentifier: 
+  Path: event:/Weapons/Shotgun
+  guid: ed4b7b8f67a5474bb66265df4028efd5
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 900
+--- !u!114 &6668187812977629493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/ObjectsSplit/CratesSplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/ObjectsSplit/CratesSplit
+  guid: 7e4b3ee5fe11c64d81b70e33b17e9e73
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &6716498970360436796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1199,7 +1058,7 @@ MonoBehaviour:
   Path: event:/THESPLIT/AmbientSplit/Level1Split
   guid: b0ea51e4546bf44d8e906ccd7e12912d
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1207,7 +1066,76 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 117000
---- !u!114 &6987280674005452146
+--- !u!114 &6850224209194030920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2
+  guid: 60a18e2b5e0a5146bf8cbff61cd95b7c
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1624
+--- !u!114 &7041896115636101775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit
+  guid: 9639c219caaffc45abd77e803703508d
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7173429462139654194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1
+  guid: ac80e44c06800f418605486f1bca4123
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1624
+--- !u!114 &7446443799283765430
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1227,99 +1155,7 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
---- !u!114 &7089035847396478686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/AmbientSplit/Level 3Split
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/AmbientSplit/Level 3Split
-  guid: c0ab7cb76e6ab148a7bef13d4e1a7673
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 146000
---- !u!114 &7447324839466799044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightONsplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightONsplit
-  guid: 144bd5e45e13144aa4b33afbd0d940ee
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &7475215849096332704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/CharacterSplit/EnemyScreechSplit/EnemyScreechSplit
-  guid: 7240411a1ca6a54b8a7e7c8698f8477d
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 6.2000003
-  MaxDistance: 650
-  Length: 1500
---- !u!114 &7507942998575860256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit
-  m_EditorClassIdentifier: 
-  Path: event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit
-  guid: 9639c219caaffc45abd77e803703508d
-  Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &7676489850857928242
+--- !u!114 &7451168215795233345
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1334,7 +1170,7 @@ MonoBehaviour:
   Path: event:/THESPLIT/SFXSplit/TrapsSplit/HazardTrapSplit
   guid: 7d992398351e024889d8c685985f5248
   Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1342,7 +1178,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &7988008784111532901
+--- !u!114 &7886555633104121994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1352,39 +1188,105 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Weapons/HAndGun
+  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_3
   m_EditorClassIdentifier: 
-  Path: event:/Weapons/HAndGun
-  guid: 1ae11e38a0271c449d523d3019532969
+  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_3
+  guid: 86c4827503ef1944828b04de60bad9db
   Banks:
-  - {fileID: 2622318482156506805}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0.3
-  MaxDistance: 7.2000003
-  Length: 826
---- !u!114 &8007988934290885515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Portal/Portal_transition
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Portal/Portal_transition
-  guid: 5d92ff18564164488afed38c1e846ad2
-  Banks:
-  - {fileID: 2622318482156506805}
+  - {fileID: -620240994951451138}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 10000
+  Length: 125
+--- !u!114 &8150958586506215483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_4
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_4
+  guid: 8059e6912f182243ba5269408b244dbd
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 125
+--- !u!114 &8443650122402851287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_2
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/TextChatSoundsSplit/TextChatSplit_2
+  guid: 6722edc2bc648f44ba9ac297049f354d
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 125
+--- !u!114 &9138032619728033221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Blowtorch/Blowtorch
+  m_EditorClassIdentifier: 
+  Name: Blowtorch
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &9169756065715810528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightONsplit
+  m_EditorClassIdentifier: 
+  Path: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightONsplit
+  guid: 144bd5e45e13144aa4b33afbd0d940ee
+  Banks:
+  - {fileID: -620240994951451138}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
