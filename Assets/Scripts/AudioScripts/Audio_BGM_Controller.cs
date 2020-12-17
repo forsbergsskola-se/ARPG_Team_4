@@ -7,7 +7,7 @@ public class Audio_BGM_Controller : MonoBehaviour
 
     [SerializeField]
     [Range(-30f, 10f)]
-    public float BGMVolume; // = -10f; Default.
+    public float BGMVolume = -10f; //Default.
     //Levels:
     [FMODUnity.EventRef]
     public string LevelBGMEvent1 = "event:/THESPLIT/AmbientSplit/Level1Split";
@@ -28,7 +28,8 @@ public class Audio_BGM_Controller : MonoBehaviour
 
     void Start()
     {
-        BGMVolume = -10f;
+        //BGMVolume = -10f;
+
         MenuBGM = FMODUnity.RuntimeManager.CreateInstance(MenuBGMEvent);
         LevelBGM1 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent1);
         LevelBGM2 = FMODUnity.RuntimeManager.CreateInstance(LevelBGMEvent2);
