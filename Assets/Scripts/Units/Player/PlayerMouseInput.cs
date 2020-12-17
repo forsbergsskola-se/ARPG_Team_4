@@ -74,9 +74,9 @@ namespace Units.Player {
             RaycastHit hitInfo;
             if (IsMouseCursorOnEnemy(myRay, out hitInfo)) {
                 if (_playerMeleeAttack.WithinAttackRange(hitInfo.collider.gameObject.transform.position) &&
-                    _FSMWorkWithAnimation.crowbarIsReady)
+                    _FSMWorkWithAnimation.CrowbarIsReady)
                     SetMeleeCursor();
-                else if (_FSMWorkWithAnimation.gunIsReady)
+                else if (_FSMWorkWithAnimation.GunIsReady)
                     SetRangedCursor();
             }
             else {
@@ -105,7 +105,7 @@ namespace Units.Player {
                     TryMeleeAttack();
                 }
                 else if (RMBClickedThisTurn) {
-                    if (_playerRangedAttack.AttackIsReady && _FSMWorkWithAnimation.gunIsReady)
+                    if (_playerRangedAttack.AttackIsReady && _FSMWorkWithAnimation.GunIsReady)
                         StartRangedAttack();
                 }
             }
@@ -123,7 +123,7 @@ namespace Units.Player {
             _playerMovement.ResetPath();
             if (RMBheld)
             {
-                if (!_FSMWorkWithAnimation.gunIsReady) return;
+                if (!_FSMWorkWithAnimation.GunIsReady) return;
                 HandleRangedAttackCharging();
 
             }
@@ -155,13 +155,13 @@ namespace Units.Player {
         }
         
         private void StartRangedAttack() {
-            if (!_FSMWorkWithAnimation.gunIsReady) return;
+            if (!_FSMWorkWithAnimation.GunIsReady) return;
             _playerRangedAttack.StartRangedAttack();
         }
 
         private void TryMeleeAttack() {
             if (_target != null && _playerMeleeAttack.WithinAttackRange(_target.transform.position) &&
-                _FSMWorkWithAnimation.crowbarIsReady) {
+                _FSMWorkWithAnimation.CrowbarIsReady) {
                 _playerMeleeAttack.TryAttack(_target);
             }
             else {
