@@ -21,4 +21,14 @@ public class DisabledAudio : MonoBehaviour
         AT.LevelAudioSet5(setLevel5);
     }
     */
+    /*
+        PlayerMovingAudio(true);
+        PlayerMovingAudio(false);
+        PlayerMovingAudio(playerIsMoving);
+        private void PlayerMovingAudio(bool setFootStepSFX)
+        {
+            var AT = GetComponent<Audio_Character_Controller>();
+            AT.FootStepSFXSet(setFootStepSFX);
+        }
+        */
 }

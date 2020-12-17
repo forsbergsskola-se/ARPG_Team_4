@@ -69,10 +69,13 @@ public class Audio_Character_Controller : MonoBehaviour
     }
     public void FootStepSFXSet(bool setFootStepSFX)
     {
+        var TP = FindObjectOfType<Audio_Character_Controller>();
+        var tPposition = TP.gameObject.transform.position;
         if (setFootStepSFX)
         {
             FootStepSFX = FMODUnity.RuntimeManager.CreateInstance(FootStepEvent);
-            FootStepSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            FootStepSFX.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tPposition));
+            //FMODUnity.RuntimeManager.AttachInstanceToGameObject(FootStepSFX, GetComponent<tPposition>(), );
             FootStepSFX.start();
         }
         else
