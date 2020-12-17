@@ -13,16 +13,12 @@ namespace Units.Player {
         LayerMask _deadPlayerLayer;
         LayerMask _alivePlayerLayer;
 
-        // Fråga David
-        private void Awake() {
-            if (healthScriptableObject.CurrentHealth == 0) {
-                healthScriptableObject.CurrentHealth = healthScriptableObject.MaxHealth;
-            }
-        }
-
         private void Start() {
             _deadPlayerLayer = 0;
             _alivePlayerLayer = 9;
+            if (healthScriptableObject.CurrentHealth == 0) {
+                healthScriptableObject.CurrentHealth = healthScriptableObject.MaxHealth;
+            }
         }
 
         private void FixedUpdate() {
