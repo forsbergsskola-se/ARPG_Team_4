@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47f1892c9ded3d847b98ec2b7d1704a6
+guid: 6a108860be15ba449bf9ea5995c87c39
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,17 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Holographic_Glass_Hologram1Mat
+      name: Glass_Hologram2_group2Mat
     second: {fileID: 2100000, guid: 0cf95dc2555ca2846872de498fe76053, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Holographic_Goldenratio_PolygonMat
-    second: {fileID: 2100000, guid: 0421ac2803c5bff4985df8695bb80556, type: 2}
+      name: group2_Goldenratio_Polygon1Mat
+    second: {fileID: 2100000, guid: 40cf3f481728c374aad2daf29b555d47, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Holographic_Stand1_HolographicMat
+      name: group2_Holographic_Stand2Mat
     second: {fileID: 2100000, guid: 3c693cb9c6841474382f4561b3d50377, type: 2}
   materials:
     materialImportMode: 1
