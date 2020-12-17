@@ -48,13 +48,18 @@ namespace Units.Player {
         
         IEnumerator DamageFeedback() {
             //Audio Player Hit
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Character/PlayerHit/PlayerHit", GetComponent<Transform>().position);
+            PlayHurtAudio(true);
 
             var playerMesh = GetComponent<MeshRenderer>();
             playerMesh.enabled = false;
             yield return new WaitForSeconds(0.2f);
             playerMesh.enabled = true;
             yield return null;
+        }
+        private void PlayHurtAudio(bool setPlayerHitSFX)
+        {
+            var AT = FindObjectOfType<Audio_Character_Controller>();
+            AT.PlayerHitSFXSet(setPlayerHitSFX);
         }
         
         public void GainHealth(int healValue) {

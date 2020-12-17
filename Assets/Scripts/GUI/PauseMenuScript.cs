@@ -40,7 +40,7 @@ namespace GUI {
         }
 
         public void ResumeButton() {
-            PlayButtonSound();
+            PlayButtonSound(true);
             shadow.SetActive(false);
             pauseMenuRef.SetActive(false);
             _playerMovement.InputDisabled = false;
@@ -49,55 +49,57 @@ namespace GUI {
         }
 
         public void LoadCheckpointButton() {
-            PlayButtonSound();
+            PlayButtonSound(true);
         }
 
     
      
         public void QuitButton() {
-            PlayButtonQuit();
+            PlayButtonQuit(true);
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
         }
-        private void PlayButtonQuit()
+        private void PlayButtonQuit(bool setButton_1_SFX)
         {
-
+            var AT = FindObjectOfType<Audio_SFX_Controller>();
+            AT.Button_1_SFXSet(setButton_1_SFX);
             //Debug.Log("Calling for Audio Quit Test");
-            var AT = FindObjectOfType<AudioTest>();
-            var aTposition = AT.gameObject.transform.position;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2", aTposition);
+            //var aTposition = AT.gameObject.transform.position;
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2", aTposition);
 
         }
-        private void PlayButtonSound() {
-            var AT = FindObjectOfType<AudioTest>();
+        private void PlayButtonSound(bool setButton_2_SFX) {
+            var AT = FindObjectOfType<Audio_SFX_Controller>();
+            AT.Button_2_SFXSet(setButton_2_SFX);
             //Debug.Log("Calling for Audio Test");
-            var aTposition = AT.gameObject.transform.position;
-            FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1", aTposition);
+            //var aTposition = AT.gameObject.transform.position;
+            //FMODUnity.RuntimeManager.PlayOneShot("event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1", aTposition);
         }
     
         void PauseGame ()
         {
-            var AT = FindObjectOfType<AudioTest>();
-            AT.MenuBGMSoundOn += 1;
             
+            //var AT = FindObjectOfType<AudioTest>();
+            //AT.MenuBGMSoundOn += 1;
             Time.timeScale = 0f;
         }
 
         void ResumeGame ()
         {
-            var AT = FindObjectOfType<AudioTest>();
-            AT.MenuBGMSoundOn -= 1;
+
+            //var AT = FindObjectOfType<AudioTest>();
+            //AT.MenuBGMSoundOn -= 1;
             Time.timeScale = 1;
         }
 
         private void SetMenuSoundActive(bool menuActive)
         {
-            Debug.Log("Trigger menu sound: " + menuActive);
-            var audioTest = FindObjectOfType<AudioTest>();
+            var audioTest = FindObjectOfType<Audio_BGM_Controller>();
             audioTest.MenuActive(menuActive);
+            //Debug.Log("Trigger menu sound: " + menuActive);
         }
 
         /*
