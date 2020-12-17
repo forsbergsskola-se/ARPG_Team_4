@@ -4944,7 +4944,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Positions:
   - {x: -22.78, y: 1.6000061, z: 2.07}
   - {x: -25.735552, y: 1.6000061, z: 2.0699985}
@@ -5034,8 +5034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20134dd7256fee4c9f1157b21033964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
-  patrolDistance: 0
+  movementSpeed: 1
+  patrolDistance: 6
 --- !u!1 &9107995116449814566
 GameObject:
   m_ObjectHideFlags: 0
