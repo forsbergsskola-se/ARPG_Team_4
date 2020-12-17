@@ -7,7 +7,6 @@ namespace Units.EnemyAI {
     public class TrackPlayer : MonoBehaviour {
         private WaypointMovement waypointMovement;
         private MeleeAttackEnemy meleeAttackEnemy;
-        private NavMeshAgent _enemy;
         private Transform PlayerTransform => GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         public float enemyViewDistance = 6f;
         private float _nextAttackTime;
@@ -15,12 +14,10 @@ namespace Units.EnemyAI {
 
         //Audio
         public int enemyAudioInterval = 0;
-        public float _enemyAudioInterval = 0f;
 
         private void Start() {
             waypointMovement = GetComponent<WaypointMovement>();
             meleeAttackEnemy = GetComponent<MeleeAttackEnemy>();
-            _enemy = GetComponent<NavMeshAgent>();
 
             if (waypointMovement == null) 
                 Debug.LogWarning("Patrol point(s) not found", this);
@@ -29,20 +26,20 @@ namespace Units.EnemyAI {
         private void FixedUpdate() {
             var enemyPos = transform.position;
             var distance = Vector3.Distance(enemyPos, PlayerTransform.position);
+            var enemy = GetComponent<NavMeshAgent>();
 
             if (CanSeePlayer()) {
                 var dirToPlayer = enemyPos - PlayerTransform.position;
-
+                var newPos = enemyPos - dirToPlayer;
                 if (distance <= meleeAttackEnemy.attackRange) {
-                    _enemy.ResetPath();
+                    enemy.ResetPath();
                     if (Time.time >= _nextAttackTime) {
                         transform.LookAt(PlayerTransform.position);
                         meleeAttackEnemy.Attack(PlayerTransform.gameObject);
                         _nextAttackTime = Time.time + 1f / meleeAttackEnemy.attacksPerSecond;
                     }
                 } else {
-                    var newPos = enemyPos - dirToPlayer;
-                    _enemy.SetDestination(newPos);
+                    enemy.SetDestination(newPos);
                 }
             } else {
                 waypointMovement.SetDestination();
