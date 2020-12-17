@@ -13,7 +13,7 @@ namespace Units.Player {
         LayerMask _deadPlayerLayer;
         LayerMask _alivePlayerLayer;
 
-
+        // Fråga David
         private void Awake() {
             if (healthScriptableObject.CurrentHealth == 0) {
                 healthScriptableObject.CurrentHealth = healthScriptableObject.MaxHealth;
@@ -25,12 +25,10 @@ namespace Units.Player {
             _alivePlayerLayer = 9;
         }
 
-        private void FixedUpdate()
-        {
+        private void FixedUpdate() {
             if (healthScriptableObject.CurrentHealth > 0 && gameObject.layer != _alivePlayerLayer) {
                 gameObject.layer = _alivePlayerLayer;
-            }
-            else if (gameObject.layer != _deadPlayerLayer) {
+            } else if (healthScriptableObject.CurrentHealth == 0) {
                 gameObject.layer = _deadPlayerLayer;
             }
         }
