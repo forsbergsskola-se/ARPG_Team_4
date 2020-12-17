@@ -4478,8 +4478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
-  attackRange: 3
-  attackRadius: 0.5
+  attackRange: 2.8
+  attackRadius: 1.5
   attacksPerSecond: 2
   enemyLayers:
     serializedVersion: 2
