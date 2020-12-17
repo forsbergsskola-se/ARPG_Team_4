@@ -166,12 +166,11 @@ namespace StateMachine {
             _animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
             _animator.SetInteger(AnimPlayerWeapon, (int)stateWeapon + 1);
             _animator.SetInteger(AnimStateMoveBlend, (int)stateMove);
-        
-            if (playerIsAttacking) playerIsAttacking = false;
-            if (playerIsAiming) FixTiltOfCharacter();
         }
         
         private void LateUpdate() {
+            if (playerIsAttacking) playerIsAttacking = false;
+            if (playerIsAiming) FixTiltOfCharacter();
             _previousPos = transform.position;
         }
     
