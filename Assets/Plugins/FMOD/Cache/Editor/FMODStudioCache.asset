@@ -204,7 +204,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 4273926085250815848}
+  - {fileID: 264919513774669982}
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
@@ -747,8 +747,28 @@ MonoBehaviour:
   - {fileID: 2622318482156506805}
   StringsBanks:
   - {fileID: 1665732798677564100}
-  stringsBankWriteTime: 637435609953038383
+  stringsBankWriteTime: 637435672430000000
   cacheVersion: 5
+--- !u!114 &264919513774669982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Blowtorch/Blowtorch
+  m_EditorClassIdentifier: 
+  Name: Blowtorch
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &587038015867273570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,11 +898,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637435609953038383
+  lastModified: 637435672430000000
   LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 3672
+  FileSizes: []
   Exists: 1
 --- !u!114 &1668727316726851595
 MonoBehaviour:
@@ -961,7 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundsAssetTeam04/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637435609953028379
+  lastModified: 637435672430000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1099,7 +1117,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4953234001534173242
 MonoBehaviour:
   m_ObjectHideFlags: 0
