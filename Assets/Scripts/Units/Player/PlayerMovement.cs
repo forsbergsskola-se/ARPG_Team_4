@@ -23,7 +23,7 @@ namespace Units.Player {
 
         /*
         FMOD.Studio.EventInstance FootstepEvent;
-        //FMOD.Studio.EventInstance.setParameterByName(string name, float value, bool ignoreseekspeed = false);
+        FMOD.Studio.EventInstance.setParameterByName(string name, float value, bool ignoreseekspeed = false);
         public string inputSound;
         bool playersMoving;
         public float walkingSpeed;
