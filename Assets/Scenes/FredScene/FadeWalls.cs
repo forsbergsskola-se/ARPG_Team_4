@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FadeWalls : MonoBehaviour{
     private UnityEngine.Camera mainCamera;
-    public GameObject player;
-    public GameObject wall;
+    private GameObject player;
+    private GameObject[] walls;
     private Color _color;
     [Range(0.0f, 1.0f)]
     public float alphaValueSlider;
     RaycastHit hitInfo;
     private void Start(){
-        _color = wall.GetComponent<MeshRenderer>().material.color;
         mainCamera = UnityEngine.Camera.main;
+        player = this.gameObject;
+        walls = GameObject.FindGameObjectsWithTag("Wall");
     }
-
     private void Update(){
         var dir = player.transform.position - mainCamera.transform.position;
         if (Physics.Raycast(mainCamera.transform.position, dir, out hitInfo, 1000)){
-            if (hitInfo.collider.gameObject.CompareTag("Wall")){
-                Debug.Log("Wall Was found");
-                _color.a = alphaValueSlider;
-                wall.GetComponent<MeshRenderer>().material.color = _color;
-            }
-            else{
-                _color.a = 1;
-                wall.GetComponent<MeshRenderer>().material.color = _color;
+            foreach (GameObject wall in walls){
+                if (hitInfo.collider.gameObject == wall){
+                    wall.GetComponent<Renderer>().material.color = new Color(1,1,1,alphaValueSlider);
+                }
+                else if (hitInfo.collider.gameObject != wall){
+                    wall.GetComponent<Renderer>().material.color = new Color(1,1,1,1);
+                }
             }
         }
     }
