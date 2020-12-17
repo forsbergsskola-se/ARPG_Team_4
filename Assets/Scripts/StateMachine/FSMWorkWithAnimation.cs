@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Units.Player;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 namespace StateMachine {
@@ -22,10 +24,13 @@ namespace StateMachine {
         public bool playerTookDamage = false;
         public bool playerIsAttacking = false;
         public bool playerIsCrouching = false;
-
-        public UnityAction OnWeaponSwitch;
-
+        
+        private bool _crowbarIsReady;
+        private const string CrowbarUnlockedKey = "Team4_ARPG_CrowbarUnlocked";
         private bool _gunIsReady;
+        private const string GunUnlockedKey = "Team4_ARPG_GunUnlocked";
+        public UnityAction OnWeaponSwitch;
+        
         public bool GunIsReady
         {
             get => _gunIsReady;
@@ -35,8 +40,7 @@ namespace StateMachine {
                 OnWeaponSwitch();
             }
         }
-
-        private bool _crowbarIsReady;
+        
         public bool CrowbarIsReady
         {
             get => _crowbarIsReady;
@@ -46,7 +50,37 @@ namespace StateMachine {
                 OnWeaponSwitch();
             }
         }
-    
+
+        private bool CrowbarIsUnlocked {
+            get {
+                var savedValue = PlayerPrefs.GetString(CrowbarUnlockedKey, "false");
+                switch (savedValue) {
+                    case "false":
+                        return false;
+                    case "true":
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+            set => PlayerPrefs.SetString(CrowbarUnlockedKey, value ? "true" : "false");
+        }
+        
+        private bool GunIsUnlocked {
+            get {
+                var savedValue = PlayerPrefs.GetString(GunUnlockedKey, "false");
+                switch (savedValue) {
+                    case "false":
+                        return false;
+                    case "true":
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+            set => PlayerPrefs.SetString(GunUnlockedKey, value ? "true" : "false");
+        }
+
         public enum StateWeapon{Unarmed, CrowBar, Gun}
         public enum StateMove{Idle, Running, CrouchIdle, CrouchMove, Dead}
     
@@ -55,10 +89,12 @@ namespace StateMachine {
 
         public void EquipCrowbar() {
             stateWeapon = StateWeapon.CrowBar;
+            CrowbarIsUnlocked = true;
         }
 
         public void EquipGun() {
             stateWeapon = StateWeapon.Gun;
+            GunIsUnlocked = true;
         }
 
         void Start(){ 
@@ -70,20 +106,18 @@ namespace StateMachine {
         
             _previousPos = transform.position;
             _playerHealth.GetDamaged.AddListener(TakeDamageState);
+
+            if (SceneManager.GetActiveScene().buildIndex == 0) {
+                PlayerPrefs.DeleteAll();
+            }
         }
-        void Update() {
-            //Check Player Equipped Weapon
-            //if (Input.GetKey(KeyCode.Alpha1)) stateWeapon = StateWeapon.Unarmed;
-            if (Input.GetKey(KeyCode.Alpha1)) EquipCrowbar();
-            else if (Input.GetKey(KeyCode.Alpha2)) EquipGun();
+
+        private void Update() {
+            if (Input.GetKey(KeyCode.Alpha1) && CrowbarIsUnlocked) EquipCrowbar();
+            else if (Input.GetKey(KeyCode.Alpha2) && GunIsUnlocked) EquipGun();
 
             if (stateWeapon == StateWeapon.Gun && Input.GetMouseButton(1)) playerIsAiming = true;
             else playerIsAiming = false;
-
-            //if (playerIsAiming) Debug.Log("Player is aiming");
-        
-            //Todo Create GetEquippedWeapon() script
-            //stateWeapon = GetEquippedWeapon()
 
             if (Mathf.Abs(_previousPos.x - transform.position.x) > positionUpdateOffset ||
                 Mathf.Abs(_previousPos.z - transform.position.z) > positionUpdateOffset) {
@@ -92,7 +126,6 @@ namespace StateMachine {
    
             if (_playerHealth.healthScriptableObject.CurrentHealth <= 0) stateMove = StateMove.Dead;
         
-            //StateMove transition
             switch (stateMove) 
             {
                 case StateMove.Idle:
@@ -104,7 +137,6 @@ namespace StateMachine {
                 case StateMove.CrouchIdle:
                     if (!playerIsCrouching) stateMove = playerIsMoving ? StateMove.Running : StateMove.Idle;
                     if (playerIsMoving) stateMove = StateMove.CrouchMove;
-                    //TODO Add crouch animation and parameter that check if player is crouching
                     break;
                 case StateMove.CrouchMove:                                                                  
                     if (!playerIsCrouching) stateMove = playerIsMoving ? StateMove.Running : StateMove.Idle;
@@ -118,7 +150,6 @@ namespace StateMachine {
             switch (stateWeapon) 
             {
                 case StateWeapon.Unarmed:
-                    //Logic
                     break;
                 case StateWeapon.CrowBar:
                     if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Draw Crowbar")) 
@@ -138,35 +169,26 @@ namespace StateMachine {
         
             if (playerIsAttacking) playerIsAttacking = false;
             if (playerIsAiming) FixTiltOfCharacter();
-        
-            //set attacking state from bool attacking?
-            //set take damage state if health drops, add listener?
-            //set death animation with listener on death?
         }
+        
         private void LateUpdate() {
             _previousPos = transform.position;
         }
     
         private void TakeDamageState() {
             playerTookDamage = true;
-            //_animator.SetBool(AnimPlayerTookDamage, playerTookDamage);
             StartCoroutine(GracePeriod());
-            //change to idle/attack state when damage is done...
         }
 
         private IEnumerator GracePeriod(){
             yield return new WaitForSecondsRealtime(1.5f);
             playerIsAttacking = false;
-            Debug.Log("Player exit damage sector");
         }
     
         private void FixTiltOfCharacter() {
-            //Lazy fix, fixes character tilt
             Vector3 eulerAngles = transform.eulerAngles;
             eulerAngles = new Vector3(0, eulerAngles.y, eulerAngles.z);
             transform.eulerAngles = eulerAngles;
         }
     }
 }
-
-// TODO create a abstract class of states?
