@@ -92,6 +92,19 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5165786430035520506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148421054402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 425399fab76aad24d80d8381b903a7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
 --- !u!1 &7577956594892135863
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +116,6 @@ GameObject:
   - component: {fileID: 7577956594892135859}
   - component: {fileID: 7577956594892135861}
   - component: {fileID: 7577956594892135860}
-  - component: {fileID: 2778732663276145528}
   m_Layer: 0
   m_Name: HealthKit
   m_TagString: Untagged
@@ -153,19 +165,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.8
   m_Center: {x: 0, y: 0.2, z: 0}
---- !u!114 &2778732663276145528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7577956594892135863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425399fab76aad24d80d8381b903a7da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 100
 --- !u!1001 &1548382867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +254,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5dde127273d52d41a3ab31c2da3936b, type: 3}
+--- !u!1 &919132148421054402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d5dde127273d52d41a3ab31c2da3936b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1548382867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450652160234872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5dde127273d52d41a3ab31c2da3936b,
