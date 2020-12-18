@@ -3484,7 +3484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0258bf249b11849488246a4742bcb092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 8
 --- !u!114 &7234552052443642281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3503,6 +3503,7 @@ MonoBehaviour:
   unitLayers:
     serializedVersion: 2
     m_Bits: 512
+  attackAudioPerSecond: 2.5
 --- !u!114 &1075906487785162743
 MonoBehaviour:
   m_ObjectHideFlags: 0
