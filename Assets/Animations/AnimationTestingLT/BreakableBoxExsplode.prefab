@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4063243252833411494}
   - component: {fileID: 4063243252833411490}
   - component: {fileID: 4063243252833411495}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: BreakableBoxExsplode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5041177836829647319}
   - component: {fileID: 5041177836829647318}
   - component: {fileID: 5041177836829647322}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 5041177836831008379}
   - component: {fileID: 5041177836831008378}
   - component: {fileID: 5041177836831008382}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 5041177836907556990}
   - component: {fileID: 5041177836907556985}
   - component: {fileID: 5041177836907556989}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 5041177837047562896}
   - component: {fileID: 5041177837047562899}
   - component: {fileID: 5041177837047562903}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 5041177837286348552}
   - component: {fileID: 5041177837286348555}
   - component: {fileID: 5041177837286348559}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1062,7 @@ GameObject:
   - component: {fileID: 5041177837332081211}
   - component: {fileID: 5041177837332081210}
   - component: {fileID: 5041177837332081214}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1453,7 +1453,7 @@ GameObject:
   - component: {fileID: 5041177837576453835}
   - component: {fileID: 5041177837576453834}
   - component: {fileID: 5041177837576453838}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 5041177837595830582}
   - component: {fileID: 5041177837595830577}
   - component: {fileID: 5041177837595830581}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2084,7 +2084,7 @@ GameObject:
   - component: {fileID: 5041177837645293325}
   - component: {fileID: 5041177837645293324}
   - component: {fileID: 5041177837645293552}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2262,7 +2262,7 @@ GameObject:
   - component: {fileID: 5041177837715034640}
   - component: {fileID: 5041177837715034643}
   - component: {fileID: 5041177837715034647}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2440,7 +2440,7 @@ GameObject:
   - component: {fileID: 5041177838042414953}
   - component: {fileID: 5041177838042414952}
   - component: {fileID: 5041177838042414956}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2831,7 +2831,7 @@ GameObject:
   - component: {fileID: 5041177838047841749}
   - component: {fileID: 5041177838047841748}
   - component: {fileID: 5041177838047841752}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3071,7 +3071,7 @@ GameObject:
   - component: {fileID: 5041177838176785116}
   - component: {fileID: 5041177838176785119}
   - component: {fileID: 5041177838176785091}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3280,7 +3280,7 @@ GameObject:
   - component: {fileID: 5041177838224857113}
   - component: {fileID: 5041177838224857112}
   - component: {fileID: 5041177838224857116}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3327,7 +3327,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b6020e8a9c6d0846aaa5198d50600b1, type: 2}
+  - {fileID: 2100000, guid: 254e7af0966c6e84bbe4181922cd1a2f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3671,7 +3671,7 @@ GameObject:
   - component: {fileID: 5041177838230596169}
   - component: {fileID: 5041177838230596168}
   - component: {fileID: 5041177838230596172}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3911,7 +3911,7 @@ GameObject:
   - component: {fileID: 5041177838374983315}
   - component: {fileID: 5041177838374983314}
   - component: {fileID: 5041177838374983318}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3958,7 +3958,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b6020e8a9c6d0846aaa5198d50600b1, type: 2}
+  - {fileID: 2100000, guid: 254e7af0966c6e84bbe4181922cd1a2f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4089,7 +4089,7 @@ GameObject:
   - component: {fileID: 5041177838549693128}
   - component: {fileID: 5041177838549693131}
   - component: {fileID: 5041177838549693135}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4298,7 +4298,7 @@ GameObject:
   - component: {fileID: 5041177838602844569}
   - component: {fileID: 5041177838602844568}
   - component: {fileID: 5041177838602844572}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Woodcrate (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
