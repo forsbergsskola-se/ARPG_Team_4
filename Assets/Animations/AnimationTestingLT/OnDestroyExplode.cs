@@ -8,6 +8,7 @@ public class OnDestroyExplode : MonoBehaviour
     public GameObject SpawnExplode;
     private void OnDestroy()
     {
-        Instantiate(SpawnExplode, transform);
+        GameObject newBox = Instantiate(SpawnExplode);
+        newBox.transform.position = new Vector3(transform.position.x, transform.position.y + transform.localScale.y / 2, transform.position.z);
     }
 }

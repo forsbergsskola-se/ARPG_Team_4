@@ -13,13 +13,12 @@ public class ExplodeBox : MonoBehaviour
     private List<Transform> _explodeObject = new List<Transform>();
 
     private void Start() {
+        Debug.Log("Spawned");
         Explode();
     }
 
     public void Explode() {
-        
         foreach (Transform t in transform) {
-            //t.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
             _explodeObject.Add(t);
             var rb = t.GetComponent<Rigidbody>();
             if (rb != null) rb.AddExplosionForce(Random.Range(minForce, maxForce), transform.position, radius);
