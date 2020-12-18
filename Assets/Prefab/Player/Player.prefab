@@ -3779,6 +3779,8 @@ MonoBehaviour:
   LevelBGMEvent1: event:/THESPLIT/AmbientSplit/Level1Split
   LevelBGMEvent2: event:/THESPLIT/AmbientSplit/Level2Split
   LevelBGMEvent3: event:/THESPLIT/AmbientSplit/Level 3Split
+  LevelBGMEvent4: event:/THESPLIT/AmbientSplit/Level4Split
+  LevelBGMEvent5: event:/THESPLIT/AmbientSplit/Level5Split
   MenuBGMEvent: event:/THESPLIT/AmbientSplit/MenuHUMSplit
 --- !u!114 &7487681355912461529
 MonoBehaviour:
@@ -3811,14 +3813,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SFXVolume: 0
-  BlowtorchEvent: event:/THESPLIT/SFXSplit/BlowtorchSplit/BlowtorchSplit
   Button_1_Event: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_1
   Button_2_Event: event:/THESPLIT/SFXSplit/ButtonSplit/ButtonsSplit_2
-  FlashlightOFF_Event: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightOFFSplit
-  FlashlightON_Event: event:/THESPLIT/SFXSplit/FlashlightSplit/FlashlightONSplit
   CratesEvent: event:/THESPLIT/SFXSplit/ObjectsSplit/CratesSplit
-  PortalTransitionEvent: event:/THESPLIT/SFXSplit/PortalSplit/Portal_transitionSplit
-  HazerdTrapEvent: event:/THESPLIT/SFXSplit/TrapsSplit/HazardTrapSplit
   LaserTrapEvent: event:/THESPLIT/SFXSplit/TrapsSplit/LaserTrapSplit
 --- !u!114 &8468052800730504686
 MonoBehaviour:
@@ -3847,8 +3844,6 @@ MonoBehaviour:
   WeaponVolume: 0
   CrowbarEvent: event:/THESPLIT/WeaponsSplit/Crowbar
   HandGunEvent: event:/THESPLIT/WeaponsSplit/HAndGun
-  PlasmaEvent: event:/THESPLIT/WeaponsSplit/Plasma
-  ShotgunEvent: event:/THESPLIT/WeaponsSplit/Shotgun
 --- !u!1 &7195989051238147033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,7 +4507,7 @@ MonoBehaviour:
   buildUpTime: 0.5
   projectileVelocity: 30
   projectileMaxDistance: 30
-  damage: 6
+  damage: 2
   attackCoolDown: 1
 --- !u!114 &469871592968579855
 MonoBehaviour:
@@ -4526,7 +4521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539103ee415d5a2498f072902b5a06ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 1
   attackRange: 2.8
   attackRadius: 1.5
   attacksPerSecond: 2

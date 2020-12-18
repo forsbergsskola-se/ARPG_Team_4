@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0258bf249b11849488246a4742bcb092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 6
 --- !u!114 &2998622218867294218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3473,10 +3473,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d3baf1eb838754a8af0a982e5bb4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyViewDistance: 6
+  enemyViewDistance: 60
   playerHealth: {fileID: 11400000, guid: 088accede7fd7ad4b8ce7d8705d3d3b7, type: 2}
   enemyAudioInterval: 0
-  _enemyAudioInterval: 0
 --- !u!114 &235692997006351235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,10 +3491,6 @@ MonoBehaviour:
   attackRange: 2
   attacksPerSecond: 1
   attackDamage: 1
-  attackRadius: 2
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &1605834365768586771
 MonoBehaviour:
   m_ObjectHideFlags: 0

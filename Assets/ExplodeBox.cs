@@ -13,7 +13,6 @@ public class ExplodeBox : MonoBehaviour
     private List<Transform> _explodeObject = new List<Transform>();
 
     private void Start() {
-        Debug.Log("Spawned");
         Explode();
     }
 
@@ -30,7 +29,6 @@ public class ExplodeBox : MonoBehaviour
         foreach (Transform obj in _explodeObject) {
             Color color = obj.GetComponent<Renderer>().material.color;
             color.a -= Time.deltaTime * fadeSpeed;
-            Debug.Log("ColorAlpha " + color.a);
             obj.GetComponent<Renderer>().material.color = color;
             if (color.a <= 0) Destroy(gameObject);
         }
