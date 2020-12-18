@@ -45,12 +45,11 @@ namespace Units.Player {
         private void Attack(GameObject target) {
             transform.LookAt(GetMousePosition());
             _nextAttackTime = Time.time + _attackTime;
-            
             _target = target;
-            
             _FSMWorkWithAnimation.playerIsAttacking = true;
-            
             PlayMeleeAudio(true);
+            // Fix error with event from animation not registering. Will throw off timing for the melee damage.
+            DoSingleTargetDamage();
         }
         private void PlayMeleeAudio(bool setCrowbarSFX)
         {
