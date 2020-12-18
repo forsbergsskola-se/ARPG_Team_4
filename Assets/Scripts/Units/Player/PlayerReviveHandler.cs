@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 namespace Units.Player {
     /// <summary>
@@ -23,6 +24,7 @@ namespace Units.Player {
 
         public void ReviveAtCheckpoint() {
             RestoreHealth();
+            GetComponent<NavMeshAgent>().enabled = false;
             _playerHealth.TriggerInvulnerability();
             this.gameObject.transform.position = reviveCheckpointLocation.position;
             SendMessage("ShowReviveVFX", SendMessageOptions.DontRequireReceiver);

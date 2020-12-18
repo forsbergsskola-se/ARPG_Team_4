@@ -1,5 +1,6 @@
 ﻿using StateMachine;
 using UnityEngine;
+using UnityEngine.AI;
 
 //TODO check that knockback works, check that disable input from menus etc works.
 namespace Units.Player {
@@ -29,6 +30,7 @@ namespace Units.Player {
         
         public void EnableInput() {
             _inputDisabled = false;
+            GetComponent<NavMeshAgent>().enabled = true;
         }
 
         private void Start() {

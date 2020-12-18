@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using UnityEngine.AI;
 
 namespace Units.Player {
     public class PlayerHealth : MonoBehaviour, IDamagable {
