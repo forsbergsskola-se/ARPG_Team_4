@@ -4,8 +4,9 @@ namespace Interactables {
     public class PortalButton : MonoBehaviour {
         public bool insideCollider;
         public GameObject interactText;
-        public MeshFilter theMesh;
         public GameObject lightGameObject;
+        public Material newLight;
+        public GameObject doorToUnlock;
 
         private void Start() {
             interactText.SetActive(false);
@@ -14,8 +15,8 @@ namespace Interactables {
         private void Update() {
             if (insideCollider) {
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    theMesh = lightGameObject.GetComponent<MeshFilter>();
-                    theMesh.sharedMesh = Resources.Load<Mesh>("Emissive 4");
+                    lightGameObject.GetComponent<MeshRenderer>().material = newLight;
+                    doorToUnlock.GetComponent<Open_And_Close>().enabled = true;
                 }
             }
         }
