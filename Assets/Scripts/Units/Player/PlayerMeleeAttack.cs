@@ -46,10 +46,10 @@ namespace Units.Player {
             transform.LookAt(GetMousePosition());
             _nextAttackTime = Time.time + _attackTime;
             
-            //DoSingleTargetDamage(target);
             _target = target;
-
-            //Melee Audio
+            
+            _FSMWorkWithAnimation.playerIsAttacking = true;
+            
             PlayMeleeAudio(true);
         }
         private void PlayMeleeAudio(bool setCrowbarSFX)
@@ -88,12 +88,5 @@ namespace Units.Player {
 
             return hitLocation;
         }
-
-        /*
-        public void DoSingleTargetDamage() {
-            Debug.Log("Do single target damage");
-            if (_target != null)
-                _target.GetComponent<IDamagable>().TakeDamage(attackDamage);
-        }*/
     }
 }

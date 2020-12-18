@@ -1,27 +1,22 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Interactables {
     public class PortalButton : MonoBehaviour {
-        public GameObject[] portalsToActivate;
         public bool insideCollider;
         public GameObject interactText;
+        public GameObject lightGameObject;
+        public Material newLight;
+        public GameObject doorToUnlock;
 
         private void Start() {
             interactText.SetActive(false);
-            foreach (GameObject go in portalsToActivate) {
-                go.GetComponent<ParticleSystem>().Stop();
-            }
         }
 
         private void Update() {
             if (insideCollider) {
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    Debug.Log("Pressed Space");
-                    interactText.SetActive(false);
-                    foreach (GameObject go in portalsToActivate) {
-                        go.GetComponent<Portal>().isEnabled = true;
-                        go.GetComponent<ParticleSystem>().Play();
-                    }
+                    lightGameObject.GetComponent<MeshRenderer>().material = newLight;
+                    doorToUnlock.GetComponent<Open_And_Close>().enabled = true;
                 }
             }
         }
